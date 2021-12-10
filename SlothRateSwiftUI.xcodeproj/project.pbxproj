@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3230EB275FB1400016468D /* StepsCounter.swift */; };
+		FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */; };
+		FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */; };
+		FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE92758056B006D9E88 /* ContentView.swift */; };
+		FF89EBEC2758056D006D9E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF89EBEB2758056D006D9E88 /* Assets.xcassets */; };
+		FF89EBEF2758056D006D9E88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF89EBEE2758056D006D9E88 /* Preview Assets.xcassets */; };
+		FF89EBF92758056D006D9E88 /* SlothRateSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBF82758056D006D9E88 /* SlothRateSwiftUITests.swift */; };
+		FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */; };
+		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
+		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
+		FF8E979327624885005BB1E7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8E979227624885005BB1E7 /* HealthKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF89EBF52758056D006D9E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF89EBE32758056B006D9E88;
+			remoteInfo = SlothRateSwiftUI;
+		};
+		FF89EBFF2758056D006D9E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF89EBE32758056B006D9E88;
+			remoteInfo = SlothRateSwiftUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF3230EB275FB1400016468D /* StepsCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCounter.swift; sourceTree = "<group>"; };
+		FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCounterViewModel.swift; sourceTree = "<group>"; };
+		FF89EBE42758056B006D9E88 /* SlothRateSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlothRateSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIApp.swift; sourceTree = "<group>"; };
+		FF89EBE92758056B006D9E88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF89EBEB2758056D006D9E88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF89EBEE2758056D006D9E88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF89EBF42758056D006D9E88 /* SlothRateSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF89EBF82758056D006D9E88 /* SlothRateSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUITests.swift; sourceTree = "<group>"; };
+		FF89EBFE2758056D006D9E88 /* SlothRateSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITests.swift; sourceTree = "<group>"; };
+		FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
+		FF8E979227624885005BB1E7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF89EBE12758056B006D9E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF8E979327624885005BB1E7 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF89EBF12758056D006D9E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF89EBFB2758056D006D9E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF89EBDB2758056B006D9E88 = {
+			isa = PBXGroup;
+			children = (
+				FF89EBE62758056B006D9E88 /* SlothRateSwiftUI */,
+				FF89EBF72758056D006D9E88 /* SlothRateSwiftUITests */,
+				FF89EC012758056D006D9E88 /* SlothRateSwiftUIUITests */,
+				FF89EBE52758056B006D9E88 /* Products */,
+				FF8E979127624885005BB1E7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FF89EBE52758056B006D9E88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF89EBE42758056B006D9E88 /* SlothRateSwiftUI.app */,
+				FF89EBF42758056D006D9E88 /* SlothRateSwiftUITests.xctest */,
+				FF89EBFE2758056D006D9E88 /* SlothRateSwiftUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF89EBE62758056B006D9E88 /* SlothRateSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */,
+				FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */,
+				FF89EBE92758056B006D9E88 /* ContentView.swift */,
+				FF3230EB275FB1400016468D /* StepsCounter.swift */,
+				FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */,
+				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
+				FF89EBEB2758056D006D9E88 /* Assets.xcassets */,
+				FF89EBED2758056D006D9E88 /* Preview Content */,
+			);
+			path = SlothRateSwiftUI;
+			sourceTree = "<group>";
+		};
+		FF89EBED2758056D006D9E88 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF89EBEE2758056D006D9E88 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF89EBF72758056D006D9E88 /* SlothRateSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF89EBF82758056D006D9E88 /* SlothRateSwiftUITests.swift */,
+			);
+			path = SlothRateSwiftUITests;
+			sourceTree = "<group>";
+		};
+		FF89EC012758056D006D9E88 /* SlothRateSwiftUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */,
+				FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */,
+			);
+			path = SlothRateSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		FF8E979127624885005BB1E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF8E979227624885005BB1E7 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUI" */;
+			buildPhases = (
+				FF89EBE02758056B006D9E88 /* Sources */,
+				FF89EBE12758056B006D9E88 /* Frameworks */,
+				FF89EBE22758056B006D9E88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlothRateSwiftUI;
+			productName = SlothRateSwiftUI;
+			productReference = FF89EBE42758056B006D9E88 /* SlothRateSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF89EBF32758056D006D9E88 /* SlothRateSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF89EC0B2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUITests" */;
+			buildPhases = (
+				FF89EBF02758056D006D9E88 /* Sources */,
+				FF89EBF12758056D006D9E88 /* Frameworks */,
+				FF89EBF22758056D006D9E88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF89EBF62758056D006D9E88 /* PBXTargetDependency */,
+			);
+			name = SlothRateSwiftUITests;
+			productName = SlothRateSwiftUITests;
+			productReference = FF89EBF42758056D006D9E88 /* SlothRateSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF89EBFD2758056D006D9E88 /* SlothRateSwiftUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF89EC0E2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUIUITests" */;
+			buildPhases = (
+				FF89EBFA2758056D006D9E88 /* Sources */,
+				FF89EBFB2758056D006D9E88 /* Frameworks */,
+				FF89EBFC2758056D006D9E88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF89EC002758056D006D9E88 /* PBXTargetDependency */,
+			);
+			name = SlothRateSwiftUIUITests;
+			productName = SlothRateSwiftUIUITests;
+			productReference = FF89EBFE2758056D006D9E88 /* SlothRateSwiftUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF89EBDC2758056B006D9E88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					FF89EBE32758056B006D9E88 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					FF89EBF32758056D006D9E88 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FF89EBE32758056B006D9E88;
+					};
+					FF89EBFD2758056D006D9E88 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FF89EBE32758056B006D9E88;
+					};
+				};
+			};
+			buildConfigurationList = FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRateSwiftUI" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF89EBDB2758056B006D9E88;
+			productRefGroup = FF89EBE52758056B006D9E88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */,
+				FF89EBF32758056D006D9E88 /* SlothRateSwiftUITests */,
+				FF89EBFD2758056D006D9E88 /* SlothRateSwiftUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF89EBE22758056B006D9E88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF89EBEF2758056D006D9E88 /* Preview Assets.xcassets in Resources */,
+				FF89EBEC2758056D006D9E88 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF89EBF22758056D006D9E88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF89EBFC2758056D006D9E88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF89EBE02758056B006D9E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
+				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
+				FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */,
+				FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */,
+				FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF89EBF02758056D006D9E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF89EBF92758056D006D9E88 /* SlothRateSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF89EBFA2758056D006D9E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */,
+				FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF89EBF62758056D006D9E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */;
+			targetProxy = FF89EBF52758056D006D9E88 /* PBXContainerItemProxy */;
+		};
+		FF89EC002758056D006D9E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */;
+			targetProxy = FF89EBFF2758056D006D9E88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF89EC062758056D006D9E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF89EC072758056D006D9E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF89EC092758056D006D9E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF89EC0A2758056D006D9E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF89EC0C2758056D006D9E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlothRateSwiftUI.app/SlothRateSwiftUI";
+			};
+			name = Debug;
+		};
+		FF89EC0D2758056D006D9E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlothRateSwiftUI.app/SlothRateSwiftUI";
+			};
+			name = Release;
+		};
+		FF89EC0F2758056D006D9E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlothRateSwiftUI;
+			};
+			name = Debug;
+		};
+		FF89EC102758056D006D9E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlothRateSwiftUI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRateSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF89EC062758056D006D9E88 /* Debug */,
+				FF89EC072758056D006D9E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF89EC092758056D006D9E88 /* Debug */,
+				FF89EC0A2758056D006D9E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF89EC0B2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF89EC0C2758056D006D9E88 /* Debug */,
+				FF89EC0D2758056D006D9E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF89EC0E2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF89EC0F2758056D006D9E88 /* Debug */,
+				FF89EC102758056D006D9E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF89EBDC2758056B006D9E88 /* Project object */;
+}
