@@ -17,6 +17,15 @@
 		FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */; };
 		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
+		FF8ABAA32767A02A00BBD522 /* MultiDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA22767A02A00BBD522 /* MultiDatePicker.swift */; };
+		FF8ABAA62767A03C00BBD522 /* MDPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA52767A03C00BBD522 /* MDPModel.swift */; };
+		FF8ABAA82767A05700BBD522 /* MDPDayOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA72767A05700BBD522 /* MDPDayOfMonth.swift */; };
+		FF8ABAAA2767A06E00BBD522 /* MDPMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA92767A06E00BBD522 /* MDPMonthView.swift */; };
+		FF8ABAAC2767A08100BBD522 /* MDPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAAB2767A08100BBD522 /* MDPContentView.swift */; };
+		FF8ABAAE2767A09600BBD522 /* MDPDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAAD2767A09600BBD522 /* MDPDayView.swift */; };
+		FF8ABAB02767A0AD00BBD522 /* MDPMonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAAF2767A0AD00BBD522 /* MDPMonthYearPicker.swift */; };
+		FF8ABAB22767A0BE00BBD522 /* MDPMonthYearPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAB12767A0BE00BBD522 /* MDPMonthYearPickerButton.swift */; };
+		FF8ABAB42767B8C800BBD522 /* ComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAB32767B8C800BBD522 /* ComparisonView.swift */; };
 		FF8E979327624885005BB1E7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8E979227624885005BB1E7 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +60,15 @@
 		FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITests.swift; sourceTree = "<group>"; };
 		FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		FF8ABAA22767A02A00BBD522 /* MultiDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDatePicker.swift; sourceTree = "<group>"; };
+		FF8ABAA52767A03C00BBD522 /* MDPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPModel.swift; sourceTree = "<group>"; };
+		FF8ABAA72767A05700BBD522 /* MDPDayOfMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPDayOfMonth.swift; sourceTree = "<group>"; };
+		FF8ABAA92767A06E00BBD522 /* MDPMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthView.swift; sourceTree = "<group>"; };
+		FF8ABAAB2767A08100BBD522 /* MDPContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPContentView.swift; sourceTree = "<group>"; };
+		FF8ABAAD2767A09600BBD522 /* MDPDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPDayView.swift; sourceTree = "<group>"; };
+		FF8ABAAF2767A0AD00BBD522 /* MDPMonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPicker.swift; sourceTree = "<group>"; };
+		FF8ABAB12767A0BE00BBD522 /* MDPMonthYearPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPickerButton.swift; sourceTree = "<group>"; };
+		FF8ABAB32767B8C800BBD522 /* ComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonView.swift; sourceTree = "<group>"; };
 		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
 		FF8E979227624885005BB1E7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -105,13 +123,13 @@
 		FF89EBE62758056B006D9E88 /* SlothRateSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */,
 				FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */,
-				FF89EBE92758056B006D9E88 /* ContentView.swift */,
-				FF3230EB275FB1400016468D /* StepsCounter.swift */,
-				FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */,
-				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
+				FF8ABAB62767B8F100BBD522 /* Views */,
+				FF8ABAB72767B90600BBD522 /* ViewModels */,
+				FF8ABAB52767B8DB00BBD522 /* Models */,
+				FF8ABAA42767A02E00BBD522 /* Components */,
 				FF89EBEB2758056D006D9E88 /* Assets.xcassets */,
+				FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */,
 				FF89EBED2758056D006D9E88 /* Preview Content */,
 			);
 			path = SlothRateSwiftUI;
@@ -140,6 +158,47 @@
 				FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = SlothRateSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		FF8ABAA42767A02E00BBD522 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF8ABAA52767A03C00BBD522 /* MDPModel.swift */,
+				FF8ABAA72767A05700BBD522 /* MDPDayOfMonth.swift */,
+				FF8ABAA92767A06E00BBD522 /* MDPMonthView.swift */,
+				FF8ABAAB2767A08100BBD522 /* MDPContentView.swift */,
+				FF8ABAAD2767A09600BBD522 /* MDPDayView.swift */,
+				FF8ABAAF2767A0AD00BBD522 /* MDPMonthYearPicker.swift */,
+				FF8ABAB12767A0BE00BBD522 /* MDPMonthYearPickerButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FF8ABAB52767B8DB00BBD522 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF8ABAA22767A02A00BBD522 /* MultiDatePicker.swift */,
+				FF3230EB275FB1400016468D /* StepsCounter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF8ABAB62767B8F100BBD522 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF89EBE92758056B006D9E88 /* ContentView.swift */,
+				FF8ABAB32767B8C800BBD522 /* ComparisonView.swift */,
+				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF8ABAB72767B90600BBD522 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		FF8E979127624885005BB1E7 /* Frameworks */ = {
@@ -280,9 +339,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8ABAB22767A0BE00BBD522 /* MDPMonthYearPickerButton.swift in Sources */,
+				FF8ABAA82767A05700BBD522 /* MDPDayOfMonth.swift in Sources */,
+				FF8ABAB02767A0AD00BBD522 /* MDPMonthYearPicker.swift in Sources */,
+				FF8ABAA62767A03C00BBD522 /* MDPModel.swift in Sources */,
+				FF8ABAAE2767A09600BBD522 /* MDPDayView.swift in Sources */,
+				FF8ABAAC2767A08100BBD522 /* MDPContentView.swift in Sources */,
 				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
+				FF8ABAB42767B8C800BBD522 /* ComparisonView.swift in Sources */,
+				FF8ABAAA2767A06E00BBD522 /* MDPMonthView.swift in Sources */,
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
 				FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */,
+				FF8ABAA32767A02A00BBD522 /* MultiDatePicker.swift in Sources */,
 				FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */,
 				FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */,
 			);

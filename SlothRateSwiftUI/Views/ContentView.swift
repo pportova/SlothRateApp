@@ -12,16 +12,20 @@ import UIKit
 struct ContentView: View {
     
     @State var stepsViewModel = StepsCounterViewModel()
-    @State var isPickerVisible = false
-    @State private var currentDate = Date()
+    
+    @State private var isPickerVisible = false
+
+    
+    @State private var singleDate = Date()
+    @State private var anyDays = [Date]()
+    @State private var dateRange: ClosedRange<Date>? = nil
+    
     private let today = Date()
     private let animationAmount = 1.0
        
     var body: some View {
         
         let value = Int(stepsViewModel.countResult.rounded())
-
-
         
         ZStack {
             Color(red: 0.98, green: 0.81, blue: 0.7)
@@ -31,14 +35,20 @@ struct ContentView: View {
             VStack{
                 
                 HStack{
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Button(action: {
+                        singleDate = singleDate.dayBefore
+                        stepsViewModel.chosenDate = singleDate
+                    }) {
                         Text("Yesterday")
                             .padding(20.0)
                             .foregroundColor(Color(red: 0.06, green: 0.14, blue: 0.26))
                             .font(.custom("Futura", size: 20))
                     }
                     Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Button(action: {
+                        singleDate = singleDate.dayAfter
+                        stepsViewModel.chosenDate = singleDate
+                    }) {
                         Text("Next Day")
                             .padding(20.0)
                             .foregroundColor(Color(red: 0.06, green: 0.14, blue: 0.26))
@@ -70,7 +80,7 @@ struct ContentView: View {
                         .padding(10)
                 }
                 Spacer()
-                Text("Steps taken on \(currentDate, style: .date)")
+                Text("Steps taken on \(singleDate, style: .date)")
                     .font(.custom("Futura", size: 20))
                     .foregroundColor(Color(red: 0.43, green: 0.37, blue: 0.30))
 
@@ -82,7 +92,10 @@ struct ContentView: View {
  
             
                 Button(action: {
-                    isPickerVisible.toggle()
+//                    isPickerVisible.toggle()
+                    withAnimation{
+                        isPickerVisible.toggle()
+                    }
                 }) {
                     if isPickerVisible {
                     Text("Done")
@@ -100,6 +113,7 @@ struct ContentView: View {
                         .cornerRadius(21.0)
                     } else {
                         Text("Go To Calendar")
+                        
                             .fontWeight(.light)
                             .font(.custom("Futura", size: 20))
                             .padding(20.0)
@@ -117,20 +131,83 @@ struct ContentView: View {
                           
             }
             if isPickerVisible{
-                VStack{
-                    DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .padding(20)
+                TabView{
+                    
+                    VStack{
+                        Text("Single date").font(.title).padding()
+                        MultiDatePicker(singleDay: $singleDate)
+                            Button(action: {
+                                isPickerVisible.toggle()
+                            }){
+                                Text("Done")
+                            }.padding()
+                    }
+                    .tabItem{
+                        Text("Pick a single date")
+                            .padding()
+                    }
+                    
+                    VStack{
+                        Text("Several dates").font(.title).padding()
+                        MultiDatePicker(anyDays: $anyDays)
+                        Button(action: {
+                            isPickerVisible.toggle()
+                        }) {
+                            Text("Details")
+                        }
+                        
+                        
+                    }
+                    .tabItem{
+                        Text("Pick several dates")
+                            .padding()
+                    }
+                    
+                    VStack{
+                        Text("Date Range").font(.title).padding()
+                        MultiDatePicker(dateRange: $dateRange)
+                        if let range = dateRange {
+                            Text("\(range)").padding()
+                        } else {
+                            Text("Select two dates")
+                                .padding()
+                        }
+                        Button(action: {
+                            isPickerVisible.toggle()
+//                            ComparisonView()
+                        }){
+                            Text("Details")
+                        }
+                        .padding()
+                    }
+                    .tabItem{
+                        Text("Range of dates")
+                    }
+                    
                 }
-
-
             }
+
             
         }
     }
 
+
 }
 
+extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+
+}
 
 
 struct ContentView_Previews: PreviewProvider {
