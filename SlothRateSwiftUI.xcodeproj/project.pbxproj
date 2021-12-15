@@ -17,16 +17,9 @@
 		FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */; };
 		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
-		FF8ABAA32767A02A00BBD522 /* MultiDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA22767A02A00BBD522 /* MultiDatePicker.swift */; };
-		FF8ABAA62767A03C00BBD522 /* MDPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA52767A03C00BBD522 /* MDPModel.swift */; };
-		FF8ABAA82767A05700BBD522 /* MDPDayOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA72767A05700BBD522 /* MDPDayOfMonth.swift */; };
-		FF8ABAAA2767A06E00BBD522 /* MDPMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAA92767A06E00BBD522 /* MDPMonthView.swift */; };
-		FF8ABAAC2767A08100BBD522 /* MDPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAAB2767A08100BBD522 /* MDPContentView.swift */; };
-		FF8ABAAE2767A09600BBD522 /* MDPDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAAD2767A09600BBD522 /* MDPDayView.swift */; };
-		FF8ABAB02767A0AD00BBD522 /* MDPMonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAAF2767A0AD00BBD522 /* MDPMonthYearPicker.swift */; };
-		FF8ABAB22767A0BE00BBD522 /* MDPMonthYearPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAB12767A0BE00BBD522 /* MDPMonthYearPickerButton.swift */; };
-		FF8ABAB42767B8C800BBD522 /* ComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8ABAB32767B8C800BBD522 /* ComparisonView.swift */; };
-		FF8E979327624885005BB1E7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8E979227624885005BB1E7 /* HealthKit.framework */; };
+		FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */; };
+		FFDB1ACD27690BF600FA2B52 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8E979227624885005BB1E7 /* HealthKit.framework */; };
+		FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB1AD12769296300FA2B52 /* BadgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,17 +53,13 @@
 		FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITests.swift; sourceTree = "<group>"; };
 		FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		FF8ABAA22767A02A00BBD522 /* MultiDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDatePicker.swift; sourceTree = "<group>"; };
-		FF8ABAA52767A03C00BBD522 /* MDPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPModel.swift; sourceTree = "<group>"; };
-		FF8ABAA72767A05700BBD522 /* MDPDayOfMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPDayOfMonth.swift; sourceTree = "<group>"; };
-		FF8ABAA92767A06E00BBD522 /* MDPMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthView.swift; sourceTree = "<group>"; };
-		FF8ABAAB2767A08100BBD522 /* MDPContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPContentView.swift; sourceTree = "<group>"; };
-		FF8ABAAD2767A09600BBD522 /* MDPDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPDayView.swift; sourceTree = "<group>"; };
-		FF8ABAAF2767A0AD00BBD522 /* MDPMonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPicker.swift; sourceTree = "<group>"; };
-		FF8ABAB12767A0BE00BBD522 /* MDPMonthYearPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPickerButton.swift; sourceTree = "<group>"; };
-		FF8ABAB32767B8C800BBD522 /* ComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonView.swift; sourceTree = "<group>"; };
 		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
 		FF8E979227624885005BB1E7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		FFDB1AC92768FA3D00FA2B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDB1ACB2768FA4C00FA2B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../.Trash/Info.plist; sourceTree = "<group>"; };
+		FFDB1AD027690DFB00FA2B52 /* SlothRateSwiftUIDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUIDebug.entitlements; sourceTree = "<group>"; };
+		FFDB1AD12769296300FA2B52 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8E979327624885005BB1E7 /* HealthKit.framework in Frameworks */,
+				FFDB1ACD27690BF600FA2B52 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +116,10 @@
 				FF8ABAB62767B8F100BBD522 /* Views */,
 				FF8ABAB72767B90600BBD522 /* ViewModels */,
 				FF8ABAB52767B8DB00BBD522 /* Models */,
-				FF8ABAA42767A02E00BBD522 /* Components */,
 				FF89EBEB2758056D006D9E88 /* Assets.xcassets */,
+				FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */,
 				FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */,
+				FFDB1AD027690DFB00FA2B52 /* SlothRateSwiftUIDebug.entitlements */,
 				FF89EBED2758056D006D9E88 /* Preview Content */,
 			);
 			path = SlothRateSwiftUI;
@@ -160,24 +150,9 @@
 			path = SlothRateSwiftUIUITests;
 			sourceTree = "<group>";
 		};
-		FF8ABAA42767A02E00BBD522 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				FF8ABAA52767A03C00BBD522 /* MDPModel.swift */,
-				FF8ABAA72767A05700BBD522 /* MDPDayOfMonth.swift */,
-				FF8ABAA92767A06E00BBD522 /* MDPMonthView.swift */,
-				FF8ABAAB2767A08100BBD522 /* MDPContentView.swift */,
-				FF8ABAAD2767A09600BBD522 /* MDPDayView.swift */,
-				FF8ABAAF2767A0AD00BBD522 /* MDPMonthYearPicker.swift */,
-				FF8ABAB12767A0BE00BBD522 /* MDPMonthYearPickerButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		FF8ABAB52767B8DB00BBD522 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FF8ABAA22767A02A00BBD522 /* MultiDatePicker.swift */,
 				FF3230EB275FB1400016468D /* StepsCounter.swift */,
 			);
 			path = Models;
@@ -187,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FF89EBE92758056B006D9E88 /* ContentView.swift */,
-				FF8ABAB32767B8C800BBD522 /* ComparisonView.swift */,
+				FFDB1AD12769296300FA2B52 /* BadgeView.swift */,
 				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
 			);
 			path = Views;
@@ -204,6 +179,8 @@
 		FF8E979127624885005BB1E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFDB1AC92768FA3D00FA2B52 /* Info.plist */,
+				FFDB1ACB2768FA4C00FA2B52 /* Info.plist */,
 				FF8E979227624885005BB1E7 /* HealthKit.framework */,
 			);
 			name = Frameworks;
@@ -313,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */,
 				FF89EBEF2758056D006D9E88 /* Preview Assets.xcassets in Resources */,
 				FF89EBEC2758056D006D9E88 /* Assets.xcassets in Resources */,
 			);
@@ -339,18 +317,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8ABAB22767A0BE00BBD522 /* MDPMonthYearPickerButton.swift in Sources */,
-				FF8ABAA82767A05700BBD522 /* MDPDayOfMonth.swift in Sources */,
-				FF8ABAB02767A0AD00BBD522 /* MDPMonthYearPicker.swift in Sources */,
-				FF8ABAA62767A03C00BBD522 /* MDPModel.swift in Sources */,
-				FF8ABAAE2767A09600BBD522 /* MDPDayView.swift in Sources */,
-				FF8ABAAC2767A08100BBD522 /* MDPContentView.swift in Sources */,
+				FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */,
 				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
-				FF8ABAB42767B8C800BBD522 /* ComparisonView.swift in Sources */,
-				FF8ABAAA2767A06E00BBD522 /* MDPMonthView.swift in Sources */,
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
 				FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */,
-				FF8ABAA32767A02A00BBD522 /* MultiDatePicker.swift in Sources */,
 				FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */,
 				FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */,
 			);
@@ -510,17 +480,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUI.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUIDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Your health records will be used to make medical suggestions";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your health records will be used to make medical suggestions";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -530,6 +505,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -548,10 +524,14 @@
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Your health records will be used to make medical suggestions";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your health records will be used to make medical suggestions";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

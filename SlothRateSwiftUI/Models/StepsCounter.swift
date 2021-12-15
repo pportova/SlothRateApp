@@ -11,7 +11,6 @@ import HealthKit
 
 class StepsCounter: NSObject, ObservableObject {
     
-
     private let healthStore = HKHealthStore()
         
     func getTodaysSteps(pickedDate: Date, completion: @escaping (Double) -> Void) {
