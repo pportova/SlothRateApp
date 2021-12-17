@@ -14,15 +14,21 @@ struct ContentView: View {
     @State var stepsViewModel = StepsCounterViewModel()
     @State private var isPickerVisible = false
     @State private var currentDate = Date()
+    @State private var showBadgeView = false
     
     private let today = Date()
     private let animationAmount = 1.0
+    
+    init() {
+        self.stepsViewModel.countSteps(chosenDate: currentDate)
+    }
        
     var body: some View {
         
-        let value = Int(stepsViewModel.countResult.rounded())
+        let stepsValue = Int(stepsViewModel.countResult.rounded())
         
         ZStack {
+
             Color(red: 0.92, green: 0.80, blue: 0.64)
                 .opacity(0.45)
                 .ignoresSafeArea()
@@ -38,7 +44,6 @@ struct ContentView: View {
                             .padding(20.0)
                             .foregroundColor(Color("UpperLabelsColor"))
                             .font(.custom("Futura", size: 20))
-//                            .offset(y: -20)
                     }
                     Spacer()
                     Button(action: {
@@ -49,8 +54,6 @@ struct ContentView: View {
                             .padding(20.0)
                             .font(.custom("Futura", size: 20))
                             .foregroundColor(Color("UpperLabelsColor"))
-//                            .offset(y: -20)
-                        
                     }
                 }
                 .padding()
@@ -66,6 +69,7 @@ struct ContentView: View {
                         CircleView()
                             .padding(50)
                             .opacity(0.25)
+                    Spacer()
 
                 } else {
                     Text("What sloth\n are you today?")
@@ -73,25 +77,35 @@ struct ContentView: View {
                         .font(.custom("Futura", size: 50))
                         .foregroundColor(Color("TitleTextColor"))
                         .multilineTextAlignment(.center)
-//                        .offset(y: -30)
                         .frame(width: 400, height: 150)
 
                     CircleView()
                         .padding(10)
-//                        .offset(y: -30)
-
-                    BadgeView()
-                        .offset(y: -60)
-
+                        .onAppear() {
+                            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
+                                withAnimation {
+                                    self.showBadgeView = true
+                                }
+                            }
+                        }
+                    
+                    if !showBadgeView {
+                        Spacer()
+                            .frame(height: 95)
+                    } else {
+                        BadgeView()
+                            .offset(y: -45)
+                            .transition(.moveAndFade)
+             
+                    }
 
                 }
                 Text("Steps taken on \(currentDate, style: .date)")
                     .font(.custom("Futura", size: 20))
                     .foregroundColor(Color("StepsTakenColor"))
                     .offset(y: -10)
-//
 
-                Text("\(value)")
+                Text("\(stepsValue)")
                     .font(.custom("American Typewriter", size: 70))
                     .fontWeight(.semibold)
                     .foregroundColor(Color("ValueLabelColor"))
@@ -104,6 +118,7 @@ struct ContentView: View {
                     }
                 }) {
                     if isPickerVisible {
+
                         Text("Done")
                             .fontWeight(.light)
                             .font(.custom("Futura", size: 20))
@@ -117,6 +132,8 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .cornerRadius(21.0)
                             .animation(.easeIn(duration: 1), value: 2)
+
+                        
                     } else {
                         Text("Go To Calendar")
 
@@ -135,15 +152,23 @@ struct ContentView: View {
 
                     }
                 }
-                .padding()
+//                .padding()
             }
 
             if isPickerVisible {
                 DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .padding(20)
+                    .offset(y: -20)
             }
         }
+    }
+       
+}
+
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        AnyTransition.move(edge: .trailing)
     }
 }
 
@@ -166,6 +191,5 @@ extension Date {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        ContentView().preferredColorScheme(.dark)
     }
 }

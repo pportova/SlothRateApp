@@ -10,9 +10,14 @@ import SwiftUI
 struct CircleView: View {
     
     var slothRateData = StepsCounterViewModel()
+    var imageNumber: Int
+    
+    init() {
+        imageNumber = slothRateData.getSlothRate().0
+    }
 
     var body: some View {
-        Image("\(slothRateData.slothRate)" as String)
+        Image("\(imageNumber)" as String)
             .resizable()
             .scaledToFit()
             .frame(width: 200, height: 200)
@@ -27,7 +32,10 @@ struct CircleView: View {
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView()
-
+        VStack{
+            CircleView()
+            BadgeView()
+                .offset(y: -45)
+        }
     }
 }

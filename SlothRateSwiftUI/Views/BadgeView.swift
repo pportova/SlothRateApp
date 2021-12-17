@@ -8,15 +8,29 @@
 import SwiftUI
 
 struct BadgeView: View {
+    
+    let stepsViewModel = StepsCounterViewModel()
+    var pictureDescription = ""
+    
+    init() {
+        pictureDescription = stepsViewModel.getSlothRate().1
+    }
+    
     var body: some View {
-        Text("Perfectly active\n all-day-by-the-computer sloth")
-            .padding(10)
+    
+        Text("\(pictureDescription)")
+            .padding(15)
             .multilineTextAlignment(.trailing)
-            .foregroundColor(.black)
-            .background(Color("BackgroundBageColor"))
-            .border(Color("CircleViewFrame"), width: 3)
+            .foregroundColor(Color("ButtonColor"))
+//            .font(.custom("American Typewriter", size: 18))
+            .font(.custom("Bradley Hand", size: 20))
+
+            .background(Color("BackgroundBageColor"))  
+            .border(Color("FrameColor"), width: 3)
+
             .cornerRadius(10)
             .frame(width: 400, height: 80, alignment: .trailing)
+            
     }
 }
 
