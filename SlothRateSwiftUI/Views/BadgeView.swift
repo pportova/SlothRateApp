@@ -20,16 +20,19 @@ struct BadgeView: View {
     
         Text("\(pictureDescription)")
             .padding(15)
+//            .cornerRadius(20)
             .multilineTextAlignment(.trailing)
             .foregroundColor(Color("ButtonColor"))
-//            .font(.custom("American Typewriter", size: 18))
-            .font(.custom("Bradley Hand", size: 20))
+            .font(.custom("American Typewriter", size: 18))
+//            .font(.custom("Bradley Hand", size: 20))
 
             .background(Color("BackgroundBageColor"))  
-            .border(Color("FrameColor"), width: 3)
+            .border(Color("FrameColor"), width: 6)
 
             .cornerRadius(10)
             .frame(width: 400, height: 80, alignment: .trailing)
+
+    
             
     }
 }

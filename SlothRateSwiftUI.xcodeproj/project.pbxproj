@@ -20,6 +20,7 @@
 		FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */; };
 		FFDB1ACD27690BF600FA2B52 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8E979227624885005BB1E7 /* HealthKit.framework */; };
 		FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB1AD12769296300FA2B52 /* BadgeView.swift */; };
+		FFF0C3A22770B7C2001AD449 /* TextAndPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FFDB1ACB2768FA4C00FA2B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../.Trash/Info.plist; sourceTree = "<group>"; };
 		FFDB1AD027690DFB00FA2B52 /* SlothRateSwiftUIDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUIDebug.entitlements; sourceTree = "<group>"; };
 		FFDB1AD12769296300FA2B52 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndPictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FF89EBE92758056B006D9E88 /* ContentView.swift */,
+				FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */,
 				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
 				FFDB1AD12769296300FA2B52 /* BadgeView.swift */,
 			);
@@ -320,6 +323,7 @@
 				FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */,
 				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
+				FFF0C3A22770B7C2001AD449 /* TextAndPictureView.swift in Sources */,
 				FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */,
 				FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */,
 				FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */,
