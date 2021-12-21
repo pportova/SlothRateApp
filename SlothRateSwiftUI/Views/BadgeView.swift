@@ -20,20 +20,17 @@ struct BadgeView: View {
     
         Text("\(pictureDescription)")
             .padding(15)
-//            .cornerRadius(20)
-            .multilineTextAlignment(.trailing)
+            .background(Color("BackgroundBageColor"))
             .foregroundColor(Color("ButtonColor"))
-            .font(.custom("American Typewriter", size: 18))
-//            .font(.custom("Bradley Hand", size: 20))
-
-            .background(Color("BackgroundBageColor"))  
-            .border(Color("FrameColor"), width: 6)
-
-            .cornerRadius(10)
-            .frame(width: 400, height: 80, alignment: .trailing)
-
-    
-            
+            .cornerRadius(21.0)
+            .multilineTextAlignment(.trailing)
+            .font(.custom("Avenir", size: 18))
+            .overlay(
+                RoundedRectangle(cornerRadius: 21.0)
+                    
+                    .strokeBorder(Color("FrameColor") , lineWidth: 2.0)
+            )
+            .frame(width: 400, height: 80, alignment: .trailing)        
     }
 }
 

@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var isBadgeVisible = false
     
     private let today = Date()
-    private let animationAmount = 1.0
+    private let animationAmount = 1
     
     init() {
         self.stepsViewModel.countSteps(chosenDate: currentDate)
@@ -64,13 +64,16 @@ struct ContentView: View {
                         Button(action: {
                             withAnimation {
                                 isPickerVisible.toggle()
+                                isBadgeVisible = false
                             }
                         }) {
-                            Text("Back to Rate")
+                            Spacer()
+                            Text("Back\n to Rate")
                                 .padding(20.0)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color("UpperLabelsColor"))
                                 .font(.custom("Futura", size: 20))
+                            Spacer()
                             }
                     }
                         
@@ -99,7 +102,7 @@ struct ContentView: View {
                                 .onAppear() {
                                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
                                         withAnimation {
-                                            self.isBadgeVisible.toggle()
+                                            isBadgeVisible = true
                                         }
                                     }
                                 }
@@ -110,7 +113,9 @@ struct ContentView: View {
                             } else {
                                 BadgeView()
                                     .offset(y: -45)
-                                    .transition(.moveAndFade)
+//
+                                    .transition(.move(edge: .trailing))
+                                    .animation(.easeOut, value: animationAmount)
                             }
 
                             Text("\(stepsValue)")
@@ -146,11 +151,12 @@ struct ContentView: View {
                                     .offset(y: -10)
                             
                             }
-                            .blur(radius: 20)
+                            .blur(radius: 70)
                             .overlay(
                                 DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
                                         .datePickerStyle(GraphicalDatePickerStyle())
                                         .padding(20)
+                                        .offset(y: -60)
                             )
                     }
                 }

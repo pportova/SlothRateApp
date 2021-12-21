@@ -27,23 +27,23 @@ class StepsCounterViewModel: ObservableObject {
     func getSlothRate() -> (Int, String) {
         var slothRate = Int()
         var activityDescription = ""
-        if countResult < 1000 {
+        if countResult < 5000 {
             //Sleeping sloth
             slothRate = 1
             activityDescription = "Sleeping sloth.\n I'm checking how this looks."
-        } else if countResult > 1000 && countResult < 5000 {
+        } else if countResult > 5000 && countResult < 7500 {
             slothRate = 2
             //Hanging on a branch
             activityDescription = "Hanging from a branch."
-        } else if countResult > 5000 && countResult < 8000 {
+        } else if countResult > 7500 && countResult < 10000 {
             slothRate = 3
             //Showing "V"
-            activityDescription = "Showing V"
-        } else if countResult > 8000 && countResult < 14000 {
+            activityDescription = "Perfectly active\n all-day-by-the-computer sloth."
+        } else if countResult > 10000 && countResult < 12500 {
             slothRate = 4
             //Sitting by a computer
-            activityDescription = "Perfectly active\n all-day-by-the-computer sloth."
-        } else if countResult > 14000 {
+            activityDescription = "Showing V"
+        } else if countResult > 12500 {
             slothRate = 5
             //Climbing a branch
             activityDescription = "Climbing a branch"
