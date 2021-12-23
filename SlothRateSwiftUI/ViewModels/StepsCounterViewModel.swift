@@ -6,23 +6,30 @@
 //
 
 import Foundation
+import SwiftUI
 
 class StepsCounterViewModel: ObservableObject {
     
-    var stepsCounter = StepsCounter()
+    private var stepsCounter = StepsCounter()
+    private var today = Date()
     
     @Published var countResult = Double()
-    @Published var chosenDate = Date()
+    @Published var result = Bool()
 
-    func countSteps(chosenDate: Date) {
-        stepsCounter.getTodaysSteps(pickedDate: chosenDate, completion: { result in
+    
+//    MARK: Functions
+    func countStepsAndCheckDate(currentDate: Date) {
+        stepsCounter.getTodaysSteps(pickedDate: currentDate, completion: { result in
                         DispatchQueue.main.async {
                             self.countResult = result
                         }
         })
-
+        self.checkTheDate(currentDate: currentDate)
     }
 
+    func checkTheDate(currentDate: Date) {
+        result = Calendar.current.isDateInToday(currentDate)
+    }
     
     func getSlothRate() -> (Int, String) {
         var slothRate = Int()

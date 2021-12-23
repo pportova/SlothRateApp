@@ -11,7 +11,7 @@ import UIKit
 
 struct ContentView: View {
     
-    @State var stepsViewModel = StepsCounterViewModel()
+    @ObservedObject var stepsViewModel = StepsCounterViewModel()
     @State private var isPickerVisible = false
     @State private var currentDate = Date()
     @State private var isBadgeVisible = false
@@ -20,82 +20,24 @@ struct ContentView: View {
     private let animationAmount = 1
     
     init() {
-        self.stepsViewModel.countSteps(chosenDate: currentDate)
+        self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
     }
        
     var body: some View {
         
         let stepsValue = Int(stepsViewModel.countResult.rounded())
-           
+         
         ZStack {
             Color(red: 0.92, green: 0.80, blue: 0.64)
                 .opacity(0.45)
                 .ignoresSafeArea()
 
             VStack{
-                // Upper buttons stack
-                HStack{
-                    Button(action: {
-                        currentDate = currentDate.dayBefore
-                        stepsViewModel.chosenDate = currentDate
-                    }){
-                        Text("Day Before")
-                            .padding(20.0)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(Color("UpperLabelsColor"))
-                            .font(.custom("Futura", size: 20))
-                    }
-                        
-                    Spacer()
-                    
-                    if !isPickerVisible{
-                        Button(action: {
-                            withAnimation {
-                                isPickerVisible.toggle()
-                            }
-                        }) {
-                            Text("Go to Calendar")
-                                .padding(20.0)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(Color("UpperLabelsColor"))
-                                .font(.custom("Futura", size: 20))
-                        }
-                    } else {
-                        Button(action: {
-                            withAnimation {
-                                isPickerVisible.toggle()
-                                isBadgeVisible = false
-                            }
-                        }) {
-                            Spacer()
-                            Text("Back\n to Rate")
-                                .padding(20.0)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(Color("UpperLabelsColor"))
-                                .font(.custom("Futura", size: 20))
-                            Spacer()
-                            }
-                    }
-                        
-                    Spacer()
-
-                    Button(action: {
-                        currentDate = currentDate.dayAfter
-                        stepsViewModel.chosenDate = currentDate
-                    }) {
-                        Text("Next Day")
-                            .padding(20.0)
-                            .multilineTextAlignment(.trailing)
-                            .font(.custom("Futura", size: 20))
-                            .foregroundColor(Color("UpperLabelsColor"))
-                        }
-                    }
-                    .padding()
-                    .frame(width: 400)
+                
+                NavigationButtons(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.result)
 
                     Spacer()
                 
-                // Main content
                     if !isPickerVisible{
                         VStack{
                             TextAndPictureView()
@@ -113,7 +55,6 @@ struct ContentView: View {
                             } else {
                                 BadgeView()
                                     .offset(y: -45)
-//
                                     .transition(.move(edge: .trailing))
                                     .animation(.easeOut, value: animationAmount)
                             }
@@ -191,7 +132,9 @@ extension Date {
 
 
 struct ContentView_Previews: PreviewProvider {
+  
     static var previews: some View {
+        
         ContentView()
     }
 }

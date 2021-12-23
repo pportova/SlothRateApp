@@ -18,7 +18,8 @@ class StepsCounter: NSObject, ObservableObject {
         guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
             
         let dateToCalculate = Date()
-        if pickedDate == dateToCalculate {
+        
+        if Calendar.current.isDateInToday(pickedDate) {
             let startOfDay = Calendar.current.startOfDay(for: dateToCalculate)
             predicate = HKQuery.predicateForSamples(
                 withStart: startOfDay,

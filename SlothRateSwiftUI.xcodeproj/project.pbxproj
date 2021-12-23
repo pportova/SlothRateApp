@@ -17,6 +17,7 @@
 		FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */; };
 		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
+		FFDA7FE2277484BC00E4C24B /* NavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA7FE1277484BB00E4C24B /* NavigationButtons.swift */; };
 		FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */; };
 		FFDB1ACD27690BF600FA2B52 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8E979227624885005BB1E7 /* HealthKit.framework */; };
 		FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB1AD12769296300FA2B52 /* BadgeView.swift */; };
@@ -56,6 +57,7 @@
 		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
 		FF8E979227624885005BB1E7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		FFDA7FE1277484BB00E4C24B /* NavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtons.swift; sourceTree = "<group>"; };
 		FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FFDB1AC92768FA3D00FA2B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFDB1ACB2768FA4C00FA2B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../.Trash/Info.plist; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				FF89EBE92758056B006D9E88 /* ContentView.swift */,
+				FFDA7FE1277484BB00E4C24B /* NavigationButtons.swift */,
 				FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */,
 				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
 				FFDB1AD12769296300FA2B52 /* BadgeView.swift */,
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */,
+				FFDA7FE2277484BC00E4C24B /* NavigationButtons.swift in Sources */,
 				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
 				FFF0C3A22770B7C2001AD449 /* TextAndPictureView.swift in Sources */,
