@@ -10,7 +10,7 @@ import SwiftUI
 struct TextAndPictureView: View {
     var body: some View {
         VStack{
-            Text("What sloth\n are you today?")
+            Text("What sloth\nare you today?")
                 .fontWeight(.light)
                 .font(.custom("Futura", size: 50))
                 .foregroundColor(Color("TitleTextColor"))

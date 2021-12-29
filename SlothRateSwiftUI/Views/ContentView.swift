@@ -34,7 +34,7 @@ struct ContentView: View {
 
             VStack{
                 
-                NavigationButtons(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.result)
+                NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.result)
 
                     Spacer()
                 
@@ -66,9 +66,9 @@ struct ContentView: View {
                                 .padding(10)
                                 .offset(y: -30)
                     
-                            Text("steps taken on \(currentDate, style: .date)")
-                                .font(.custom("Futura", size: 20))
-                                .foregroundColor(Color("StepsTakenColor"))
+                            Text("steps taken")
+                                .font(.custom("Futura", size: 30))
+                                .foregroundColor(Color("UpperLabelsColor"))
                                 .offset(y: -10)
                 
                         }
@@ -86,9 +86,9 @@ struct ContentView: View {
                                     .padding(10)
                                     .offset(y: -30)
                                 
-                                Text("steps taken on \(currentDate, style: .date)")
-                                    .font(.custom("Futura", size: 20))
-                                    .foregroundColor(Color("StepsTakenColor"))
+                                Text("steps taken")
+                                    .font(.custom("Futura", size: 30))
+                                    .foregroundColor(Color("UpperLabelsColor"))
                                     .offset(y: -10)
                             
                             }
@@ -134,7 +134,6 @@ extension Date {
 struct ContentView_Previews: PreviewProvider {
   
     static var previews: some View {
-        
         ContentView()
     }
 }

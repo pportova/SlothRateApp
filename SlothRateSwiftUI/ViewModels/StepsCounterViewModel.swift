@@ -37,23 +37,23 @@ class StepsCounterViewModel: ObservableObject {
         if countResult < 5000 {
             //Sleeping sloth
             slothRate = 1
-            activityDescription = "Sleeping sloth.\n I'm checking how this looks."
+            activityDescription = "Best of the breed.\n A genuinely stationary sloth."
         } else if countResult > 5000 && countResult < 7500 {
             slothRate = 2
             //Hanging on a branch
-            activityDescription = "Hanging from a branch."
+            activityDescription = "A benchmark for laziness.\n Yet showing evidence of motion."
         } else if countResult > 7500 && countResult < 10000 {
             slothRate = 3
             //Showing "V"
-            activityDescription = "Perfectly active\n all-day-by-the-computer sloth."
+            activityDescription = "Moderately active.\n Getting some calories burnt in vain."
         } else if countResult > 10000 && countResult < 12500 {
             slothRate = 4
             //Sitting by a computer
-            activityDescription = "Showing V"
+            activityDescription = "Suspiciously active.\n Evolving into other species rapidly."
         } else if countResult > 12500 {
             slothRate = 5
             //Climbing a branch
-            activityDescription = "Climbing a branch"
+            activityDescription = "Hyperactive.\n Are you a sloth really?"
         }
         return (slothRate, activityDescription)
 }

@@ -1,5 +1,5 @@
 //
-//  NavigationButtons.swift
+//  NavigationButtonsView.swift
 //  SlothRateSwiftUI
 //
 //  Created by Polina Portova on 23.12.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavigationButtons: View {
+struct NavigationButtonsView: View {
     
     @Binding var currentDate: Date
     @Binding var isPickerVisible: Bool
@@ -24,11 +24,10 @@ struct NavigationButtons: View {
                 currentDate = currentDate.dayBefore
                 stepsViewModel.checkTheDate(currentDate: currentDate)
             }){
-                Text("Day Before")
+                BackwardArrowView(elementName: "chevron.left")
                     .padding(20.0)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(Color("UpperLabelsColor"))
-                    .font(.custom("Futura", size: 20))
             }
                 
             Spacer()
@@ -39,11 +38,12 @@ struct NavigationButtons: View {
                         isPickerVisible.toggle()
                     }
                 }) {
-                    Text("Go to Calendar")
+                    Text("\(currentDate, style: .date)")
                         .padding(20.0)
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color("UpperLabelsColor"))
                         .font(.custom("Futura", size: 20))
+                        .frame(width: 250, height: 40)
                 }
             } else {
                 Button(action: {
@@ -53,13 +53,12 @@ struct NavigationButtons: View {
                         stepsViewModel.checkTheDate(currentDate: currentDate)
                     }
                 }) {
-                    Spacer()
-                    Text("Back\n to Rate")
+                    Text("Back to Sloth")
                         .padding(20.0)
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color("UpperLabelsColor"))
                         .font(.custom("Futura", size: 20))
-                    Spacer()
+                        .frame(width: 250, height: 40)
                     }
             }
                 
@@ -70,19 +69,15 @@ struct NavigationButtons: View {
                 currentDate = currentDate.dayAfter
                 stepsViewModel.checkTheDate(currentDate: currentDate)
             }) {
-                Text("Next Day")
+                ForwardArrowView(elementName: "chevron.right")
                     .padding(20.0)
-                    .multilineTextAlignment(.trailing)
-                    .font(.custom("Futura", size: 20))
                     .foregroundColor(Color("UpperLabelsColor"))
                 }
             } else {
                 Button(action: {
                 }) {
-                    Text("Next Day")
+                    ForwardArrowView(elementName: "chevron.right")
                         .padding(20.0)
-                        .multilineTextAlignment(.trailing)
-                        .font(.custom("Futura", size: 20))
                         .foregroundColor(Color.gray)
                     }
                 .disabled(isButtonDisabled)
@@ -100,7 +95,8 @@ struct NavigationButtons_Previews: PreviewProvider {
     static var previews: some View {
         let isButtonDisabled = true
         let stepsViewModel = StepsCounterViewModel()
+        let testTime = Date(timeIntervalSinceReferenceDate: -152344567894.0)
       
-        NavigationButtons(currentDate: .constant(Date()), isPickerVisible: .constant(true), isBadgeVisible: .constant(true), stepsViewModel: stepsViewModel, isButtonDisabled: isButtonDisabled)
+        NavigationButtonsView(currentDate: .constant(testTime), isPickerVisible: .constant(false), isBadgeVisible: .constant(true), stepsViewModel: stepsViewModel, isButtonDisabled: isButtonDisabled)
     }
 }

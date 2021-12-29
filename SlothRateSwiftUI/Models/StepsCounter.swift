@@ -14,41 +14,41 @@ class StepsCounter: NSObject, ObservableObject {
     private let healthStore = HKHealthStore()
         
     func getTodaysSteps(pickedDate: Date, completion: @escaping (Double) -> Void) {
-        var predicate = NSPredicate()
-        guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
+            var predicate = NSPredicate()
+            guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
+                
+            let dateToCalculate = Date()
             
-        let dateToCalculate = Date()
-        
-        if Calendar.current.isDateInToday(pickedDate) {
-            let startOfDay = Calendar.current.startOfDay(for: dateToCalculate)
-            predicate = HKQuery.predicateForSamples(
-                withStart: startOfDay,
-                end: dateToCalculate,
-                options: .strictStartDate
-            )
-        } else {
-            let startOfDay = Calendar.current.startOfDay(for: pickedDate)
-            let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
-            predicate = HKQuery.predicateForSamples(
-                withStart: startOfDay,
-                end: endOfDay,
-                options: .strictStartDate)
-        }
-        let query = HKStatisticsQuery(
-            quantityType: stepsQuantityType,
-            quantitySamplePredicate: predicate,
-            options: .cumulativeSum
-        ) { _, result, _ in
-            guard let result = result, let sum = result.sumQuantity() else {
-                completion(0.0)
-                return
+            if Calendar.current.isDateInToday(pickedDate) {
+                let startOfDay = Calendar.current.startOfDay(for: dateToCalculate)
+                predicate = HKQuery.predicateForSamples(
+                    withStart: startOfDay,
+                    end: dateToCalculate,
+                    options: .strictStartDate
+                )
+            } else {
+                let startOfDay = Calendar.current.startOfDay(for: pickedDate)
+                let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
+                predicate = HKQuery.predicateForSamples(
+                    withStart: startOfDay,
+                    end: endOfDay,
+                    options: .strictStartDate)
             }
-            completion(sum.doubleValue(for: HKUnit.count()))
+            let query = HKStatisticsQuery(
+                quantityType: stepsQuantityType,
+                quantitySamplePredicate: predicate,
+                options: .cumulativeSum
+            ) { _, result, _ in
+                guard let result = result, let sum = result.sumQuantity() else {
+                    completion(0.0)
+                    return
+                }
+                completion(sum.doubleValue(for: HKUnit.count()))
+            }
+                
+            healthStore.execute(query)
         }
-            
-        healthStore.execute(query)
-    }
-
+    
 }
 
 extension Date {
