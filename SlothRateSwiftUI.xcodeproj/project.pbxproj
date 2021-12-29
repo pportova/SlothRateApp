@@ -7,8 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF16A0C3277C9B0A008C073B /* ArrowButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */; };
+		FF16A0C4277C9C82008C073B /* NavigationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */; };
 		FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3230EB275FB1400016468D /* StepsCounter.swift */; };
 		FF5779C9277C64BA005C63FC /* ArrowButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */; };
+		FF5779CF277C8808005C63FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5779CE277C8808005C63FC /* Assets.xcassets */; };
+		FF5779D5277C8809005C63FC /* WatchSlothRate WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FF5779D4277C8809005C63FC /* WatchSlothRate WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF5779DC277C8809005C63FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779DB277C8809005C63FC /* ContentView.swift */; };
+		FF5779DE277C8809005C63FC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779DD277C8809005C63FC /* NotificationController.swift */; };
+		FF5779E0277C8809005C63FC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779DF277C8809005C63FC /* NotificationView.swift */; };
+		FF5779E2277C8809005C63FC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779E1277C8809005C63FC /* ComplicationController.swift */; };
+		FF5779E4277C880A005C63FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5779E3277C880A005C63FC /* Assets.xcassets */; };
+		FF5779E7277C880A005C63FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5779E6277C880A005C63FC /* Preview Assets.xcassets */; };
+		FF5779F3277C880A005C63FC /* WatchSlothRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779F2277C880A005C63FC /* WatchSlothRateTests.swift */; };
+		FF5779FD277C880A005C63FC /* WatchSlothRateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779FC277C880A005C63FC /* WatchSlothRateUITests.swift */; };
+		FF5779FF277C880A005C63FC /* WatchSlothRateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779FE277C880A005C63FC /* WatchSlothRateUITestsLaunchTests.swift */; };
+		FF577A02277C880A005C63FC /* WatchSlothRate.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FF5779CC277C8807005C63FC /* WatchSlothRate.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF577A11277C8916005C63FC /* StepsCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3230EB275FB1400016468D /* StepsCounter.swift */; };
+		FF577A12277C8916005C63FC /* TextAndPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */; };
+		FF577A13277C8916005C63FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF89EBEB2758056D006D9E88 /* Assets.xcassets */; };
+		FF577A14277C8916005C63FC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
+		FF577A15277C8916005C63FC /* StepsCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */; };
+		FF577A16277C8916005C63FC /* SlothRateSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */; };
+		FF577A17277C8916005C63FC /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB1AD12769296300FA2B52 /* BadgeView.swift */; };
 		FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */; };
 		FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */; };
 		FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE92758056B006D9E88 /* ContentView.swift */; };
@@ -26,6 +47,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FF5779D6277C8809005C63FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF5779D3277C8809005C63FC;
+			remoteInfo = "WatchSlothRate WatchKit Extension";
+		};
+		FF5779EF277C880A005C63FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF5779D3277C8809005C63FC;
+			remoteInfo = "WatchSlothRate WatchKit Extension";
+		};
+		FF5779F9277C880A005C63FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF5779CB277C8807005C63FC;
+			remoteInfo = WatchSlothRate;
+		};
+		FF577A00277C880A005C63FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF5779CB277C8807005C63FC;
+			remoteInfo = WatchSlothRate;
+		};
 		FF89EBF52758056D006D9E88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF89EBDC2758056B006D9E88 /* Project object */;
@@ -42,9 +91,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FF577A03277C880A005C63FC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FF577A02277C880A005C63FC /* WatchSlothRate.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF577A06277C880A005C63FC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FF5779D5277C8809005C63FC /* WatchSlothRate WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FF3230EB275FB1400016468D /* StepsCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCounter.swift; sourceTree = "<group>"; };
 		FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButtonsView.swift; sourceTree = "<group>"; };
+		FF5779CC277C8807005C63FC /* WatchSlothRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchSlothRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5779CE277C8808005C63FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF5779D4277C8809005C63FC /* WatchSlothRate WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchSlothRate WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5779DB277C8809005C63FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF5779DD277C8809005C63FC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FF5779DF277C8809005C63FC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		FF5779E1277C8809005C63FC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		FF5779E3277C880A005C63FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF5779E6277C880A005C63FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF5779E8277C880A005C63FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF5779E9277C880A005C63FC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		FF5779EE277C880A005C63FC /* WatchSlothRateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchSlothRateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5779F2277C880A005C63FC /* WatchSlothRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSlothRateTests.swift; sourceTree = "<group>"; };
+		FF5779F8277C880A005C63FC /* WatchSlothRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchSlothRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5779FC277C880A005C63FC /* WatchSlothRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSlothRateUITests.swift; sourceTree = "<group>"; };
+		FF5779FE277C880A005C63FC /* WatchSlothRateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSlothRateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCounterViewModel.swift; sourceTree = "<group>"; };
 		FF89EBE42758056B006D9E88 /* SlothRateSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlothRateSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -69,6 +159,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF5779D1277C8809005C63FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779EB277C880A005C63FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779F5277C880A005C63FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF89EBE12758056B006D9E88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,12 +205,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF5779CD277C8807005C63FC /* WatchSlothRate */ = {
+			isa = PBXGroup;
+			children = (
+				FF5779CE277C8808005C63FC /* Assets.xcassets */,
+			);
+			path = WatchSlothRate;
+			sourceTree = "<group>";
+		};
+		FF5779D8277C8809005C63FC /* WatchSlothRate WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FF5779DB277C8809005C63FC /* ContentView.swift */,
+				FF5779DD277C8809005C63FC /* NotificationController.swift */,
+				FF5779DF277C8809005C63FC /* NotificationView.swift */,
+				FF5779E1277C8809005C63FC /* ComplicationController.swift */,
+				FF5779E3277C880A005C63FC /* Assets.xcassets */,
+				FF5779E8277C880A005C63FC /* Info.plist */,
+				FF5779E9277C880A005C63FC /* PushNotificationPayload.apns */,
+				FF5779E5277C880A005C63FC /* Preview Content */,
+			);
+			path = "WatchSlothRate WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FF5779E5277C880A005C63FC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF5779E6277C880A005C63FC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF5779F1277C880A005C63FC /* WatchSlothRateTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF5779F2277C880A005C63FC /* WatchSlothRateTests.swift */,
+			);
+			path = WatchSlothRateTests;
+			sourceTree = "<group>";
+		};
+		FF5779FB277C880A005C63FC /* WatchSlothRateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF5779FC277C880A005C63FC /* WatchSlothRateUITests.swift */,
+				FF5779FE277C880A005C63FC /* WatchSlothRateUITestsLaunchTests.swift */,
+			);
+			path = WatchSlothRateUITests;
+			sourceTree = "<group>";
+		};
 		FF89EBDB2758056B006D9E88 = {
 			isa = PBXGroup;
 			children = (
 				FF89EBE62758056B006D9E88 /* SlothRateSwiftUI */,
 				FF89EBF72758056D006D9E88 /* SlothRateSwiftUITests */,
 				FF89EC012758056D006D9E88 /* SlothRateSwiftUIUITests */,
+				FF5779CD277C8807005C63FC /* WatchSlothRate */,
+				FF5779D8277C8809005C63FC /* WatchSlothRate WatchKit Extension */,
+				FF5779F1277C880A005C63FC /* WatchSlothRateTests */,
+				FF5779FB277C880A005C63FC /* WatchSlothRateUITests */,
 				FF89EBE52758056B006D9E88 /* Products */,
 				FF8E979127624885005BB1E7 /* Frameworks */,
 			);
@@ -111,6 +274,10 @@
 				FF89EBE42758056B006D9E88 /* SlothRateSwiftUI.app */,
 				FF89EBF42758056D006D9E88 /* SlothRateSwiftUITests.xctest */,
 				FF89EBFE2758056D006D9E88 /* SlothRateSwiftUIUITests.xctest */,
+				FF5779CC277C8807005C63FC /* WatchSlothRate.app */,
+				FF5779D4277C8809005C63FC /* WatchSlothRate WatchKit Extension.appex */,
+				FF5779EE277C880A005C63FC /* WatchSlothRateTests.xctest */,
+				FF5779F8277C880A005C63FC /* WatchSlothRateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +365,76 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF5779CB277C8807005C63FC /* WatchSlothRate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF577A0E277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRate" */;
+			buildPhases = (
+				FF5779CA277C8807005C63FC /* Resources */,
+				FF577A06277C880A005C63FC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF5779D7277C8809005C63FC /* PBXTargetDependency */,
+			);
+			name = WatchSlothRate;
+			productName = WatchSlothRate;
+			productReference = FF5779CC277C8807005C63FC /* WatchSlothRate.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FF5779D3277C8809005C63FC /* WatchSlothRate WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF577A0D277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRate WatchKit Extension" */;
+			buildPhases = (
+				FF5779D0277C8809005C63FC /* Sources */,
+				FF5779D1277C8809005C63FC /* Frameworks */,
+				FF5779D2277C8809005C63FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchSlothRate WatchKit Extension";
+			productName = "WatchSlothRate WatchKit Extension";
+			productReference = FF5779D4277C8809005C63FC /* WatchSlothRate WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		FF5779ED277C880A005C63FC /* WatchSlothRateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF577A0F277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRateTests" */;
+			buildPhases = (
+				FF5779EA277C880A005C63FC /* Sources */,
+				FF5779EB277C880A005C63FC /* Frameworks */,
+				FF5779EC277C880A005C63FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF5779F0277C880A005C63FC /* PBXTargetDependency */,
+			);
+			name = WatchSlothRateTests;
+			productName = WatchSlothRateTests;
+			productReference = FF5779EE277C880A005C63FC /* WatchSlothRateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF5779F7277C880A005C63FC /* WatchSlothRateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF577A10277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRateUITests" */;
+			buildPhases = (
+				FF5779F4277C880A005C63FC /* Sources */,
+				FF5779F5277C880A005C63FC /* Frameworks */,
+				FF5779F6277C880A005C63FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF5779FA277C880A005C63FC /* PBXTargetDependency */,
+			);
+			name = WatchSlothRateUITests;
+			productName = WatchSlothRateUITests;
+			productReference = FF5779F8277C880A005C63FC /* WatchSlothRateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUI" */;
@@ -205,10 +442,12 @@
 				FF89EBE02758056B006D9E88 /* Sources */,
 				FF89EBE12758056B006D9E88 /* Frameworks */,
 				FF89EBE22758056B006D9E88 /* Resources */,
+				FF577A03277C880A005C63FC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FF577A01277C880A005C63FC /* PBXTargetDependency */,
 			);
 			name = SlothRateSwiftUI;
 			productName = SlothRateSwiftUI;
@@ -261,6 +500,20 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					FF5779CB277C8807005C63FC = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					FF5779D3277C8809005C63FC = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					FF5779ED277C880A005C63FC = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FF5779D3277C8809005C63FC;
+					};
+					FF5779F7277C880A005C63FC = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FF5779CB277C8807005C63FC;
+					};
 					FF89EBE32758056B006D9E88 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -290,11 +543,47 @@
 				FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */,
 				FF89EBF32758056D006D9E88 /* SlothRateSwiftUITests */,
 				FF89EBFD2758056D006D9E88 /* SlothRateSwiftUIUITests */,
+				FF5779CB277C8807005C63FC /* WatchSlothRate */,
+				FF5779D3277C8809005C63FC /* WatchSlothRate WatchKit Extension */,
+				FF5779ED277C880A005C63FC /* WatchSlothRateTests */,
+				FF5779F7277C880A005C63FC /* WatchSlothRateUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF5779CA277C8807005C63FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5779CF277C8808005C63FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779D2277C8809005C63FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5779E7277C880A005C63FC /* Preview Assets.xcassets in Resources */,
+				FF577A13277C8916005C63FC /* Assets.xcassets in Resources */,
+				FF5779E4277C880A005C63FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779EC277C880A005C63FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779F6277C880A005C63FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF89EBE22758056B006D9E88 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +611,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF5779D0277C8809005C63FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5779DE277C8809005C63FC /* NotificationController.swift in Sources */,
+				FF577A15277C8916005C63FC /* StepsCounterViewModel.swift in Sources */,
+				FF5779DC277C8809005C63FC /* ContentView.swift in Sources */,
+				FF577A12277C8916005C63FC /* TextAndPictureView.swift in Sources */,
+				FF16A0C4277C9C82008C073B /* NavigationButtonsView.swift in Sources */,
+				FF577A16277C8916005C63FC /* SlothRateSwiftUIApp.swift in Sources */,
+				FF16A0C3277C9B0A008C073B /* ArrowButtonsView.swift in Sources */,
+				FF5779E2277C8809005C63FC /* ComplicationController.swift in Sources */,
+				FF577A17277C8916005C63FC /* BadgeView.swift in Sources */,
+				FF577A11277C8916005C63FC /* StepsCounter.swift in Sources */,
+				FF577A14277C8916005C63FC /* CircleView.swift in Sources */,
+				FF5779E0277C8809005C63FC /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779EA277C880A005C63FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5779F3277C880A005C63FC /* WatchSlothRateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5779F4277C880A005C63FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5779FD277C880A005C63FC /* WatchSlothRateUITests.swift in Sources */,
+				FF5779FF277C880A005C63FC /* WatchSlothRateUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF89EBE02758056B006D9E88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +683,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FF5779D7277C8809005C63FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF5779D3277C8809005C63FC /* WatchSlothRate WatchKit Extension */;
+			targetProxy = FF5779D6277C8809005C63FC /* PBXContainerItemProxy */;
+		};
+		FF5779F0277C880A005C63FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF5779D3277C8809005C63FC /* WatchSlothRate WatchKit Extension */;
+			targetProxy = FF5779EF277C880A005C63FC /* PBXContainerItemProxy */;
+		};
+		FF5779FA277C880A005C63FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF5779CB277C8807005C63FC /* WatchSlothRate */;
+			targetProxy = FF5779F9277C880A005C63FC /* PBXContainerItemProxy */;
+		};
+		FF577A01277C880A005C63FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF5779CB277C8807005C63FC /* WatchSlothRate */;
+			targetProxy = FF577A00277C880A005C63FC /* PBXContainerItemProxy */;
+		};
 		FF89EBF62758056D006D9E88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */;
@@ -371,6 +716,223 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FF577A04277C880A005C63FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchSlothRate_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchSlothRate;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.pportova.SlothRateSwiftUI;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		FF577A05277C880A005C63FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchSlothRate_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchSlothRate;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.pportova.SlothRateSwiftUI;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		FF577A07277C880A005C63FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchSlothRate WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchSlothRate WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchSlothRate WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WatchSlothRate_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		FF577A08277C880A005C63FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchSlothRate WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchSlothRate WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchSlothRate WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WatchSlothRate_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		FF577A09277C880A005C63FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.WatchSlothRateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchSlothRate WatchKit Extension.appex/WatchSlothRate WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		FF577A0A277C880A005C63FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.WatchSlothRateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchSlothRate WatchKit Extension.appex/WatchSlothRate WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		FF577A0B277C880A005C63FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.WatchSlothRateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = WatchSlothRate;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		FF577A0C277C880A005C63FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI.WatchSlothRateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = WatchSlothRate;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 		FF89EC062758056D006D9E88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,6 +1063,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sloth Rate";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Your health records will be used to make medical suggestions";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your health records will be used to make medical suggestions";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
@@ -538,6 +1101,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sloth Rate";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Your health records will be used to make medical suggestions";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your health records will be used to make medical suggestions";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
@@ -660,6 +1224,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF577A0D277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRate WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF577A07277C880A005C63FC /* Debug */,
+				FF577A08277C880A005C63FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF577A0E277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF577A04277C880A005C63FC /* Debug */,
+				FF577A05277C880A005C63FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF577A0F277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF577A09277C880A005C63FC /* Debug */,
+				FF577A0A277C880A005C63FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF577A10277C880A005C63FC /* Build configuration list for PBXNativeTarget "WatchSlothRateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF577A0B277C880A005C63FC /* Debug */,
+				FF577A0C277C880A005C63FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRateSwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

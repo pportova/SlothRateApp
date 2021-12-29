@@ -15,10 +15,12 @@ struct TextAndPictureView: View {
                 .font(.custom("Futura", size: 50))
                 .foregroundColor(Color("TitleTextColor"))
                 .multilineTextAlignment(.center)
+//                .fixedSize()
                 .frame(width: 400, height: 150)
             
             CircleView()
-                .padding(10)
+//                .frame(width: 250, height: 250)
+                .padding(20)
         }
     }
 }

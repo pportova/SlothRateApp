@@ -14,7 +14,7 @@ struct NavigationButtonsView: View {
     @Binding var isBadgeVisible: Bool
     @ObservedObject var stepsViewModel: StepsCounterViewModel
     var isButtonDisabled: Bool
-    private let today = Date()
+//    private let today = Date()
     
     
     var body: some View {
@@ -65,14 +65,15 @@ struct NavigationButtonsView: View {
             Spacer()
 
             if !isButtonDisabled {
-            Button(action: {
-                currentDate = currentDate.dayAfter
-                stepsViewModel.checkTheDate(currentDate: currentDate)
-            }) {
-                ForwardArrowView(elementName: "chevron.right")
-                    .padding(20.0)
-                    .foregroundColor(Color("UpperLabelsColor"))
-                }
+                
+                Button(action: {
+                    currentDate = currentDate.dayAfter
+                    stepsViewModel.checkTheDate(currentDate: currentDate)
+                }) {
+                    ForwardArrowView(elementName: "chevron.right")
+                        .padding(20.0)
+                        .foregroundColor(Color("UpperLabelsColor"))
+                    }
             } else {
                 Button(action: {
                 }) {

@@ -12,6 +12,7 @@ import UIKit
 struct ContentView: View {
     
     @ObservedObject var stepsViewModel = StepsCounterViewModel()
+    
     @State private var isPickerVisible = false
     @State private var currentDate = Date()
     @State private var isBadgeVisible = false
@@ -33,8 +34,8 @@ struct ContentView: View {
                 .ignoresSafeArea()
 
             VStack{
-                
                 NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.result)
+                    .offset(y: 10)
 
                     Spacer()
                 
@@ -54,7 +55,7 @@ struct ContentView: View {
                                     .frame(height: 95)
                             } else {
                                 BadgeView()
-                                    .offset(y: -45)
+                                    .offset(y: -55)
                                     .transition(.move(edge: .trailing))
                                     .animation(.easeOut, value: animationAmount)
                             }
@@ -68,8 +69,8 @@ struct ContentView: View {
                     
                             Text("steps taken")
                                 .font(.custom("Futura", size: 30))
-                                .foregroundColor(Color("UpperLabelsColor"))
-                                .offset(y: -10)
+                                .foregroundColor(Color("StepsTakenColor"))
+                                .offset(y: -30)
                 
                         }
                         } else {
@@ -84,12 +85,11 @@ struct ContentView: View {
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color("ValueLabelColor"))
                                     .padding(10)
-                                    .offset(y: -30)
                                 
                                 Text("steps taken")
                                     .font(.custom("Futura", size: 30))
-                                    .foregroundColor(Color("UpperLabelsColor"))
-                                    .offset(y: -10)
+                                    .foregroundColor(Color("StepsTakenColor"))
+                                    .offset(y: -30)
                             
                             }
                             .blur(radius: 70)
@@ -115,20 +115,20 @@ extension AnyTransition {
     }
 }
 
-extension Date {
-    static var yesterday: Date { return Date().dayBefore }
-    static var tomorrow:  Date { return Date().dayAfter }
-    var dayBefore: Date {
-        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
-    }
-    var dayAfter: Date {
-        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
-    }
-    var noon: Date {
-        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
-    }
-
-}
+//extension Date {
+//    static var yesterday: Date { return Date().dayBefore }
+//    static var tomorrow:  Date { return Date().dayAfter }
+//    var dayBefore: Date {
+//        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+//    }
+//    var dayAfter: Date {
+//        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+//    }
+//    var noon: Date {
+//        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+//    }
+//
+//}
 
 
 struct ContentView_Previews: PreviewProvider {

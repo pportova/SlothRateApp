@@ -20,7 +20,8 @@ struct CircleView: View {
         Image("\(imageNumber)" as String)
             .resizable()
             .scaledToFit()
-            .frame(width: 200, height: 200)
+            .frame(minWidth: 130, idealWidth: 250, maxWidth: 250, minHeight: 130, idealHeight: 250, maxHeight: 250)
+//            .frame(width: 250, height: 250)
             .clipShape(Circle())
             .overlay{
                 Circle().stroke(
