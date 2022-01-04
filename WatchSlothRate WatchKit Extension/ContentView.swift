@@ -27,6 +27,7 @@ struct ContentView: View {
                     CircleView()
                         .scaledToFit()
                         .padding(5)
+                        .offset(y: -16)
                            
                     HStack{
                         Button(action: {
@@ -39,14 +40,14 @@ struct ContentView: View {
         
                         Spacer(minLength: 120)
 
-//                        if !isButtonDisabled {
-                        if !stepsViewModel.result {
+
+                        if !stepsViewModel.isDateInToday {
                             Button(action: {
                                 currentDate = currentDate.dayAfter
                                 stepsViewModel.checkTheDate(currentDate: currentDate)
                             }) {
                                 ForwardArrowView(elementName: "chevron.right")
-                                    .padding(20.0)
+//                                    .padding(20.0)
                                     .foregroundColor(.white)
                                 }
 
@@ -54,14 +55,14 @@ struct ContentView: View {
                             Button(action: {
                             }) {
                                 ForwardArrowView(elementName: "chevron.right")
-                                    .padding(20.0)
+//                                    .padding(20.0)
                                     .foregroundColor(Color.gray)
                                 }
-                               
+
                             .disabled(isButtonDisabled)
                         }
                     }
-                    .offset(y: 30)
+//                    .offset(y: 30)
                 }
                 
                 Spacer()

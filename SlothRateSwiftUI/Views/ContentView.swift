@@ -21,6 +21,18 @@ struct ContentView: View {
     private let animationAmount = 1
     
     init() {
+        StepsCounter.authorizeHealthKit{ (authorized, error) in
+            guard authorized else {
+              let resultMessage = "HealthKit Authorization Failed"
+              if let error = error {
+                print("\(resultMessage). Reason: \(error.localizedDescription)")
+              } else {
+                print(resultMessage)
+              }
+              return
+            }
+            print("HealthKit Successfully Authorized.")
+          }
         self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
     }
        
@@ -34,7 +46,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
 
             VStack{
-                NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.result)
+                NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.isDateInToday)
                     .offset(y: 10)
 
                     Spacer()

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import HealthKit
 
 class StepsCounterViewModel: ObservableObject {
     
@@ -14,12 +15,12 @@ class StepsCounterViewModel: ObservableObject {
     private var today = Date()
     
     @Published var countResult = Double()
-    @Published var result = Bool()
+    @Published var isDateInToday = Bool()
 
     
 //    MARK: Functions
     func countStepsAndCheckDate(currentDate: Date) {
-        stepsCounter.getTodaysSteps(pickedDate: currentDate, completion: { result in
+        stepsCounter.getTodaysSteps(calendar: Calendar(identifier: .gregorian),store: HKHealthStore(), pickedDate: currentDate, completion: { result in
                         DispatchQueue.main.async {
                             self.countResult = result
                         }
@@ -28,7 +29,7 @@ class StepsCounterViewModel: ObservableObject {
     }
 
     func checkTheDate(currentDate: Date) {
-        result = Calendar.current.isDateInToday(currentDate)
+        isDateInToday = Calendar.current.isDateInToday(currentDate)
     }
     
     func getSlothRate() -> (Int, String) {

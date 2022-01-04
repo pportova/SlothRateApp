@@ -11,50 +11,109 @@ import HealthKit
 
 class StepsCounter: NSObject, ObservableObject {
     
-    private let healthStore = HKHealthStore()
+    private enum HealthkitSetupError: Error {
+      case notAvailableOnDevice
+      case dataTypeNotAvailable
+    }
         
-    func getTodaysSteps(pickedDate: Date, completion: @escaping (Double) -> Void) {
-            var predicate = NSPredicate()
-            guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
+    func getTodaysSteps(calendar: AppCalendar,store: HealthStore, pickedDate: Date, completion: @escaping (Double) -> Void) {
+        let healthStore = HKHealthStore()
+        
+        var predicate = NSPredicate()
+        guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
                 
-            let dateToCalculate = Date()
+        let dateToCalculate = Date()
+        
+        let formattedPickedDate = formattingDate(date: pickedDate)
+        let formattedDateToCalculate = formattingDate(date: dateToCalculate)
             
-            if Calendar.current.isDateInToday(pickedDate) {
-                let startOfDay = Calendar.current.startOfDay(for: dateToCalculate)
-                predicate = HKQuery.predicateForSamples(
-                    withStart: startOfDay,
-                    end: dateToCalculate,
-                    options: .strictStartDate
-                )
-            } else {
-                let startOfDay = Calendar.current.startOfDay(for: pickedDate)
-                let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
-                predicate = HKQuery.predicateForSamples(
-                    withStart: startOfDay,
-                    end: endOfDay,
-                    options: .strictStartDate)
+        if Calendar.current.isDateInToday(pickedDate) {
+            let startOfDay = Calendar.current.startOfDay(for: formattedDateToCalculate)
+            predicate = HKQuery.predicateForSamples(
+                withStart: startOfDay,
+                end: formattedDateToCalculate,
+                options: .strictStartDate
+            )
+        } else {
+            let startOfDay = Calendar.current.startOfDay(for: formattedPickedDate)
+            let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
+            predicate = HKQuery.predicateForSamples(
+                withStart: startOfDay,
+                end: endOfDay,
+                options: .strictStartDate)
+        }
+        let query = HKStatisticsQuery(
+            quantityType: stepsQuantityType,
+            quantitySamplePredicate: predicate,
+            options: .cumulativeSum
+        ) { _, result, _ in
+            guard let result = result, let sum = result.sumQuantity() else {
+                completion(0.0)
+                return
             }
-            let query = HKStatisticsQuery(
-                quantityType: stepsQuantityType,
-                quantitySamplePredicate: predicate,
-                options: .cumulativeSum
-            ) { _, result, _ in
-                guard let result = result, let sum = result.sumQuantity() else {
-                    completion(0.0)
-                    return
-                }
-                completion(sum.doubleValue(for: HKUnit.count()))
-            }
+            completion(sum.doubleValue(for: HKUnit.count()))
+        }
                 
             healthStore.execute(query)
         }
     
+    class func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Void) {
+        guard HKHealthStore.isHealthDataAvailable() else {
+          completion(false, HealthkitSetupError.notAvailableOnDevice)
+          return
+        }
+        guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            completion(false, HealthkitSetupError.dataTypeNotAvailable)
+                    return
+        }
+        
+        let healthKitTypesToRead: Set<HKObjectType> = [stepsQuantityType]
+        
+        HKHealthStore().requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
+          completion(success, error)
+        }
+    }
+
+    func formattingDate(date: Date) -> Date {
+//        let currentLocale = NSLocale.current.identifier
+//        let dayFormatter = DateFormatter()
+        var convertedDate = Date()
+        let timezoneOffset = TimeZone.current.secondsFromGMT()
+        
+//        if date != nil {
+            let epochDate = date.timeIntervalSince1970
+            let timeZoneWithEpochOffset = epochDate + Double(timezoneOffset)
+            convertedDate = Date(timeIntervalSince1970: timeZoneWithEpochOffset)
+//        }
+         return convertedDate
+    }
+    
 }
+
+//func formattedDate(date: inout Date) {
+//    let current = NSLocale.current.identifier
+//    let dayFormatter = DateFormatter()
+//    dayFormatter.locale = Locale(identifier: current)
+//    let conversionResult = dayFormatter.string(from: date)
+//    date = dayFormatter.date(from: conversionResult) ?? date
+//}
+
+protocol AppCalendar {
+    func startOfDay(for date: Date) -> Date
+}
+
+protocol HealthStore {
+    func execute(_ query: HKQuery)
+}
+
+
+extension HKHealthStore: HealthStore { }
+
+extension Calendar: AppCalendar { }
 
 extension Date {
     
     func endOfDay(startOfDay: Date) -> Date{
-        
         var components = DateComponents()
         components.day = 1
         components.second = -1
@@ -64,5 +123,12 @@ extension Date {
         }
         return resultDate
     }
-
+    
+    func formattingDate(date: inout Date) {
+        let current = NSLocale.current.identifier
+        let dayFormatter = DateFormatter()
+        dayFormatter.locale = Locale(identifier: current)
+        let conversionResult = dayFormatter.string(from: date)
+        date = dayFormatter.date(from: conversionResult) ?? date
+    }
 }
