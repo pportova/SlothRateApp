@@ -33,6 +33,7 @@ struct ContentView: View {
             }
             print("HealthKit Successfully Authorized.")
           }
+        
         self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
     }
        
@@ -53,7 +54,8 @@ struct ContentView: View {
                 
                     if !isPickerVisible{
                         VStack{
-                            TextAndPictureView()
+                            TextAndPictureView(stepsViewModel: stepsViewModel)
+//                            TextAndPictureView()
                                 .onAppear() {
                                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
                                         withAnimation {
@@ -66,13 +68,14 @@ struct ContentView: View {
                                 Spacer()
                                     .frame(height: 95)
                             } else {
-                                BadgeView()
+                                BadgeView(stepsViewModel: stepsViewModel)
+//                                BadgeView()
                                     .offset(y: -55)
                                     .transition(.move(edge: .trailing))
                                     .animation(.easeOut, value: animationAmount)
                             }
 
-                            Text("\(stepsValue)")
+                            Text(String(stepsValue))
                                 .font(.custom("American Typewriter", size: 90))
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color("ValueLabelColor"))
@@ -87,12 +90,13 @@ struct ContentView: View {
                         }
                         } else {
                             VStack{
-                                TextAndPictureView()
+                                TextAndPictureView(stepsViewModel: stepsViewModel)
+//                                TextAndPictureView()
 
                                 Spacer()
                                     .frame(height: 95)
 
-                                Text("\(stepsValue)")
+                                Text(String(stepsValue))
                                     .font(.custom("American Typewriter", size: 90))
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color("ValueLabelColor"))
@@ -113,13 +117,16 @@ struct ContentView: View {
                             )
                     }
                 }
+            
             //VStack closes
         }
         //Overall ZStack closes
     }
+    
     //Body closes
     
 }
+    
 
 extension AnyTransition {
     static var moveAndFade: AnyTransition {

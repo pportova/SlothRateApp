@@ -72,7 +72,11 @@ class StepsCounter: NSObject, ObservableObject {
         HKHealthStore().requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
           completion(success, error)
         }
+//        HKHealthStore().handleAuthorizationForExtension(completion: {(success, error) in
+//            completion(success, error) })
     }
+    
+
 
     func formattingDate(date: Date) -> Date {
 //        let currentLocale = NSLocale.current.identifier

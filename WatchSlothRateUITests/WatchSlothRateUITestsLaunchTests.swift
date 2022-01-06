@@ -2,7 +2,7 @@
 //  WatchSlothRateUITestsLaunchTests.swift
 //  WatchSlothRateUITests
 //
-//  Created by Polina Portova on 29.12.2021.
+//  Created by Polina Portova on 06.01.2022.
 //
 
 import XCTest

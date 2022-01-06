@@ -22,7 +22,8 @@ struct NavigationButtonsView: View {
             
             Button(action: {
                 currentDate = currentDate.dayBefore
-                stepsViewModel.checkTheDate(currentDate: currentDate)
+                stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+//                stepsViewModel.checkTheDate(currentDate: currentDate)
             }){
                 BackwardArrowView(elementName: "chevron.left")
                     .padding(20.0)
@@ -50,7 +51,8 @@ struct NavigationButtonsView: View {
                     withAnimation {
                         isPickerVisible.toggle()
                         isBadgeVisible = false
-                        stepsViewModel.checkTheDate(currentDate: currentDate)
+                        stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+//                        stepsViewModel.checkTheDate(currentDate: currentDate)
                     }
                 }) {
                     Text("Back to Sloth")
@@ -68,7 +70,8 @@ struct NavigationButtonsView: View {
                 
                 Button(action: {
                     currentDate = currentDate.dayAfter
-                    stepsViewModel.checkTheDate(currentDate: currentDate)
+                    stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+//                    stepsViewModel.checkTheDate(currentDate: currentDate)
                 }) {
                     ForwardArrowView(elementName: "chevron.right")
                         .padding(20.0)

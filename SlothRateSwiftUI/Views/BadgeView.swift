@@ -9,16 +9,18 @@ import SwiftUI
 
 struct BadgeView: View {
     
-    let stepsViewModel = StepsCounterViewModel()
-    var pictureDescription = ""
-    
-    init() {
-        pictureDescription = stepsViewModel.getSlothRate().1
-    }
+//    let stepsViewModel = StepsCounterViewModel()
+    @ObservedObject var stepsViewModel: StepsCounterViewModel
+//    var pictureDescription = ""
+//    
+//    init() {
+//        pictureDescription = stepsViewModel.getSlothRate().1
+//    }
     
     var body: some View {
     
-        Text("\(pictureDescription)")
+//        Text("\(pictureDescription)")
+        Text(String(stepsViewModel.activityDescription))
             .padding(15)
             .background(Color("BackgroundBageColor"))
             .foregroundColor(Color("ButtonColor"))
@@ -36,6 +38,9 @@ struct BadgeView: View {
 
 struct BadgeView_Previews: PreviewProvider {
     static var previews: some View {
-        BadgeView()
+        let stepsViewModel = StepsCounterViewModel()
+        
+        BadgeView(stepsViewModel: stepsViewModel)
+//        BadgeView()
     }
 }

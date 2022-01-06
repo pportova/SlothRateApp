@@ -16,6 +16,8 @@ class StepsCounterViewModel: ObservableObject {
     
     @Published var countResult = Double()
     @Published var isDateInToday = Bool()
+    @Published var slothRate = Int()
+    @Published var activityDescription = String()
 
     
 //    MARK: Functions
@@ -23,9 +25,13 @@ class StepsCounterViewModel: ObservableObject {
         stepsCounter.getTodaysSteps(calendar: Calendar(identifier: .gregorian),store: HKHealthStore(), pickedDate: currentDate, completion: { result in
                         DispatchQueue.main.async {
                             self.countResult = result
+                            self.slothRate = self.getSlothRate().0
+                            self.activityDescription = self.getSlothRate().1
                         }
         })
         self.checkTheDate(currentDate: currentDate)
+//        slothRate = self.getSlothRate().0
+//        activityDescription = self.getSlothRate().1
     }
 
     func checkTheDate(currentDate: Date) {
@@ -33,8 +39,8 @@ class StepsCounterViewModel: ObservableObject {
     }
     
     func getSlothRate() -> (Int, String) {
-        var slothRate = Int()
-        var activityDescription = ""
+//        var slothRate = Int()
+//        var activityDescription = ""
         if countResult < 5000 {
             //Sleeping sloth
             slothRate = 1

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TextAndPictureView: View {
+    
+    @ObservedObject var stepsViewModel: StepsCounterViewModel
+    
     var body: some View {
         VStack{
             Text("What sloth\nare you today?")
@@ -17,8 +20,9 @@ struct TextAndPictureView: View {
                 .multilineTextAlignment(.center)
 //                .fixedSize()
                 .frame(width: 400, height: 150)
-            
-            CircleView()
+//
+            CircleView(stepsViewModel: stepsViewModel)
+//            CircleView()
 //                .frame(width: 250, height: 250)
                 .padding(20)
         }
@@ -26,7 +30,11 @@ struct TextAndPictureView: View {
 }
 
 struct TextAndPictureView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        TextAndPictureView()
+        let stepsViewModel = StepsCounterViewModel()
+        
+        TextAndPictureView(stepsViewModel: stepsViewModel)
+//        TextAndPictureView()
     }
 }

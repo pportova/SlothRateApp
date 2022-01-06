@@ -9,15 +9,17 @@ import SwiftUI
 
 struct CircleView: View {
     
-    var slothRateData = StepsCounterViewModel()
-    var imageNumber: Int
+//    var slothRateData = StepsCounterViewModel()
+    @ObservedObject var stepsViewModel: StepsCounterViewModel
+//    var imageNumber: Int
     
-    init() {
-        imageNumber = slothRateData.getSlothRate().0
-    }
+//    init() {
+//        imageNumber = slothRateData.getSlothRate().0
+//    }
 
     var body: some View {
-        Image("\(imageNumber)" as String)
+//        Image("\(imageNumber)" as String)
+        Image(String(stepsViewModel.slothRate) as String)
             .resizable()
             .scaledToFit()
             .frame(minWidth: 130, idealWidth: 250, maxWidth: 250, minHeight: 130, idealHeight: 250, maxHeight: 250)
@@ -33,9 +35,13 @@ struct CircleView: View {
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
+        let stepsViewModel = StepsCounterViewModel()
+        
         VStack{
-            CircleView()
-            BadgeView()
+//            CircleView()
+//            CircleView(stepsViewModel: stepsViewModel, imageNumber: 1)
+            BadgeView(stepsViewModel: stepsViewModel)
+//            BadgeView()
                 .offset(y: -45)
         }
     }

@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  WatchSlothRate WatchKit Extension
 //
-//  Created by Polina Portova on 29.12.2021.
+//  Created by Polina Portova on 06.01.2022.
 //
 
 import SwiftUI
@@ -13,6 +13,7 @@ struct ContentView: View {
     var isButtonDisabled = true
 
     init() {
+
         self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
     }
     
@@ -24,7 +25,7 @@ struct ContentView: View {
             
             VStack {
                 ZStack(alignment: .bottom) {
-                    CircleView()
+                    CircleView(stepsViewModel: stepsViewModel)
                         .scaledToFit()
                         .padding(5)
                         .offset(y: -16)
