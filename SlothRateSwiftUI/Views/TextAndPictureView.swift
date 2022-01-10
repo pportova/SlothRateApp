@@ -18,14 +18,18 @@ struct TextAndPictureView: View {
                 .font(.custom("Futura", size: 50))
                 .foregroundColor(Color("TitleTextColor"))
                 .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.6)
 //                .fixedSize()
-                .frame(width: 400, height: 150)
+                .frame(minHeight: 110, idealHeight: 150, maxHeight: 150, alignment: .center)
+//                .frame(height: 150)
 //
             CircleView(stepsViewModel: stepsViewModel)
+                
 //            CircleView()
 //                .frame(width: 250, height: 250)
                 .padding(20)
         }
+        .frame(width: nil)
     }
 }
 

@@ -44,6 +44,13 @@ struct NavigationButtonsView: View {
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color("UpperLabelsColor"))
                         .font(.custom("Futura", size: 20))
+//                        .frame(
+//                              minWidth: 0,
+//                              maxWidth: .infinity,
+//                              minHeight: 40,
+//                              maxHeight: 40
+////
+//                            )
                         .frame(width: 250, height: 40)
                 }
             } else {
@@ -90,7 +97,7 @@ struct NavigationButtonsView: View {
             
         }
         .padding()
-        .frame(width: 400)
+        .frame(width: nil)
     }
 }
 

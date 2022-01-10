@@ -20,9 +20,11 @@ struct CircleView: View {
     var body: some View {
 //        Image("\(imageNumber)" as String)
         Image(String(stepsViewModel.slothRate) as String)
+        
             .resizable()
             .scaledToFit()
-            .frame(minWidth: 130, idealWidth: 250, maxWidth: 250, minHeight: 130, idealHeight: 250, maxHeight: 250)
+        
+            .frame(minWidth: 180, idealWidth: 250, maxWidth: 250, minHeight: 180, idealHeight: 250, maxHeight: 250)
 //            .frame(width: 250, height: 250)
             .clipShape(Circle())
             .overlay{
@@ -39,7 +41,7 @@ struct CircleView_Previews: PreviewProvider {
         
         VStack{
 //            CircleView()
-//            CircleView(stepsViewModel: stepsViewModel, imageNumber: 1)
+//            CircleView(stepsViewModel: stepsViewModel)
             BadgeView(stepsViewModel: stepsViewModel)
 //            BadgeView()
                 .offset(y: -45)
