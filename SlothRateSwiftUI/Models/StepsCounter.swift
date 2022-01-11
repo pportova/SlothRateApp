@@ -106,14 +106,58 @@ protocol AppCalendar {
     func startOfDay(for date: Date) -> Date
 }
 
+//protocol HealthStore {
+//    func execute(_ query: HKQuery)
+//}
+
 protocol HealthStore {
-    func execute(_ query: HKQuery)
+    func execute(_ query: HealthQuery)
+}
+
+protocol HealthQuery {
+    func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HealthOptions) -> NSPredicate
+}
+
+protocol HealthOptions {
+    
+}
+//extension HealthStore {
+//    func execute(_ query: HealthQuery) {
+//        if let realQuery == query as? HKQuery {
+//            execute(realQuery)
+//        }
+//    }
+//}
+
+
+extension Calendar: AppCalendar { }
+
+//extension HKHealthStore: HealthStore { }
+extension HKHealthStore: HealthStore {
+    func execute(_ query: HealthQuery) {
+        if let realQuery = query as? HKQuery {
+            execute(realQuery)
+        }
+    }
+}
+
+extension HKQuery: HealthQuery {
+    func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HealthOptions) -> NSPredicate {
+        var predicate = NSPredicate()
+        if let realOptions = options as? HKQueryOptions {
+           predicate = predicateForSamples(withStart: startDate, end: endDate, options: realOptions)
+        }
+        return predicate
+    }
+}
+ 
+extension HKQueryOptions: HealthOptions {
+    init(){
+        self = []
+    }
 }
 
 
-extension HKHealthStore: HealthStore { }
-
-extension Calendar: AppCalendar { }
 
 extension Date {
     
