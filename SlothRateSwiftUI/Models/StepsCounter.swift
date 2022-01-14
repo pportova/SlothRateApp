@@ -16,12 +16,9 @@ class StepsCounter: NSObject, ObservableObject {
       case dataTypeNotAvailable
     }
         
-    func getTodaysSteps(calendar: AppCalendar,store: HealthStore, pickedDate: Date, completion: @escaping (Double) -> Void) {
+    func getTodaysSteps(calendar: AppCalendar, healthQueryType: HealthQuery.Type, healthOptionsType: HealthOptions.Type, store: HealthStore, pickedDate: Date, completion: @escaping (Double) -> Void) {
 //        let healthStore = HKHealthStore()
         let healthStore = store
-        
-        let healthQuery: HealthQuery
-        let healthOptions: HealthOptions
         
         var predicate: NSPredicate
         guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
@@ -36,21 +33,21 @@ class StepsCounter: NSObject, ObservableObject {
         {
             let startOfDay = calendar.startOfDay(for: formattedDateToCalculate)
 //            let startOfDay = Calendar.current.startOfDay(for: formattedDateToCalculate)
-            predicate = healthQuery.predicateForSamples(
+            predicate = healthQueryType.predicateForSamples(
 //            predicate = healthQuery.predicateForSamples(
                 withStart: startOfDay,
                 end: formattedDateToCalculate,
-                options: healthOptions.strictStartDate
+                options: healthOptionsType.strictStartDate
             )
         } else {
 //            let startOfDay = Calendar.current.startOfDay(for: formattedPickedDate)
             let startOfDay = calendar.startOfDay(for: formattedPickedDate)
             let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
 //            predicate = HKQuery.predicateForSamples(
-            predicate = healthQuery.predicateForSamples(
+            predicate = healthQueryType.predicateForSamples(
                 withStart: startOfDay,
                 end: endOfDay,
-                options: healthOptions.strictStartDate)
+                options: healthOptionsType.strictStartDate)
         }
         let query = HKStatisticsQuery(
             quantityType: stepsQuantityType,
@@ -116,17 +113,6 @@ protocol HealthStore {
     func execute(_ query: HealthQuery)
 }
 
-protocol HealthQuery {
-    func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HealthOptions) -> NSPredicate
-}
-
-
-protocol HealthOptions {
-    init(rawValue: UInt)
-    static var strictStartDate: HealthOptions {get}
-    static var strictEndDate: HealthOptions {get }
-}
-
 
 protocol HealthQuantityType {
     func quantityType(forIdentifier identifier: HealthTypeIdentifier) -> HealthQuantityType?
@@ -167,30 +153,17 @@ extension HKHealthStore: HealthStore {
     }
 }
 
-extension HKQuery: HealthQuery {
-    func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HealthOptions) -> NSPredicate {
-        var predicate = NSPredicate()
-        if let realOptions = options as? HKQueryOptions {
-           predicate = predicateForSamples(withStart: startDate, end: endDate, options: realOptions)
-        }
-        return predicate
-    }
+protocol HealthQuery {
+    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate
+}
+
+extension HKQuery: HealthQuery { }
+
+protocol HealthOptions {
+    static var strictStartDate: HKQueryOptions { get }
 }
  
-extension HKQueryOptions: HealthOptions {
-    static var strictStartDate: HealthOptions {
-        <#code#>
-    }
-    
-    static var strictEndDate: HealthOptions {
-        <#code#>
-    }
-    
-
-    init() {
-        self = []
-    }
-}
+extension HKQueryOptions: HealthOptions { }
 
 extension HKStatisticsOptions: HealthStaticticsOptions{
     init() {
