@@ -46,9 +46,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,9 +62,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,8 +78,8 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "formattingDate(date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "SlothRateSwiftUI/ViewModels/StepsCounterViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "getSlothRate()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "SlothRateSwiftUI/ViewModels/StepsCounterViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "countStepsAndCheckDate(currentDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "SlothRateSwiftUI/ViewModels/StepsCounterViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "countStepsAndCheckDate(currentDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -240,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -254,8 +254,8 @@
             filePath = "SlothRateSwiftUI/ViewModels/StepsCounterViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "countStepsAndCheckDate(currentDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "SlothRateSwiftUI/ViewModels/StepsCounterViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "countStepsAndCheckDate(currentDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "SlothRateSwiftUI/ViewModels/StepsCounterViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "checkTheDate(currentDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,9 +318,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -334,9 +334,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -350,9 +350,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -366,9 +366,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getTodaysSteps(calendar:store:pickedDate:completion:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:healthStore:pickedDate:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

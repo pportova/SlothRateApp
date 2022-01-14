@@ -11,48 +11,54 @@ import HealthKit
 
 class StepsCounter: NSObject, ObservableObject {
     
-    private enum HealthkitSetupError: Error {
+    private enum HealthKitSetupError: Error {
       case notAvailableOnDevice
       case dataTypeNotAvailable
     }
         
-    func getTodaysSteps(calendar: AppCalendar, healthQueryType: HealthQuery.Type, healthOptionsType: HealthOptions.Type, store: HealthStore, pickedDate: Date, completion: @escaping (Double) -> Void) {
-//        let healthStore = HKHealthStore()
-        let healthStore = store
+    func getTodaysSteps(calendar: AppCalendar, healthQueryType: HealthQuery.Type, healthOptionsType: HealthOptions.Type, healthQuantityType: HealthQuantityType.Type, healthTypeIdentifier: HealthTypeIdentifier.Type, healthStaticticsOptions: HKStatisticsOptions.Type, healthStore: HealthStore, pickedDate: Date, completion: @escaping (Double) -> Void) {
         
         var predicate: NSPredicate
-        guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
-                
+        guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
+        
         let dateToCalculate = Date()
         
         let formattedPickedDate = formattingDate(date: pickedDate)
         let formattedDateToCalculate = formattingDate(date: dateToCalculate)
-            
-//        if Calendar.current.isDateInToday(pickedDate)
+
         if calendar.isDateInToday(pickedDate)
         {
             let startOfDay = calendar.startOfDay(for: formattedDateToCalculate)
-//            let startOfDay = Calendar.current.startOfDay(for: formattedDateToCalculate)
             predicate = healthQueryType.predicateForSamples(
-//            predicate = healthQuery.predicateForSamples(
                 withStart: startOfDay,
                 end: formattedDateToCalculate,
                 options: healthOptionsType.strictStartDate
             )
         } else {
-//            let startOfDay = Calendar.current.startOfDay(for: formattedPickedDate)
             let startOfDay = calendar.startOfDay(for: formattedPickedDate)
             let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
-//            predicate = HKQuery.predicateForSamples(
             predicate = healthQueryType.predicateForSamples(
                 withStart: startOfDay,
                 end: endOfDay,
                 options: healthOptionsType.strictStartDate)
         }
+//        let sum = createStatisticQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: healthStaticticsOptions.cumulativeSum).0
+//        let query = createStatisticQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: healthStaticticsOptions.cumulativeSum).1
+//        var query: HealthStaticticsQuery
+//
+//        createStatisticQuery(
+//            quantityType: stepsQuantityType,
+//            quantitySamplePredicate: predicate,
+//            options: healthStaticticsOptions.cumulativeSum
+//        ){ statisticQuery in
+//            query = statisticQuery
+//        }
+        
+        
         let query = HKStatisticsQuery(
             quantityType: stepsQuantityType,
             quantitySamplePredicate: predicate,
-            options: .cumulativeSum
+            options: healthStaticticsOptions.cumulativeSum
         ) { _, result, _ in
             guard let result = result, let sum = result.sumQuantity() else {
                 completion(0.0)
@@ -60,17 +66,41 @@ class StepsCounter: NSObject, ObservableObject {
             }
             completion(sum.doubleValue(for: HKUnit.count()))
         }
+        
                 
-            healthStore.execute(query)
+        healthStore.execute(query)
         }
+//    
+//    func createStatisticQuery(quantityType: HealthQuantityType, quantitySamplePredicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (HealthStaticticsQuery) -> ()) {
+//
+////        var sumResult: HKQuantity
+//        var queryResult: HKStatisticsQuery
+//
+//        if let realQuantityType = quantityType as? HKQuantityType, let realOptions = options as? HKStatisticsOptions {
+//            let query = HKStatisticsQuery(
+//                quantityType: realQuantityType,
+//                quantitySamplePredicate: quantitySamplePredicate,
+//                options: realOptions) { _, result, _ in
+//                    guard let result = result , let sum = result.sumQuantity() else { return }
+//            }
+//            queryResult = query
+//            completion(queryResult)
+//
+//    }
+//
+//    }
+ 
+    
+    
+    //    init(quantityType: HKQuantityType, quantitySamplePredicate: NSPredicate?, options: HKStatisticsOptions, completionHandler handler: @escaping (HKStatisticsQuery, HKStatistics?, Error?) -> Void)
     
     class func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
-          completion(false, HealthkitSetupError.notAvailableOnDevice)
+          completion(false, HealthKitSetupError.notAvailableOnDevice)
           return
         }
         guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-            completion(false, HealthkitSetupError.dataTypeNotAvailable)
+            completion(false, HealthKitSetupError.dataTypeNotAvailable)
                     return
         }
         
@@ -110,40 +140,51 @@ protocol AppCalendar {
 }
 
 protocol HealthStore {
-    func execute(_ query: HealthQuery)
+    func execute(_ query: HKQuery)
 }
-
 
 protocol HealthQuantityType {
-    func quantityType(forIdentifier identifier: HealthTypeIdentifier) -> HealthQuantityType?
+    static func quantityType(forIdentifier identifier: HKQuantityTypeIdentifier) -> HKQuantityType?
 }
 
+
 protocol HealthTypeIdentifier {
+    static var stepCount: HKQuantityTypeIdentifier { get }
 }
 
 protocol HealthStaticticsOptions {
+    static var cumulativeSum: HKStatisticsOptions { get }
 }
 
-protocol HealthStatistics {
-    func sumQuantity() -> HealthQuantity?
-}
+//protocol HealthStatistics {
+//    static func sumQuantity() -> HKQuantity?
+//}
 
 protocol HealthStaticticsQuery {
+    
 }
 
 protocol HealthUnit {
-    func count() -> Self
+    static func count() -> Self
 }
 
 protocol HealthQuantity {
     func doubleValue(for unit: HealthUnit) -> Double
+    
 }
 
+protocol HealthQuery {
+    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate
+}
+
+protocol HealthOptions {
+    static var strictStartDate: HKQueryOptions { get }
+}
+ 
 
 //MARK: Extensions
 
-extension Calendar: AppCalendar {
-}
+extension Calendar: AppCalendar { }
 
 extension HKHealthStore: HealthStore {
     func execute(_ query: HealthQuery) {
@@ -153,28 +194,11 @@ extension HKHealthStore: HealthStore {
     }
 }
 
-protocol HealthQuery {
-    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate
-}
-
 extension HKQuery: HealthQuery { }
-
-protocol HealthOptions {
-    static var strictStartDate: HKQueryOptions { get }
-}
  
 extension HKQueryOptions: HealthOptions { }
 
-extension HKStatisticsOptions: HealthStaticticsOptions{
-    init() {
-        self = []
-    }
-}
-
-//extension HKStatistics: HealthStatistics {
-//    func sumQuantity() -> HealthQuantity? {
-//    }
-//}
+extension HKStatisticsOptions: HealthStaticticsOptions{ }
 
 extension HKQuantity: HealthQuantity{
     func doubleValue(for unit: HealthUnit) -> Double {
@@ -187,23 +211,15 @@ extension HKQuantity: HealthQuantity{
     
 }
 
-extension HKQuantityTypeIdentifier: HealthTypeIdentifier {
-}
+extension HKQuantityTypeIdentifier: HealthTypeIdentifier { }
 
-extension HKQuantityType: HealthQuantityType {
-    func quantityType(forIdentifier identifier: HealthTypeIdentifier) -> HealthQuantityType? {
-        var healthType: HealthQuantityType?
-        if let realIdentifier = identifier as? HKQuantityTypeIdentifier {
-            healthType = quantityType(forIdentifier: realIdentifier)
-        }
-        return healthType
-    }
-}
+extension HKQuantityType: HealthQuantityType { }
 
-extension HKStatisticsQuery: HealthStaticticsQuery {
-}
+extension HKStatisticsQuery: HealthStaticticsQuery { }
 
-
+extension HKUnit: HealthUnit { }
+//
+//extension HKStatistics: HealthStatistics { }
     
 
 
