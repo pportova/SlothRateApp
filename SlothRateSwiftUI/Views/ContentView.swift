@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var currentDate = Date()
     @State private var isBadgeVisible = false
     
+    
     private let today = Date()
     private let animationAmount = 1
     
@@ -38,22 +39,22 @@ struct ContentView: View {
     }
        
     var body: some View {
-        
-//        let stepsValue = Int(stepsViewModel.countResult.rounded())
-         
+
         ZStack {
             Color(red: 0.92, green: 0.80, blue: 0.64)
                 .opacity(0.45)
                 .ignoresSafeArea()
-            GeometryReader { geometry in
-            VStack {
-                NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.isDateInToday)
-                    .offset(y: 10)
+            
+            GeometryReader { geometryRegular in
+                    
+                VStack {
+                    NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.isDateInToday)
+                        .offset(y: 10)
 
                     Spacer()
-                
-                    if !isPickerVisible{
-                        VStack{
+                    
+                    if !isPickerVisible {
+                        VStack {
                             TextAndPictureView(stepsViewModel: stepsViewModel)
                                 .onAppear() {
                                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
@@ -75,86 +76,32 @@ struct ContentView: View {
 
                             ValueStepsTakenView(stepsViewModel: stepsViewModel)
                                 .offset(y: -40)
-
-//                            Spacer()
-                               
-//                            Text(String(stepsValue))
-//                                .font(.custom("American Typewriter", size: 90))
-//                                .fontWeight(.semibold)
-//                                .foregroundColor(Color("ValueLabelColor"))
-//                                .padding(10)
-//                                .offset(y: -30)
-//
-//                            Text("steps taken")
-//                                .font(.custom("Futura", size: 30))
-//                                .foregroundColor(Color("StepsTakenColor"))
-//                                .offset(y: -30)
-                                
-//                Spacer()
                         }
-                        } else {
-                            VStack{
-                                TextAndPictureView(stepsViewModel: stepsViewModel)
+                    } else {
+                        VStack {
+                            TextAndPictureView(stepsViewModel: stepsViewModel)
 
-                                Spacer()
-                                    .frame(height: 95)
-
-//                                ValueStepsTakenView(stepsViewModel: stepsViewModel)
-//                                    .offset(y: -40)
-
-                           
-                                    ValueStepsTakenView(stepsViewModel: stepsViewModel)
-                                        .offset(y: -40)
-//                                    .alignmentGuide(offset(), computeValue: { d in
-//                                            if geometry.size.height <= 667 {
-//                                                return -80
-//                                            }
-//                                        })
-                                
-                                
-//                                Text(String(stepsValue))
-//                                    .font(.custom("American Typewriter", size: 90))
-//                                    .fontWeight(.semibold)
-//                                    .foregroundColor(Color("ValueLabelColor"))
-//                                    .padding(10)
-//
-//                                Text("steps taken")
-//                                    .font(.custom("Futura", size: 30))
-//                                    .foregroundColor(Color("StepsTakenColor"))
-//                                    .offset(y: -30)
+                            Spacer()
+                                .frame(height: 95)
                             
-                            }
-                            .blur(radius: 70)
-                            .overlay(
-                                DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
-                                        .datePickerStyle(GraphicalDatePickerStyle())
-//                                    .frame(
-//                                        width: geometry.size.width,
-//                                        height: geometry.size.height,
-//                                        alignment: .center)
-                                        .padding(20)
-                                        .offset(y: -60)
-                            )
-                    }
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-//            .frame(
-//                width: geometry.size.width,
-//                height: geometry.size.height,
-//                alignment: .center)
-            
-                //VStack closes
+                            ValueStepsTakenView(stepsViewModel: stepsViewModel)
+                                .offset(y: -40)
 
-            }
-            //GR
-            
-            
-            //VStack closes
+                        }
+                        .blur(radius: 70)
+                        .overlay(
+                            DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
+                                    .datePickerStyle(GraphicalDatePickerStyle())
+                                    .padding(20)
+                                    .offset(y: -60))
+                        }
+                    }//VStack closes
+                    .frame(width: geometryRegular.size.width, height: geometryRegular.size.height, alignment: .center)
+          
+                }//GR closes
         }
         //Overall ZStack closes
-    }
-    
-    //Body closes
+    } //Body closes
     
 }
     
@@ -165,26 +112,9 @@ extension AnyTransition {
     }
 }
 
-//extension Date {
-//    static var yesterday: Date { return Date().dayBefore }
-//    static var tomorrow:  Date { return Date().dayAfter }
-//    var dayBefore: Date {
-//        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
-//    }
-//    var dayAfter: Date {
-//        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
-//    }
-//    var noon: Date {
-//        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
-//    }
-//
-//}
-
-
 struct ContentView_Previews: PreviewProvider {
   
     static var previews: some View {
         ContentView()
-        ContentView().previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

@@ -13,6 +13,7 @@ struct TextAndPictureView: View {
     
     var body: some View {
         VStack{
+            
             Text("What sloth\nare you today?")
                 .fontWeight(.light)
                 .font(.custom("Futura", size: 50))
@@ -22,7 +23,6 @@ struct TextAndPictureView: View {
 //                .fixedSize()
                 .frame(minHeight: 110, idealHeight: 150, maxHeight: 150, alignment: .center)
 //                .frame(height: 150)
-//
             CircleView(stepsViewModel: stepsViewModel)
                 
 //            CircleView()
