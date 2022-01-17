@@ -31,8 +31,6 @@ class StepsCounterViewModel: ObservableObject {
                         }
         })
         self.checkTheDate(currentDate: currentDate)
-//        slothRate = self.getSlothRate().0
-//        activityDescription = self.getSlothRate().1
     }
 
     func checkTheDate(currentDate: Date) {
