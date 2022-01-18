@@ -22,7 +22,7 @@ struct ContentView: View {
     private let animationAmount = 1
     
     init() {
-        StepsCounter.authorizeHealthKit{ (authorized, error) in
+        StepsCounter.authorizeHealthKit(viewModel: stepsViewModel, date: currentDate) { (authorized, error) in
             guard authorized else {
               let resultMessage = "HealthKit Authorization Failed"
               if let error = error {
@@ -33,7 +33,7 @@ struct ContentView: View {
               return
             }
             print("HealthKit Successfully Authorized.")
-          }
+        }
         
         self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
     }

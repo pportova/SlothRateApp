@@ -74,7 +74,8 @@ class StepsCounter: NSObject, ObservableObject {
     }
  
     
-    class func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Void) {
+    class func authorizeHealthKit(viewModel: StepsCounterViewModel, date: Date, completion: @escaping (Bool, Error?) -> Void) {
+        
         guard HKHealthStore.isHealthDataAvailable() else {
           completion(false, HealthKitError.notAvailableOnDevice)
           return
@@ -87,6 +88,9 @@ class StepsCounter: NSObject, ObservableObject {
         let healthKitTypesToRead: Set<HKObjectType> = [stepsQuantityType]
         
         HKHealthStore().requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
+            if success {
+                viewModel.countStepsAndCheckDate(currentDate: date)
+            }
           completion(success, error)
         }
     }
@@ -129,21 +133,7 @@ protocol HealthStaticticsOptions {
     static var cumulativeSum: HKStatisticsOptions { get }
 }
 
-//protocol HealthStatistics {
-//}
-
-protocol HealthStaticticsQuery {
-    
-}
-
-//protocol HealthUnit {
-//    static func count() -> Self
-//}
-//
-//protocol HealthQuantity {
-//    func doubleValue(for unit: HealthUnit) -> Double
-//
-//}
+protocol HealthStaticticsQuery { }
 
 protocol HealthQuery {
     static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate

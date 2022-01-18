@@ -8,11 +8,39 @@
 import XCTest
 @testable import SlothRateSwiftUI
 
-struct MockOptions: HealthOptions {
-    let rawValue: Int
+// 1 parameter
+class MockCalendar: AppCalendar {
+    static var current: Calendar {
+        get {
+            return self.current
+        }
+    }
     
-    static let strictStartDate = MockOptions(rawValue: 1 << 0)
-    static let strictEndDate  = MockOptions(rawValue: 1 << 1)
+    let startOfDay = Date(timeIntervalSinceReferenceDate: 0.0) // 1 jan 2001
+    let isToday = false
+    func startOfDay(for date: Date) -> Date {
+        return startOfDay
+    }
+    func isDateInToday(_ date: Date) -> Bool {
+        return isToday
+    }
+}
+
+// 2 parameter
+//class MockHealthQuery: HealthQuery {
+//    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate {
+//        <#code#>
+//    }
+//    
+//    
+//}
+
+
+
+
+struct MockOptions: HealthOptions {
+    static var strictStartDate = MockOptions(rawValue: 1 << 0)
+    
 }
 
 struct MockStaticticsOptions: HealthStaticticsOptions {
@@ -34,30 +62,12 @@ class MockQuantityType: HealthQuantityType {
     }  
 }
 
-class MockHealthQuery: HealthQuery {
-    let predicate = NSPredicate()
-    var hasCompleted = false
-    func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HealthOptions) -> NSPredicate {
-        hasCompleted = true
-        return predicate
-    }
-}
 
 class MockHealthStore: HealthStore {
     func execute(_ query: HealthQuery) {
     }
 }
 
-class MockCalendar: AppCalendar {
-    let startOfDay = Date(timeIntervalSinceReferenceDate: 0.0) // 1 jan 2001
-    let isToday = false
-    func startOfDay(for date: Date) -> Date {
-        return startOfDay
-    }
-    func isDateInToday(_ date: Date) -> Bool {
-        return isToday
-    }
-}
 
 class MockStatistics: HealthStatistics {
 }
@@ -84,18 +94,6 @@ class SlothRateSwiftUITests: XCTestCase {
         mockHealthStore = nil
         try super.tearDownWithError()
     }
-
-    func testGetPredicate() {
-        
-        let startDate = Date(timeIntervalSinceReferenceDate: 0.0) // 1 jan 2001
-        let endDate =  Date(timeIntervalSinceReferenceDate: 100000.0) // 2 jan 2001
-        let options = MockOptions(rawValue: 0)
-        let query = MockHealthQuery()
-        
-        let predicate = query.predicateForSamples(withStart: startDate, end: endDate, options: options)
-        XCTAssertTrue(query.hasCompleted)
-        
-    }
     
     func testGetTodaysSteps() {
         
@@ -104,11 +102,10 @@ class SlothRateSwiftUITests: XCTestCase {
         let calendar = MockCalendar()
         var countResult = Double()
         let promise = expectation(description: "16000")
+
+        sut.getTodaysSteps(calendar: calendar, healthQueryType: <#T##HealthQuery.Type#>, healthOptionsType: <#T##HealthOptions.Type#>, healthQuantityType: <#T##HealthQuantityType.Type#>, healthTypeIdentifier: <#T##HealthTypeIdentifier.Type#>, healthStaticticsOptions: <#T##HealthStaticticsOptions.Type#>, healthStore: store, pickedDate: pickedDate, completion: <#T##(Double) -> Void#>)
         
-        sut.getTodaysSteps(calendar: calendar, store: store, pickedDate: pickedDate, completion: { result in
-            countResult = result
-            promise.fulfill()
-         })
+        
         wait(for: [promise], timeout: 5)
         
         XCTAssertEqual(countResult, 16000, "Something went wrong")
