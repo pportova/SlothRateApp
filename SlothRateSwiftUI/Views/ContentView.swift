@@ -17,24 +17,10 @@ struct ContentView: View {
     @State private var currentDate = Date()
     @State private var isBadgeVisible = false
     
-    
     private let today = Date()
     private let animationAmount = 1
     
     init() {
-        StepsCounter.authorizeHealthKit(viewModel: stepsViewModel, date: currentDate) { (authorized, error) in
-            guard authorized else {
-              let resultMessage = "HealthKit Authorization Failed"
-              if let error = error {
-                print("\(resultMessage). Reason: \(error.localizedDescription)")
-              } else {
-                print(resultMessage)
-              }
-              return
-            }
-            print("HealthKit Successfully Authorized.")
-        }
-        
         self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
     }
        
@@ -99,6 +85,20 @@ struct ContentView: View {
                     .frame(width: geometryRegular.size.width, height: geometryRegular.size.height, alignment: .center)
           
                 }//GR closes
+        }
+        .onAppear {
+                StepsCounter.authorizeHealthKit(viewModel: stepsViewModel, date: currentDate) { (authorized, error) in
+                guard authorized else {
+                  let resultMessage = "HealthKit Authorization Failed"
+                  if let error = error {
+                    print("\(resultMessage). Reason: \(error.localizedDescription)")
+                  } else {
+                    print(resultMessage)
+                  }
+                  return
+                }
+                print("HealthKit Successfully Authorized.")
+            }
         }
         //Overall ZStack closes
     } //Body closes

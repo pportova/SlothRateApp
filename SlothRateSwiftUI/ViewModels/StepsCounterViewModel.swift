@@ -34,7 +34,9 @@ class StepsCounterViewModel: ObservableObject {
     }
 
     func checkTheDate(currentDate: Date) {
-        isDateInToday = Calendar.current.isDateInToday(currentDate)
+        DispatchQueue.main.async {
+            self.isDateInToday = Calendar.current.isDateInToday(currentDate)
+        }
     }
     
     func getSlothRate() -> (Int, String) {

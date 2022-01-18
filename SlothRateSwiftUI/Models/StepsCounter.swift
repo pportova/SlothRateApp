@@ -74,7 +74,7 @@ class StepsCounter: NSObject, ObservableObject {
     }
  
     
-    class func authorizeHealthKit(viewModel: StepsCounterViewModel, date: Date, completion: @escaping (Bool, Error?) -> Void) {
+    class func authorizeHealthKit(viewModel: StepsCounterViewModel, date: Date, completion: @escaping (Bool, Error?) -> (Void)) {
         
         guard HKHealthStore.isHealthDataAvailable() else {
           completion(false, HealthKitError.notAvailableOnDevice)
@@ -86,13 +86,13 @@ class StepsCounter: NSObject, ObservableObject {
         }
         
         let healthKitTypesToRead: Set<HKObjectType> = [stepsQuantityType]
-        
         HKHealthStore().requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
             if success {
-                viewModel.countStepsAndCheckDate(currentDate: date)
+                    viewModel.countStepsAndCheckDate(currentDate: date)
             }
           completion(success, error)
         }
+        
     }
     
 
