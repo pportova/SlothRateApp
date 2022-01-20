@@ -27,13 +27,11 @@ class MockCalendar: AppCalendar {
 }
 
 // 2 parameter
-//class MockHealthQuery: HealthQuery {
-//    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate {
-//        <#code#>
-//    }
-//    
-//    
-//}
+class MockHealthQuery: HealthQuery {
+    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate {
+        NSPredicate()
+    }
+}
 
 
 
@@ -73,7 +71,13 @@ class MockStatistics: HealthStatistics {
 }
 
 class MockStatisticsQuery: HealthStaticticsQuery {
-    init(quantityType: MockQuantityType, quantitySamplePredicate: NSPredicate?, options: MockStaticticsOptions, completionHandler handler: @escaping (MockStatisticsQuery, MockStatistics?, Error?) -> Void) {
+//    init(quantityType: MockQuantityType, quantitySamplePredicate: NSPredicate?, options: MockStaticticsOptions, completionHandler handler: @escaping (MockStatisticsQuery, MockStatistics?, Error?) -> Void) {
+//    }
+}
+
+struct MockQueryProvider: QueryProviderProtocol {
+    func makeQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
+        return MockStatisticsQuery()
     }
 }
 
@@ -98,13 +102,22 @@ class SlothRateSwiftUITests: XCTestCase {
     func testGetTodaysSteps() {
         
         let pickedDate = Date(timeIntervalSinceReferenceDate: 0.0)
-        let store = MockHealthStore()
         let calendar = MockCalendar()
-        var countResult = Double()
+        var countResult: Double
         let promise = expectation(description: "16000")
 
-        sut.getTodaysSteps(calendar: calendar, healthQueryType: <#T##HealthQuery.Type#>, healthOptionsType: <#T##HealthOptions.Type#>, healthQuantityType: <#T##HealthQuantityType.Type#>, healthTypeIdentifier: <#T##HealthTypeIdentifier.Type#>, healthStaticticsOptions: <#T##HealthStaticticsOptions.Type#>, healthStore: store, pickedDate: pickedDate, completion: <#T##(Double) -> Void#>)
-        
+        sut.getTodaysSteps(
+            calendar: calendar,
+            healthQueryType: MockHealthQuery.self,
+            healthOptionsType: MockOptions.self,
+            healthQuantityType: MockQuantityType.self,
+            healthTypeIdentifier: MockHealthTypeIdentifier.self,
+            healthStaticticsOptions: MockStaticticsOptions.self,
+            healthStore: mockHealthStore,
+            pickedDate: pickedDate
+        ) { (result) in
+            countResult = result
+        }
         
         wait(for: [promise], timeout: 5)
         

@@ -17,9 +17,19 @@ class StepsCounter: NSObject, ObservableObject {
         case staticticsQueryNotCreated
     }
         
-    func getTodaysSteps(calendar: AppCalendar, healthQueryType: HealthQuery.Type, healthOptionsType: HealthOptions.Type, healthQuantityType: HealthQuantityType.Type, healthTypeIdentifier: HealthTypeIdentifier.Type, healthStaticticsOptions: HealthStaticticsOptions.Type, healthStore: HealthStore, pickedDate: Date, completion: @escaping (Double) -> Void) {
-        
-            var predicate: NSPredicate
+    func getTodaysSteps(
+        calendar: AppCalendar,
+        healthQueryType: HealthQuery.Type,
+        healthOptionsType: HealthOptions.Type,
+        healthQuantityType: HealthQuantityType.Type,
+        healthTypeIdentifier: HealthTypeIdentifier.Type,
+        healthStaticticsOptions: HealthStaticticsOptions.Type,
+        queryProvider: QueryProviderProtocol,
+        healthStore: HealthStore,
+        pickedDate: Date,
+        completion: @escaping (Double) -> Void
+    ) {
+            let predicate: NSPredicate
             guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
         
             let dateToCalculate = Date()
@@ -32,7 +42,7 @@ class StepsCounter: NSObject, ObservableObject {
                 predicate = healthQueryType.predicateForSamples(
                     withStart: startOfDay,
                     end: formattedDateToCalculate,
-                    options: healthOptionsType.strictStartDate )
+                    options: healthOptionsType.strictStartDate)
             } else {
                 let startOfDay = calendar.startOfDay(for: formattedPickedDate)
                 let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
@@ -42,7 +52,7 @@ class StepsCounter: NSObject, ObservableObject {
                     options: healthOptionsType.strictStartDate)
             }
           
-        let staticticsQuery = createQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSum) { result in
+        let staticticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSum) { result in
             completion(result)
         }
         
@@ -109,6 +119,27 @@ class StepsCounter: NSObject, ObservableObject {
 }
 
 //MARK: Protocols
+
+protocol QueryProviderProtocol {
+    func makeQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery?
+}
+
+struct QueryProvider: QueryProviderProtocol {
+    func makeQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
+        if let realQuantityType = quantityType as? HKQuantityType, let realOptions = options as? HKStatisticsOptions {
+
+            let query = HKStatisticsQuery(quantityType: realQuantityType, quantitySamplePredicate: predicate, options: realOptions) {
+                _, statictics, _ in
+                guard let statistics = statictics, let sum = statistics.sumQuantity() else {
+                    completion(0.0)
+                    return}
+                completion(sum.doubleValue(for: HKUnit.count()))
+            }
+            return query
+        }
+        return nil
+    }
+}
 
 protocol AppCalendar {
     static var current: Calendar { get }
