@@ -33,18 +33,18 @@ class StepsCounter: NSObject, ObservableObject {
             guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
         
             let dateToCalculate = Date()
-        
-            let formattedPickedDate = formattingDate(date: pickedDate)
-            let formattedDateToCalculate = formattingDate(date: dateToCalculate)
+//
+//            let formattedPickedDate = formattingDate(date: pickedDate)
+//            let formattedDateToCalculate = formattingDate(date: dateToCalculate)
 
             if calendar.isDateInToday(pickedDate) {
-                let startOfDay = calendar.startOfDay(for: formattedDateToCalculate)
+                let startOfDay = calendar.startOfDay(for: dateToCalculate)
                 predicate = healthQueryType.predicateForSamples(
                     withStart: startOfDay,
-                    end: formattedDateToCalculate,
+                    end: dateToCalculate,
                     options: healthOptionsType.strictStartDate)
             } else {
-                let startOfDay = calendar.startOfDay(for: formattedPickedDate)
+                let startOfDay = calendar.startOfDay(for: pickedDate)
                 let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
                 predicate = healthQueryType.predicateForSamples(
                     withStart: startOfDay,
@@ -66,22 +66,22 @@ class StepsCounter: NSObject, ObservableObject {
         }
     }
     
-    
-    func createQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
-    
-        if let realQuantityType = quantityType as? HKQuantityType, let realOptions = options as? HKStatisticsOptions {
-        
-            let query = HKStatisticsQuery(quantityType: realQuantityType, quantitySamplePredicate: predicate, options: realOptions) {
-                _, statictics, _ in
-                guard let statistics = statictics, let sum = statistics.sumQuantity() else {
-                    completion(0.0)
-                    return}
-                completion(sum.doubleValue(for: HKUnit.count()))
-            }
-            return query
-        }
-        return nil
-    }
+//    
+//    func createQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
+//    
+//        if let realQuantityType = quantityType as? HKQuantityType, let realOptions = options as? HKStatisticsOptions {
+//        
+//            let query = HKStatisticsQuery(quantityType: realQuantityType, quantitySamplePredicate: predicate, options: realOptions) {
+//                _, statictics, _ in
+//                guard let statistics = statictics, let sum = statistics.sumQuantity() else {
+//                    completion(0.0)
+//                    return}
+//                completion(sum.doubleValue(for: HKUnit.count()))
+//            }
+//            return query
+//        }
+//        return nil
+//    }
  
     
     class func authorizeHealthKit(viewModel: StepsCounterViewModel, date: Date, completion: @escaping (Bool, Error?) -> (Void)) {
@@ -107,14 +107,14 @@ class StepsCounter: NSObject, ObservableObject {
     
 
 
-    func formattingDate(date: Date) -> Date {
-        var convertedDate = Date()
-        let timezoneOffset = TimeZone.current.secondsFromGMT()
-        let epochDate = date.timeIntervalSince1970
-        let timeZoneWithEpochOffset = epochDate + Double(timezoneOffset)
-        convertedDate = Date(timeIntervalSince1970: timeZoneWithEpochOffset)
-        return convertedDate
-    }
+//    func formattingDate(date: Date) -> Date {
+//        var convertedDate = Date()
+//        let timezoneOffset = TimeZone.current.secondsFromGMT()
+//        let epochDate = date.timeIntervalSince1970
+//        let timeZoneWithEpochOffset = epochDate + Double(timezoneOffset)
+//        convertedDate = Date(timeIntervalSince1970: timeZoneWithEpochOffset)
+//        return convertedDate
+//    }
     
 }
 
@@ -187,7 +187,9 @@ extension HKHealthStore: HealthStore {
 //    }
 }
 
-extension HKQuery: HealthQuery { }
+extension HKQuery: HealthQuery {
+    
+}
  
 extension HKQueryOptions: HealthOptions { }
 

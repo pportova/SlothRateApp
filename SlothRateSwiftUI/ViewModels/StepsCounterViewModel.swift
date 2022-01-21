@@ -12,6 +12,7 @@ import HealthKit
 class StepsCounterViewModel: ObservableObject {
     
     private var stepsCounter = StepsCounter()
+    private var queryProvider = QueryProvider()
     private var today = Date()
     
     @Published var countResult = Double()
@@ -23,7 +24,7 @@ class StepsCounterViewModel: ObservableObject {
 //    MARK: Functions
     func countStepsAndCheckDate(currentDate: Date) {
         
-        stepsCounter.getTodaysSteps(calendar: Calendar(identifier: .gregorian), healthQueryType: HKQuery.self, healthOptionsType: HKQueryOptions.self, healthQuantityType: HKQuantityType.self, healthTypeIdentifier: HKQuantityTypeIdentifier.self, healthStaticticsOptions: HKStatisticsOptions.self, healthStore: HKHealthStore(), pickedDate: currentDate, completion: { result in
+        stepsCounter.getTodaysSteps(calendar: Calendar(identifier: .gregorian), healthQueryType: HKQuery.self, healthOptionsType: HKQueryOptions.self, healthQuantityType: HKQuantityType.self, healthTypeIdentifier: HKQuantityTypeIdentifier.self, healthStaticticsOptions: HKStatisticsOptions.self, queryProvider: queryProvider, healthStore: HKHealthStore(), pickedDate: currentDate, completion: { result in
                         DispatchQueue.main.async {
                             self.countResult = result
                             self.slothRate = self.getSlothRate().0
