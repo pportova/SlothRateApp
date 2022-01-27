@@ -11,10 +11,14 @@ import SwiftUI
 struct SlothRateSwiftUIApp: App {
     
     @State private var stepsViewModel = StepsCounterViewModel()
+
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
+        
+        
         WindowGroup {
-            ContentView()
+            ContentView(currentDate: Date())
                 .environmentObject(stepsViewModel)
         }
     }
@@ -33,3 +37,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return AppDelegate.orientationLock
     }
 }
+
