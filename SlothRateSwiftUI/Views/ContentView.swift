@@ -174,6 +174,10 @@ struct ContentView: View {
             }
         }
         .gesture(longPressDrag)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) {_ in
+            currentDate = Date()
+            stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+        }
         
 //        .gesture(
 //            DragGesture()

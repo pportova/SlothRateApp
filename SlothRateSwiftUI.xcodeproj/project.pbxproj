@@ -501,15 +501,16 @@
 				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUIDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sloth Rate";
-				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Your health records will be used to make medical suggestions";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your health records will be used to make medical suggestions";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This application needs to acces your health data to count steps.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This application needs to acces your health data to count steps.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This application needs to acces your health data to count steps.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -540,15 +541,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sloth Rate";
-				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Your health records will be used to make medical suggestions";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your health records will be used to make medical suggestions";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This application needs to acces your health data to count steps.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This application needs to acces your health data to count steps.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This application needs to acces your health data to count steps.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to this device's motion data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -580,6 +582,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -605,6 +608,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,6 +633,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,6 +657,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
