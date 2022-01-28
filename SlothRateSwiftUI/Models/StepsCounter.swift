@@ -5,7 +5,6 @@
 //  Created by Polina Portova on 07.12.2021.
 //
 
-import Foundation
 import CoreMotion
 import HealthKit
 
@@ -16,7 +15,7 @@ class StepsCounter: NSObject, ObservableObject {
         case dataTypeNotAvailable
         case staticticsQueryNotCreated
     }
-        
+
     func getTodaysSteps(
         calendar: AppCalendar,
         healthQueryType: HealthQuery.Type,
@@ -29,93 +28,51 @@ class StepsCounter: NSObject, ObservableObject {
         pickedDate: Date,
         completion: @escaping (Double) -> Void
     ) {
-            let predicate: NSPredicate
-            guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
-        
-            let dateToCalculate = Date()
-//
-//            let formattedPickedDate = formattingDate(date: pickedDate)
-//            let formattedDateToCalculate = formattingDate(date: dateToCalculate)
 
-            if calendar.isDateInToday(pickedDate) {
-                let startOfDay = calendar.startOfDay(for: dateToCalculate)
-                predicate = healthQueryType.predicateForSamples(
-                    withStart: startOfDay,
-                    end: dateToCalculate,
-                    options: healthOptionsType.strictStartDate)
-            } else {
-                let startOfDay = calendar.startOfDay(for: pickedDate)
-                let endOfDay = startOfDay.endOfDay(startOfDay: startOfDay)
-                predicate = healthQueryType.predicateForSamples(
-                    withStart: startOfDay,
-                    end: endOfDay,
-                    options: healthOptionsType.strictStartDate)
-            }
-          
-        let staticticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSum) { result in
+        guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
+
+        let now = Date()
+        let startOfDay = calendar.startOfDay(for: pickedDate)
+        let endOfDay = calendar.isDateInToday(pickedDate) ? now : startOfDay.endOfDay(startOfDay: startOfDay)
+        let predicate = healthQueryType.predicateForSamples(
+            withStart: startOfDay,
+            end: endOfDay,
+            options: healthOptionsType.strictStartDate)
+
+        let statisticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSum) { result in
             completion(result)
         }
         
-        self.executeQuery(statisticsQuery: staticticsQuery, store: healthStore)
+        self.executeQuery(statisticsQuery: statisticsQuery, store: healthStore)
     }
 
     
-    func executeQuery (statisticsQuery: HealthStaticticsQuery?, store: HealthStore) -> Void {
+    func executeQuery(statisticsQuery: HealthStaticticsQuery?, store: HealthStore) -> Void {
         if let realQuery = statisticsQuery as? HKStatisticsQuery {
             store.execute(realQuery)
         }
     }
-    
-//    
-//    func createQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
-//    
-//        if let realQuantityType = quantityType as? HKQuantityType, let realOptions = options as? HKStatisticsOptions {
-//        
-//            let query = HKStatisticsQuery(quantityType: realQuantityType, quantitySamplePredicate: predicate, options: realOptions) {
-//                _, statictics, _ in
-//                guard let statistics = statictics, let sum = statistics.sumQuantity() else {
-//                    completion(0.0)
-//                    return}
-//                completion(sum.doubleValue(for: HKUnit.count()))
-//            }
-//            return query
-//        }
-//        return nil
-//    }
- 
+
     
     class func authorizeHealthKit(viewModel: StepsCounterViewModel, date: Date, completion: @escaping (Bool, Error?) -> (Void)) {
         
         guard HKHealthStore.isHealthDataAvailable() else {
-          completion(false, HealthKitError.notAvailableOnDevice)
-          return
+            completion(false, HealthKitError.notAvailableOnDevice)
+            return
         }
         guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
             completion(false, HealthKitError.dataTypeNotAvailable)
-                    return
+            return
         }
         
         let healthKitTypesToRead: Set<HKObjectType> = [stepsQuantityType]
         HKHealthStore().requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
             if success {
-                    viewModel.countStepsAndCheckDate(currentDate: date)
+                viewModel.countStepsAndCheckDate(currentDate: date)
             }
-          completion(success, error)
+            completion(success, error)
         }
-        
     }
-    
-
-
-//    func formattingDate(date: Date) -> Date {
-//        var convertedDate = Date()
-//        let timezoneOffset = TimeZone.current.secondsFromGMT()
-//        let epochDate = date.timeIntervalSince1970
-//        let timeZoneWithEpochOffset = epochDate + Double(timezoneOffset)
-//        convertedDate = Date(timeIntervalSince1970: timeZoneWithEpochOffset)
-//        return convertedDate
-//    }
-    
 }
 
 //MARK: Protocols
@@ -173,50 +130,25 @@ protocol HealthQuery {
 protocol HealthOptions {
     static var strictStartDate: HKQueryOptions { get }
 }
- 
+
 
 //MARK: Extensions
 
 extension Calendar: AppCalendar { }
 
-extension HKHealthStore: HealthStore {
-//    func execute(_ query: HealthQuery) {
-//        if let realQuery = query as? HKQuery {
-//            execute(realQuery)
-//        }
-//    }
-}
+extension HKHealthStore: HealthStore { }
 
-extension HKQuery: HealthQuery {
-    
-}
- 
+extension HKQuery: HealthQuery { }
+
 extension HKQueryOptions: HealthOptions { }
 
 extension HKStatisticsOptions: HealthStaticticsOptions{ }
-
-//extension HKQuantity: HealthQuantity{
-//    func doubleValue(for unit: HealthUnit) -> Double {
-//        var result = Double()
-//        if let realUnit = unit as? HKUnit {
-//            result = doubleValue(for: realUnit)
-//        }
-//        return result
-//    }
-//
-//}
 
 extension HKQuantityTypeIdentifier: HealthTypeIdentifier { }
 
 extension HKQuantityType: HealthQuantityType { }
 
 extension HKStatisticsQuery: HealthStaticticsQuery { }
-
-//extension HKUnit: HealthUnit { }
-
-//extension HKStatistics: HealthStatistics { }
-    
-
 
 extension Date {
     func endOfDay(startOfDay: Date) -> Date{
@@ -230,11 +162,4 @@ extension Date {
         return resultDate
     }
     
-    func formattingDate(date: inout Date) {
-        let current = NSLocale.current.identifier
-        let dayFormatter = DateFormatter()
-        dayFormatter.locale = Locale(identifier: current)
-        let conversionResult = dayFormatter.string(from: date)
-        date = dayFormatter.date(from: conversionResult) ?? date
-    }
 }
