@@ -12,12 +12,14 @@ struct NavigationButtonsView: View {
     @Binding var currentDate: Date
     @Binding var isPickerVisible: Bool
     @Binding var isBadgeVisible: Bool
+//    @EnvironmentObject var stepsViewModel: StepsCounterViewModel
     @ObservedObject var stepsViewModel: StepsCounterViewModel
     var isButtonDisabled: Bool
 //    private let today = Date()
     
     
     var body: some View {
+
         HStack{
             
             Button(action: {
@@ -34,41 +36,62 @@ struct NavigationButtonsView: View {
             Spacer()
             
             if !isPickerVisible{
+                
                 Button(action: {
                     withAnimation {
                         isPickerVisible.toggle()
                     }
                 }) {
-                    Text("\(currentDate, style: .date)")
-                        .padding(20.0)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color("UpperLabelsColor"))
-                        .font(.custom("Futura", size: 20))
-//                        .frame(
-//                              minWidth: 0,
-//                              maxWidth: .infinity,
-//                              minHeight: 40,
-//                              maxHeight: 40
-////
-//                            )
-                        .frame(width: 250, height: 40)
+                    NavigationLink(destination: DatePickerView(currentDate: $currentDate, isBadgeVisible: $isBadgeVisible, isPickerVisible: $isPickerVisible, stepsViewModel: stepsViewModel), label: {
+                        Text("\(currentDate, style: .date)")
+                            .padding(20.0)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color("UpperLabelsColor"))
+                            .font(.custom("Futura", size: 20))
+                            .frame(width: 250, height: 40)
+                    })
+//                    Text("\(currentDate, style: .date)")
+//                        .padding(20.0)
+//                        .multilineTextAlignment(.center)
+//                        .foregroundColor(Color("UpperLabelsColor"))
+//                        .font(.custom("Futura", size: 20))
+//                        .frame(width: 250, height: 40)
                 }
+                
+                               
+                
             } else {
+
                 Button(action: {
                     withAnimation {
                         isPickerVisible.toggle()
                         isBadgeVisible = false
                         stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
-//                        stepsViewModel.checkTheDate(currentDate: currentDate)
+                            
+//
                     }
                 }) {
-                    Text("Back to Sloth")
-                        .padding(20.0)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color("UpperLabelsColor"))
-                        .font(.custom("Futura", size: 20))
-                        .frame(width: 250, height: 40)
+                    
+                    NavigationLink(destination: ContentView(currentDate: currentDate)
+                                   , label: {
+                        Text("Back to Sloth")
+                            .padding(20.0)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color("UpperLabelsColor"))
+                            .font(.custom("Futura", size: 20))
+                            .frame(width: 250, height: 40)
+                    })
+                    
+                    
+//                    Text("Back to Sloth")
+//                        .padding(20.0)
+//                        .multilineTextAlignment(.center)
+//                        .foregroundColor(Color("UpperLabelsColor"))
+//                        .font(.custom("Futura", size: 20))
+//                        .frame(width: 250, height: 40)
                     }
+                
+                
             }
                 
             Spacer()
@@ -99,6 +122,8 @@ struct NavigationButtonsView: View {
         .padding()
         .frame(width: nil)
     }
+        
+    
 }
 
 struct NavigationButtons_Previews: PreviewProvider {

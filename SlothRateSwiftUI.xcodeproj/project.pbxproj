@@ -20,6 +20,7 @@
 		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
 		FF920EB3278C70AA00A90224 /* ValueStepsTakenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920EB2278C70AA00A90224 /* ValueStepsTakenView.swift */; };
+		FFD562C727A2D26D009FCC0F /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD562C627A2D26D009FCC0F /* DatePickerView.swift */; };
 		FFDA7FE2277484BC00E4C24B /* NavigationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */; };
 		FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */; };
 		FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB1AD12769296300FA2B52 /* BadgeView.swift */; };
@@ -71,6 +72,7 @@
 		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
 		FF920EB2278C70AA00A90224 /* ValueStepsTakenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStepsTakenView.swift; sourceTree = "<group>"; };
+		FFD562C627A2D26D009FCC0F /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		FFD5DA6C2787127B004C7DA4 /* SlothRateSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlothRateSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD5DA6D2787127B004C7DA4 /* SlothRateSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD5DA6E2787127B004C7DA4 /* SlothRateSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				FF89EBE92758056B006D9E88 /* ContentView.swift */,
+				FFD562C627A2D26D009FCC0F /* DatePickerView.swift */,
 				FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */,
 				FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */,
 				FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */,
@@ -334,6 +337,7 @@
 				FF920EB3278C70AA00A90224 /* ValueStepsTakenView.swift in Sources */,
 				FF5779C9277C64BA005C63FC /* ArrowButtonsView.swift in Sources */,
 				FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */,
+				FFD562C727A2D26D009FCC0F /* DatePickerView.swift in Sources */,
 				FFDA7FE2277484BC00E4C24B /* NavigationButtonsView.swift in Sources */,
 				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,

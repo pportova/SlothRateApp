@@ -15,6 +15,8 @@ class StepsCounterViewModel: ObservableObject {
     private var queryProvider = QueryProvider()
     private var today = Date()
     
+    @Published var currentDate = Date()
+//    @Binding var currentDate: Date
     @Published var countResult = Double()
     @Published var isDateInToday = Bool()
     @Published var slothRate = Int()

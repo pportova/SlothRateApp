@@ -15,14 +15,20 @@ struct ContentView: View {
     @GestureState var dragState = DragState.inactive
     @State private var viewState = CGSize.zero
     
+//    @StateObject var stepsViewModel = StepsCounterViewModel()
     @ObservedObject var stepsViewModel = StepsCounterViewModel()
+
     
     @State private var isPickerVisible = false
-    @State private var currentDate = Date()
+
+    @State var currentDate: Date
+    
     @State private var isBadgeVisible = false
     
     private let today = Date()
     private let animationAmount = 1
+
+    
     
     enum DragState {
         
@@ -60,9 +66,10 @@ struct ContentView: View {
         
     }
     
-    init() {
-        self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
-    }
+//    init() {
+
+//        self.stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+//    }
        
     var body: some View {
 
@@ -95,15 +102,16 @@ struct ContentView: View {
                     stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
                     }
                 }
-                
-//                self.viewState.height += drag.translation.height
+
+
             }
         
+        NavigationView {
         ZStack {
             Color(red: 0.92, green: 0.80, blue: 0.64)
                 .opacity(0.45)
                 .ignoresSafeArea()
-            
+           
             GeometryReader { geometryRegular in
                     
                 VStack {
@@ -112,8 +120,8 @@ struct ContentView: View {
 
                     Spacer()
                     
-                    if !isPickerVisible {
-                        VStack {
+//                    if !isPickerVisible {
+//                        VStack {
                             TextAndPictureView(stepsViewModel: stepsViewModel)
                                 .onAppear() {
                                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
@@ -135,31 +143,35 @@ struct ContentView: View {
 
                             ValueStepsTakenView(stepsViewModel: stepsViewModel)
                                 .offset(y: -40)
+//                        }
+//                    } else {
+//                        VStack {
+//                            TextAndPictureView(stepsViewModel: stepsViewModel)
+//
+//                            Spacer()
+//                                .frame(height: 95)
+//
+//                            ValueStepsTakenView(stepsViewModel: stepsViewModel)
+//                                .offset(y: -40)
+//
+//                        }
+//                        .blur(radius: 70)
+//                        .overlay(
+//                            DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
+//                                    .datePickerStyle(GraphicalDatePickerStyle())
+//                                    .padding(20)
+//                                    .offset(y: -60))
+//                        .allowsHitTesting(false)
                         }
-                    } else {
-                        VStack {
-                            TextAndPictureView(stepsViewModel: stepsViewModel)
-
-                            Spacer()
-                                .frame(height: 95)
-                            
-                            ValueStepsTakenView(stepsViewModel: stepsViewModel)
-                                .offset(y: -40)
-
-                        }
-                        .blur(radius: 70)
-                        .overlay(
-                            DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
-                                    .datePickerStyle(GraphicalDatePickerStyle())
-                                    .padding(20)
-                                    .offset(y: -60))
-                        }
-                    }//VStack closes
+                        
+//                    }//VStack closes
                     .frame(width: geometryRegular.size.width, height: geometryRegular.size.height, alignment: .center)
           
                 }//GR closes
+            
         }
         .onAppear {
+//            currentDate = Date()
                 StepsCounter.authorizeHealthKit(viewModel: stepsViewModel, date: currentDate) { (authorized, error) in
                 guard authorized else {
                   let resultMessage = "HealthKit Authorization Failed"
@@ -172,12 +184,16 @@ struct ContentView: View {
                 }
                 print("HealthKit Successfully Authorized.")
             }
+            stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
         }
+
         .gesture(longPressDrag)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) {_ in
             currentDate = Date()
             stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
         }
+        .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
         
 //        .gesture(
 //            DragGesture()
@@ -197,10 +213,15 @@ struct ContentView: View {
 //
 //        )
         //Overall ZStack closes
+        
+        
+        
+    }
+        .edgesIgnoringSafeArea(.all)
     } //Body closes
     
 }
-    
+
 
 extension AnyTransition {
     static var moveAndFade: AnyTransition {
@@ -208,9 +229,13 @@ extension AnyTransition {
     }
 }
 
+
+
 struct ContentView_Previews: PreviewProvider {
-  
+    let testTime = Date(timeIntervalSinceReferenceDate: -152344567894.0)
+    
     static var previews: some View {
-        ContentView()
+//        ContentView()
+        ContentView(currentDate: Date())
     }
 }
