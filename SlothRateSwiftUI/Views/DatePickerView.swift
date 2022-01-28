@@ -33,6 +33,7 @@ struct DatePickerView: View {
             DatePicker("", selection: $currentDate, in: ...today, displayedComponents: .date)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .padding(20)
+                .frame(width: 333)
                 .offset(y: -60)
                 .onChange(of: currentDate, perform: { value in
     

@@ -31,12 +31,19 @@ class StepsCounter: NSObject, ObservableObject {
 
         guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
 
-        let now = Date()
-        let startOfDay = calendar.startOfDay(for: pickedDate)
-        let endOfDay = calendar.isDateInToday(pickedDate) ? now : startOfDay.endOfDay(startOfDay: startOfDay)
+        let dayIntervals = pickedDate.startAndEndOfDate(calendar: calendar)
+//        
+//        let now = Date()
+//        let startOfDay = calendar.startOfDay(for: pickedDate)
+//        let endOfDay = calendar.isDateInToday(pickedDate) ? now : startOfDay.endOfDay(startOfDay: startOfDay)
+//        let predicate = healthQueryType.predicateForSamples(
+//            withStart: startOfDay,
+//            end: endOfDay,
+//            options: healthOptionsType.strictStartDate)
+        
         let predicate = healthQueryType.predicateForSamples(
-            withStart: startOfDay,
-            end: endOfDay,
+            withStart: dayIntervals.start,
+            end: dayIntervals.end,
             options: healthOptionsType.strictStartDate)
 
         let statisticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSum) { result in
@@ -102,6 +109,8 @@ protocol AppCalendar {
     static var current: Calendar { get }
     func isDateInToday(_ date: Date) -> Bool
     func startOfDay(for date: Date) -> Date
+    func nextDate(after date: Date, matching components: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date?
+    
 }
 
 protocol HealthStore {
@@ -151,6 +160,20 @@ extension HKQuantityType: HealthQuantityType { }
 extension HKStatisticsQuery: HealthStaticticsQuery { }
 
 extension Date {
+    
+    func startAndEndOfDate(calendar: AppCalendar) -> (start: Date, end: Date)  {
+        let startOfDay = calendar.startOfDay(for: self)
+        let components = DateComponents(hour: 0, minute: 0, second: 0)
+        let nextDate = calendar.nextDate(after: startOfDay, matching: components, matchingPolicy: .strict, repeatedTimePolicy: .first, direction: .forward)
+        
+        let endOfDay = calendar.isDateInToday(self) ? Date() : nextDate ?? Date()
+        
+        return (start: startOfDay, end: endOfDay)
+
+    }
+    
+    
+    
     func endOfDay(startOfDay: Date) -> Date{
         var components = DateComponents()
         components.day = 1
