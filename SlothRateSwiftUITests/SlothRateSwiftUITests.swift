@@ -9,76 +9,58 @@ import XCTest
 @testable import SlothRateSwiftUI
 
 // 1 parameter
-//class MockCalendar: AppCalendar {
-//    static var current: Calendar {
-//        get {
-//            return self.current
-//        }
-//    }
-//
-//    let startOfDay = Date(timeIntervalSinceReferenceDate: 0.0) // 1 jan 2001
-//    let isToday = false
-//    func startOfDay(for date: Date) -> Date {
-//        return startOfDay
-//    }
-//    func isDateInToday(_ date: Date) -> Bool {
-//        return isToday
-//    }
-//}
+class MockCalendar: AppCalendar {
+    func isDateInToday(_ date: Date) -> Bool { true }
+    func startOfDay(for date: Date) -> Date { Date() }
+    func nextDate(after date: Date, matching components: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date? { nil }
 
-//// 2 parameter
-//class MockHealthQuery: HealthQuery {
-//    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HealthOptions) -> NSPredicate {
-//        NSPredicate()
-//    }
-//}
+}
+
+// 2 parameter
+class MockHealthQuery: Query {
+    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: QueryOptions) -> NSPredicate {
+        NSPredicate()
+    }
+}
 
 
 
-//
-//struct MockOptions: HealthOptions {
-//    static var strictStartDate = MockOptions(rawValue: 1 << 0)
-//
-//}
-//
-//struct MockStaticticsOptions: HealthStaticticsOptions {
-//    let rawValue: UInt
-//
-//    static var cumulativeSum = MockStaticticsOptions(rawValue: 1 << 0)
-//}
-//
-//struct MockHealthTypeIdentifier: HealthTypeIdentifier {
-//    let rawValue: String
-//
-//    static let stepCount = MockHealthTypeIdentifier(rawValue: "")
-//}
-//
-//class MockQuantityType: HealthQuantityType {
-//    var quantityType: HealthQuantityType?
-//    func quantityType(forIdentifier identifier: HealthTypeIdentifier) -> HealthQuantityType? {
-//        return quantityType
-//    }
-//}
+
+struct MockQueryOptions: QueryOptions, OptionSet {
+    let rawValue: Int
+    static var startDate: QueryOptions = MockQueryOptions(rawValue: 1 << 0)
+}
+
+struct MockStaticticsOptions: StaticticsOptions {
+    let rawValue: UInt
+
+    static var cumulativeSumOption: StaticticsOptions = MockStaticticsOptions(rawValue: 1 << 0)
+}
+
+struct MockQuantityTypeIdentifier: QuantityTypeIdentifier {
+    let rawValue: String
+
+    static let stepCountIdentifier: QuantityTypeIdentifier = MockQuantityTypeIdentifier(rawValue: "")
+}
+
+class MockQuantityType: QuantityType {
+    static func quantityType(forIdentifier identifier: QuantityTypeIdentifier) -> QuantityType? {
+        return MockQuantityType()
+    }
+}
 
 
-//class MockHealthStore: HealthStore {
-//    func execute(_ query: HKQuery) {
-//        <#code#>
-//    }
-//
-//    func execute(_ query: HealthQuery) {
-//    }
-//}
+class MockHealthStore: HealthStore {
+    func execute(_ query: Query) { }
+}
 
 
-class MockStatisticsQuery: HealthStaticticsQuery {
-//    init(quantityType: MockQuantityType, quantitySamplePredicate: NSPredicate?, options: MockStaticticsOptions, completionHandler handler: @escaping (MockStatisticsQuery, MockStatistics?, Error?) -> Void) {
-//    }
+class MockStatisticsQuery: StaticticsQuery {
 }
 
 struct MockQueryProvider: QueryProviderProtocol {
-    func makeQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
-        return MockStatisticsQuery()
+    func makeQuery(quantityType: QuantityType, predicate: NSPredicate?, options: StaticticsOptions, completion: @escaping (Double) -> (Void)) -> StaticticsQuery? {
+        return nil//MockStatisticsQuery()
     }
 }
 
@@ -89,15 +71,15 @@ class SlothRateSwiftUITests: XCTestCase {
     
     
     
-//    var sut: StepsCounter!
-//    var mockHealthStore: MockHealthStore!
+    var sut: StepsCounter!
+    var mockHealthStore: MockHealthStore!
 //    
 //
     override func setUpWithError() throws {
         try super.setUpWithError()
         sutViewModel = StepsCounterViewModel()
-//        sut = StepsCounter()
-//        mockHealthStore = MockHealthStore()
+        sut = StepsCounter()
+        mockHealthStore = MockHealthStore()
     }
 
     override func tearDownWithError() throws {
@@ -125,33 +107,29 @@ class SlothRateSwiftUITests: XCTestCase {
     }
     
     
-//    func testGetTodaysSteps() {
-//
-//        let pickedDate = Date(timeIntervalSinceReferenceDate: 0.0)
-//        let calendar = MockCalendar()
-//        var countResult: Double
-//        let promise = expectation(description: "16000")
-//
-//
-//        sut.getTodaysSteps(
-//            calendar: calendar,
-//            healthQueryType: MockHealthQuery.self,
-//            healthOptionsType: MockOptions.self,
-//            healthQuantityType: MockQuantityType.self,
-//            healthTypeIdentifier: MockHealthTypeIdentifier.self,
-//            healthStaticticsOptions: MockStaticticsOptions.self,
-//            queryProvider: MockQueryProvider.self as! QueryProviderProtocol,
-//            healthStore: mockHealthStore,
-//            pickedDate: pickedDate
-//        ) { (result) in
-//            countResult = result
-//        }
-//
-//        wait(for: [promise], timeout: 5)
-//
-//        XCTAssertEqual(countResult, 16000, "Something went wrong")
-//
-//    }
+    func testGetTodaysSteps() {
 
+        let pickedDate = Date(timeIntervalSinceReferenceDate: 0.0)
+        let calendar = MockCalendar()
+        var countResult = 0.0
+        let promise = expectation(description: "16000")
 
+        sut.getTodaysSteps(
+            calendar: calendar,
+            healthQueryType: MockHealthQuery.self,
+            healthOptionsType: MockQueryOptions.self,
+            healthQuantityType: MockQuantityType.self,
+            healthTypeIdentifier: MockQuantityTypeIdentifier.self,
+            healthStaticticsOptions: MockStaticticsOptions.self,
+            queryProvider: MockQueryProvider(),
+            healthStore: mockHealthStore,
+            pickedDate: pickedDate
+        ) { (result) in
+            countResult = result
+        }
+
+        wait(for: [promise], timeout: 5)
+
+        XCTAssertEqual(countResult, 16000, "Something went wrong")
+    }
 }

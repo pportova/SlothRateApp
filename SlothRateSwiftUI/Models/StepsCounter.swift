@@ -18,35 +18,27 @@ class StepsCounter: NSObject, ObservableObject {
 
     func getTodaysSteps(
         calendar: AppCalendar,
-        healthQueryType: HealthQuery.Type,
-        healthOptionsType: HealthOptions.Type,
-        healthQuantityType: HealthQuantityType.Type,
-        healthTypeIdentifier: HealthTypeIdentifier.Type,
-        healthStaticticsOptions: HealthStaticticsOptions.Type,
+        healthQueryType: Query.Type,
+        healthOptionsType: QueryOptions.Type,
+        healthQuantityType: QuantityType.Type,
+        healthTypeIdentifier: QuantityTypeIdentifier.Type,
+        healthStaticticsOptions: StaticticsOptions.Type,
         queryProvider: QueryProviderProtocol,
         healthStore: HealthStore,
         pickedDate: Date,
         completion: @escaping (Double) -> Void
     ) {
 
-        guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCount) else { return }
+        guard let stepsQuantityType = healthQuantityType.quantityType(forIdentifier: healthTypeIdentifier.stepCountIdentifier) else { return }
 
         let dayIntervals = pickedDate.startAndEndOfDate(calendar: calendar)
-//        
-//        let now = Date()
-//        let startOfDay = calendar.startOfDay(for: pickedDate)
-//        let endOfDay = calendar.isDateInToday(pickedDate) ? now : startOfDay.endOfDay(startOfDay: startOfDay)
-//        let predicate = healthQueryType.predicateForSamples(
-//            withStart: startOfDay,
-//            end: endOfDay,
-//            options: healthOptionsType.strictStartDate)
-        
+
         let predicate = healthQueryType.predicateForSamples(
             withStart: dayIntervals.start,
             end: dayIntervals.end,
-            options: healthOptionsType.strictStartDate)
+            options: healthOptionsType.startDate)
 
-        let statisticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSum) { result in
+        let statisticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSumOption) { result in
             completion(result)
         }
         
@@ -54,7 +46,7 @@ class StepsCounter: NSObject, ObservableObject {
     }
 
     
-    func executeQuery(statisticsQuery: HealthStaticticsQuery?, store: HealthStore) -> Void {
+    func executeQuery(statisticsQuery: StaticticsQuery?, store: HealthStore) -> Void {
         if let realQuery = statisticsQuery as? HKStatisticsQuery {
             store.execute(realQuery)
         }
@@ -85,11 +77,11 @@ class StepsCounter: NSObject, ObservableObject {
 //MARK: Protocols
 
 protocol QueryProviderProtocol {
-    func makeQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery?
+    func makeQuery(quantityType: QuantityType, predicate: NSPredicate?, options: StaticticsOptions, completion: @escaping (Double) -> (Void)) -> StaticticsQuery?
 }
 
 struct QueryProvider: QueryProviderProtocol {
-    func makeQuery(quantityType: HealthQuantityType, predicate: NSPredicate?, options: HealthStaticticsOptions, completion: @escaping (Double) -> (Void)) -> HealthStaticticsQuery? {
+    func makeQuery(quantityType: QuantityType, predicate: NSPredicate?, options: StaticticsOptions, completion: @escaping (Double) -> (Void)) -> StaticticsQuery? {
         if let realQuantityType = quantityType as? HKQuantityType, let realOptions = options as? HKStatisticsOptions {
 
             let query = HKStatisticsQuery(quantityType: realQuantityType, quantitySamplePredicate: predicate, options: realOptions) {
@@ -106,7 +98,7 @@ struct QueryProvider: QueryProviderProtocol {
 }
 
 protocol AppCalendar {
-    static var current: Calendar { get }
+//    static var current: Calendar { get }
     func isDateInToday(_ date: Date) -> Bool
     func startOfDay(for date: Date) -> Date
     func nextDate(after date: Date, matching components: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date?
@@ -114,30 +106,30 @@ protocol AppCalendar {
 }
 
 protocol HealthStore {
-    func execute(_ query: HKQuery)
+    func execute(_ query: Query)
 }
 
-protocol HealthQuantityType {
-    static func quantityType(forIdentifier identifier: HKQuantityTypeIdentifier) -> HKQuantityType?
+protocol QuantityType {
+    static func quantityType(forIdentifier identifier: QuantityTypeIdentifier) -> QuantityType?
 }
 
 
-protocol HealthTypeIdentifier {
-    static var stepCount: HKQuantityTypeIdentifier { get }
+protocol QuantityTypeIdentifier {
+    static var stepCountIdentifier: QuantityTypeIdentifier { get }
 }
 
-protocol HealthStaticticsOptions {
-    static var cumulativeSum: HKStatisticsOptions { get }
+protocol StaticticsOptions {
+    static var cumulativeSumOption: StaticticsOptions { get }
 }
 
-protocol HealthStaticticsQuery { }
+protocol StaticticsQuery { }
 
-protocol HealthQuery {
-    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: HKQueryOptions) -> NSPredicate
+protocol Query {
+    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: QueryOptions) -> NSPredicate
 }
 
-protocol HealthOptions {
-    static var strictStartDate: HKQueryOptions { get }
+protocol QueryOptions {
+    static var startDate: QueryOptions { get }
 }
 
 
@@ -145,34 +137,48 @@ protocol HealthOptions {
 
 extension Calendar: AppCalendar { }
 
-extension HKHealthStore: HealthStore { }
+extension HKHealthStore: HealthStore {
+    func execute(_ query: Query) {  execute(query as! HKQuery)}
+}
 
-extension HKQuery: HealthQuery { }
+extension HKQuery: Query {
+    static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: QueryOptions) -> NSPredicate {
+        return predicateForSamples(withStart: startDate, end: endDate, options: options as! HKQueryOptions)
+    }
+}
 
-extension HKQueryOptions: HealthOptions { }
+extension HKQueryOptions: QueryOptions {
+    static var startDate: QueryOptions { strictStartDate }
+}
 
-extension HKStatisticsOptions: HealthStaticticsOptions{ }
+extension HKStatisticsOptions: StaticticsOptions {
+    static var cumulativeSumOption: StaticticsOptions { cumulativeSum }
+}
 
-extension HKQuantityTypeIdentifier: HealthTypeIdentifier { }
+extension HKQuantityTypeIdentifier: QuantityTypeIdentifier {
+    static var stepCountIdentifier: QuantityTypeIdentifier { stepCount }
+}
 
-extension HKQuantityType: HealthQuantityType { }
+extension HKQuantityType: QuantityType {
+    static func quantityType(forIdentifier identifier: QuantityTypeIdentifier) -> QuantityType? {
+        quantityType(forIdentifier: identifier as! HKQuantityTypeIdentifier)
+    }
+}
 
-extension HKStatisticsQuery: HealthStaticticsQuery { }
+extension HKStatisticsQuery: StaticticsQuery { }
 
 extension Date {
     
     func startAndEndOfDate(calendar: AppCalendar) -> (start: Date, end: Date)  {
         let startOfDay = calendar.startOfDay(for: self)
         let components = DateComponents(hour: 0, minute: 0, second: 0)
-        let nextDate = calendar.nextDate(after: startOfDay, matching: components, matchingPolicy: .strict, repeatedTimePolicy: .first, direction: .forward)
+        let nextDate = calendar.nextDate(after: startOfDay, matching: components, matchingPolicy: .strict, repeatedTimePolicy: .first, direction: .forward) ?? Date()
         
-        let endOfDay = calendar.isDateInToday(self) ? Date() : nextDate ?? Date()
+        let endOfDay = calendar.isDateInToday(self) ? Date() : nextDate
         
         return (start: startOfDay, end: endOfDay)
-
     }
-    
-    
+
     
     func endOfDay(startOfDay: Date) -> Date{
         var components = DateComponents()
