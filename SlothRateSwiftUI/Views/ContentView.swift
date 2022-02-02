@@ -12,7 +12,7 @@ import UIKit
 struct ContentView: View {
     
 //    @State private var offset = CGSize.zero
-    @GestureState var dragState = DragState.inactive
+//    @GestureState var dragState = DragState.inactive
     @State private var viewState = CGSize.zero
     
 //    @StateObject var stepsViewModel = StepsCounterViewModel()
@@ -28,43 +28,46 @@ struct ContentView: View {
     private let today = Date()
     private let animationAmount = 1
 
-    
-    
-    enum DragState {
-        
-        case inactive
-        case pressing
-        case dragging(translation: CGSize)
-        
-        var translation: CGSize {
-            switch self {
-                case .inactive, .pressing:
-                    return .zero
-                case .dragging(let translation):
-                    return translation
-                }
-        }
-        
-        var isActive: Bool {
-            switch self {
-                case .inactive:
-                    return false
-                case .pressing, .dragging:
-                    return true
-            }
-        }
-        
-        var isDragging: Bool {
-            switch self {
-                case .inactive, .pressing:
-                    return false
-                case .dragging:
-                    return true
-                }
-        }
-        
-        
+    private struct OffsetPreferenceKey: PreferenceKey {
+      static var defaultValue: CGFloat = .zero
+      static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {}
     }
+    
+//    enum DragState {
+//
+//        case inactive
+//        case pressing
+//        case dragging(translation: CGSize)
+//
+//        var translation: CGSize {
+//            switch self {
+//                case .inactive, .pressing:
+//                    return .zero
+//                case .dragging(let translation):
+//                    return translation
+//                }
+//        }
+//
+//        var isActive: Bool {
+//            switch self {
+//                case .inactive:
+//                    return false
+//                case .pressing, .dragging:
+//                    return true
+//            }
+//        }
+//
+//        var isDragging: Bool {
+//            switch self {
+//                case .inactive, .pressing:
+//                    return false
+//                case .dragging:
+//                    return true
+//                }
+//        }
+//
+//
+//    }
     
 //    init() {
 
@@ -73,47 +76,47 @@ struct ContentView: View {
        
     var body: some View {
 
-        let minimumLongPressDuration = 0.05
-        let longPressDrag = LongPressGesture(minimumDuration: minimumLongPressDuration)
-            .sequenced(before: DragGesture())
-            .updating($dragState) { value, state, transaction in
-                switch value {
-                // Long press begins.
-                case .first(true):
-                    state = .pressing
-                // Long press confirmed, dragging may begin.
-                case .second(true, let drag):
-                    state = .dragging(translation: drag?.translation ?? .zero)
-
-                // Dragging ended or the long press cancelled.
-                default:
-                    state = .inactive
-                }
-            }
-            .onEnded { value in
-                guard case .second(true, let drag?) = value else { return }
-                self.viewState.width += drag.translation.width
-                if self.viewState.width > 40 {
-                    currentDate = currentDate.dayBefore
-                    stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
-                } else if self.viewState.width < -40 {
-                    if !stepsViewModel.isDateInToday {
-                    currentDate = currentDate.dayAfter
-                    stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
-                    }
-                }
-
-
-            }
-        
+//        let minimumLongPressDuration = 0.05
+//        let longPressDrag = LongPressGesture(minimumDuration: minimumLongPressDuration)
+//            .sequenced(before: DragGesture())
+//            .updating($dragState) { value, state, transaction in
+//                switch value {
+//                // Long press begins.
+//                case .first(true):
+//                    state = .pressing
+//                // Long press confirmed, dragging may begin.
+//                case .second(true, let drag):
+//                    state = .dragging(translation: drag?.translation ?? .zero)
+//
+//                // Dragging ended or the long press cancelled.
+//                default:
+//                    state = .inactive
+//                }
+//            }
+//            .onEnded { value in
+//                guard case .second(true, let drag?) = value else { return }
+//                self.viewState.width += drag.translation.width
+//                if self.viewState.width > 40 {
+//                    currentDate = currentDate.dayBefore
+//                    stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+//                } else if self.viewState.width < -40 {
+//                    if !stepsViewModel.isDateInToday {
+//                    currentDate = currentDate.dayAfter
+//                    stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+//                    }
+//                }
+//
+//
+//            }
         NavigationView {
+            
         ZStack {
             Color(red: 0.92, green: 0.80, blue: 0.64)
                 .opacity(0.45)
                 .ignoresSafeArea()
-           
+//               ScrollView(.horizontal){
             GeometryReader { geometryRegular in
-                    
+
                 VStack {
                     NavigationButtonsView(currentDate: $currentDate, isPickerVisible: $isPickerVisible, isBadgeVisible: $isBadgeVisible, stepsViewModel: stepsViewModel, isButtonDisabled: stepsViewModel.isDateInToday)
                         .offset(y: 10)
@@ -166,7 +169,7 @@ struct ContentView: View {
                         
 //                    }//VStack closes
                     .frame(width: geometryRegular.size.width, height: geometryRegular.size.height, alignment: .center)
-          
+
                 }//GR closes
             
         }
@@ -185,9 +188,21 @@ struct ContentView: View {
                 print("HealthKit Successfully Authorized.")
             }
             stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
-        }
+        }.gesture(DragGesture(minimumDistance: 20, coordinateSpace: .global)
+                    .onEnded({value in
+            if value.translation.width < -40 {
+                    if !stepsViewModel.isDateInToday {
+                        currentDate = currentDate.dayAfter
+                        stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+                    }
+            } else if value.translation.width > 40 {
+                currentDate = currentDate.dayBefore
+                stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
+            }
+        })
+        )
 
-        .gesture(longPressDrag)
+//        .gesture(longPressDrag)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) {_ in
             currentDate = Date()
             stepsViewModel.countStepsAndCheckDate(currentDate: currentDate)
@@ -218,6 +233,7 @@ struct ContentView: View {
         
     }
         .edgesIgnoringSafeArea(.all)
+        
     } //Body closes
     
 }

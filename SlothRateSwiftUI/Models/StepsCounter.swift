@@ -182,16 +182,4 @@ extension Date {
         return (start: startOfDay, end: endOfDay)
     }
 
-    
-//    func endOfDay(startOfDay: Date) -> Date{
-//        var components = DateComponents()
-//        components.day = 1
-//        components.second = -1
-//        guard let resultDate = Calendar.current.date(byAdding: components, to: startOfDay) else {
-//            print("Issues with getting end of the day.")
-//            return startOfDay
-//        }
-//        return resultDate
-//    }
-//    
 }
