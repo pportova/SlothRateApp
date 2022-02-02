@@ -74,6 +74,7 @@ class StepsCounter: NSObject, ObservableObject {
     }
 }
 
+
 //MARK: Protocols
 
 protocol QueryProviderProtocol {
@@ -102,8 +103,10 @@ protocol AppCalendar {
     func isDateInToday(_ date: Date) -> Bool
     func startOfDay(for date: Date) -> Date
     func nextDate(after date: Date, matching components: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date?
-    
 }
+
+
+
 
 protocol HealthStore {
     func execute(_ query: Query)
@@ -112,7 +115,6 @@ protocol HealthStore {
 protocol QuantityType {
     static func quantityType(forIdentifier identifier: QuantityTypeIdentifier) -> QuantityType?
 }
-
 
 protocol QuantityTypeIdentifier {
     static var stepCountIdentifier: QuantityTypeIdentifier { get }
@@ -135,7 +137,8 @@ protocol QueryOptions {
 
 //MARK: Extensions
 
-extension Calendar: AppCalendar { }
+extension Calendar: AppCalendar {
+}
 
 extension HKHealthStore: HealthStore {
     func execute(_ query: Query) {  execute(query as! HKQuery)}
@@ -161,7 +164,7 @@ extension HKQuantityTypeIdentifier: QuantityTypeIdentifier {
 
 extension HKQuantityType: QuantityType {
     static func quantityType(forIdentifier identifier: QuantityTypeIdentifier) -> QuantityType? {
-        quantityType(forIdentifier: identifier as! HKQuantityTypeIdentifier)
+        return quantityType(forIdentifier: identifier as! HKQuantityTypeIdentifier)
     }
 }
 
@@ -180,15 +183,15 @@ extension Date {
     }
 
     
-    func endOfDay(startOfDay: Date) -> Date{
-        var components = DateComponents()
-        components.day = 1
-        components.second = -1
-        guard let resultDate = Calendar.current.date(byAdding: components, to: startOfDay) else {
-            print("Issues with getting end of the day.")
-            return startOfDay
-        }
-        return resultDate
-    }
-    
+//    func endOfDay(startOfDay: Date) -> Date{
+//        var components = DateComponents()
+//        components.day = 1
+//        components.second = -1
+//        guard let resultDate = Calendar.current.date(byAdding: components, to: startOfDay) else {
+//            print("Issues with getting end of the day.")
+//            return startOfDay
+//        }
+//        return resultDate
+//    }
+//    
 }

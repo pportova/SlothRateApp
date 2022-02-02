@@ -78,9 +78,9 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "AppCalendar"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "HealthStore"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:queryProvider:healthStore:pickedDate:completion:)"
+            landmarkName = "executeQuery(statisticsQuery:store:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,7 +256,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:queryProvider:healthStore:pickedDate:completion:)"
+            landmarkName = "executeQuery(statisticsQuery:store:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -290,16 +290,6 @@
             endingLineNumber = "31"
             landmarkName = "getTodaysSteps(calendar:healthQueryType:healthOptionsType:healthQuantityType:healthTypeIdentifier:healthStaticticsOptions:queryProvider:healthStore:pickedDate:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.IDETestFailureBreakpoint">
-         <BreakpointContent
-            uuid = "1BBF53E8-98FE-477A-A811-9FC04D1C9F83"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -444,6 +434,38 @@
             endingLineNumber = "118"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A6D2D4B-FF9A-45F0-9846-2EB8D0BE930D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SlothRateSwiftUITests/SlothRateSwiftUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "testGetTodaysSteps()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6185C7DD-D1A7-4ABA-8EA0-3D22C04B0056"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SlothRateSwiftUITests/SlothRateSwiftUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "testCalendar()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

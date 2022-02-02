@@ -8,23 +8,18 @@
 import XCTest
 @testable import SlothRateSwiftUI
 
-// 1 parameter
 class MockCalendar: AppCalendar {
     func isDateInToday(_ date: Date) -> Bool { true }
     func startOfDay(for date: Date) -> Date { Date() }
-    func nextDate(after date: Date, matching components: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date? { nil }
+    func nextDate(after date: Date, matching components: DateComponents, matchingPolicy: Calendar.MatchingPolicy, repeatedTimePolicy: Calendar.RepeatedTimePolicy, direction: Calendar.SearchDirection) -> Date? { Date() }
 
 }
 
-// 2 parameter
 class MockHealthQuery: Query {
     static func predicateForSamples(withStart startDate: Date?, end endDate: Date?, options: QueryOptions) -> NSPredicate {
-        NSPredicate()
+        return NSPredicate()
     }
 }
-
-
-
 
 struct MockQueryOptions: QueryOptions, OptionSet {
     let rawValue: Int
@@ -33,13 +28,11 @@ struct MockQueryOptions: QueryOptions, OptionSet {
 
 struct MockStaticticsOptions: StaticticsOptions {
     let rawValue: UInt
-
     static var cumulativeSumOption: StaticticsOptions = MockStaticticsOptions(rawValue: 1 << 0)
 }
 
 struct MockQuantityTypeIdentifier: QuantityTypeIdentifier {
     let rawValue: String
-
     static let stepCountIdentifier: QuantityTypeIdentifier = MockQuantityTypeIdentifier(rawValue: "")
 }
 
@@ -49,43 +42,42 @@ class MockQuantityType: QuantityType {
     }
 }
 
-
 class MockHealthStore: HealthStore {
     func execute(_ query: Query) { }
 }
 
-
 class MockStatisticsQuery: StaticticsQuery {
+    
 }
 
 struct MockQueryProvider: QueryProviderProtocol {
+    let mockQuery = MockStatisticsQuery()
+
     func makeQuery(quantityType: QuantityType, predicate: NSPredicate?, options: StaticticsOptions, completion: @escaping (Double) -> (Void)) -> StaticticsQuery? {
-        return nil//MockStatisticsQuery()
+        return mockQuery
+//        return nil
+        //MockStatisticsQuery()
     }
 }
 
 class SlothRateSwiftUITests: XCTestCase {
     
     var sutViewModel: StepsCounterViewModel!
+    var sutModel: StepsCounter!
     
-    
-    
-    
-    var sut: StepsCounter!
     var mockHealthStore: MockHealthStore!
-//    
-//
+
     override func setUpWithError() throws {
         try super.setUpWithError()
         sutViewModel = StepsCounterViewModel()
-        sut = StepsCounter()
+        sutModel = StepsCounter()
         mockHealthStore = MockHealthStore()
     }
 
     override func tearDownWithError() throws {
-//        sut = nil
-//        mockHealthStore = nil
         sutViewModel = nil
+        sutModel = nil
+        mockHealthStore = nil
         try super.tearDownWithError()
     }
     
@@ -106,15 +98,41 @@ class SlothRateSwiftUITests: XCTestCase {
         XCTAssertFalse(sutViewModel.isDateInToday)
     }
     
+    func testCalendar() {
+        let calendar = MockCalendar()
+
+        let today = Date()
+        let dayInPast = today.addingTimeInterval(-1728009)
+        let tomorrow = today.addingTimeInterval(86400)
+        let dayAfterTomorrow = today.addingTimeInterval(172800)
+        let components = DateComponents(hour: 12, minute: 0, second: 0)
+        var resultDate = Date()
+        
+        
+        let tomorrowCheckFails = calendar.isDateInToday(tomorrow)
+        
+        resultDate = calendar.nextDate(after: tomorrow, matching: components, matchingPolicy: .strict, repeatedTimePolicy: .first, direction: .forward) ?? tomorrow
+
+        
+        XCTAssertTrue(tomorrowCheckFails, "MockCalendar always returns true")
+        
+        XCTAssertLessThan(dayInPast, resultDate, "The day in the past should be less than current date.")
+        
+        XCTAssertGreaterThan(dayAfterTomorrow, resultDate, "The function nextDate dailed - its result is tomorrow while it should be today.")
+        
+    }
+    
+    
+    
     
     func testGetTodaysSteps() {
 
         let pickedDate = Date(timeIntervalSinceReferenceDate: 0.0)
         let calendar = MockCalendar()
         var countResult = 0.0
-        let promise = expectation(description: "16000")
+        let expectation = expectation(description: "Completion handler isn't called")
 
-        sut.getTodaysSteps(
+        sutModel.getTodaysSteps(
             calendar: calendar,
             healthQueryType: MockHealthQuery.self,
             healthOptionsType: MockQueryOptions.self,
@@ -125,11 +143,11 @@ class SlothRateSwiftUITests: XCTestCase {
             healthStore: mockHealthStore,
             pickedDate: pickedDate
         ) { (result) in
-            countResult = result
+            countResult = 20.0
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 5)
 
-        wait(for: [promise], timeout: 5)
-
-        XCTAssertEqual(countResult, 16000, "Something went wrong")
+        XCTAssertEqual(countResult, 20.0, "Completion handler wasn't called.")
     }
 }
