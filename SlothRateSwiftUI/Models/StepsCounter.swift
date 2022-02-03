@@ -59,7 +59,6 @@ class StepsCounter: NSObject, ObservableObject {
         completion(false, HealthKitError.dataTypeNotAvailable)
         return
       }
-    
       let healthKitTypesToRead: Set<HKObjectType> = [stepsQuantityType]
       HKHealthStore().requestAuthorization(toShare: [], read: healthKitTypesToRead) { (success, error) in
         if success {

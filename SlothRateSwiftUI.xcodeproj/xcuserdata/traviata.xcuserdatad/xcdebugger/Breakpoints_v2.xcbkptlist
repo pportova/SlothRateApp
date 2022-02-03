@@ -62,10 +62,10 @@
             filePath = "SlothRateSwiftUI/Models/StepsCounter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "HealthStore"
-            landmarkType = "5">
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "authorizeHealthKit(viewModel:date:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -254,8 +254,8 @@
             filePath = "SlothRateSwiftUITests/SlothRateSwiftUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "testGetTodaysSteps()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,9 +270,9 @@
             filePath = "SlothRateSwiftUITests/SlothRateSwiftUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "testCalendar()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "testcheckTheDate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -286,9 +286,9 @@
             filePath = "SlothRateSwiftUITests/SlothRateSwiftUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "testGetTodaysSteps()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "testCalendar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

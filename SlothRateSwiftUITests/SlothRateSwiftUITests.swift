@@ -53,7 +53,6 @@ struct MockQueryProvider: QueryProviderProtocol {
     completion(steps)
     return MockStatisticsQuery()
   }
-}
 
 class SlothRateSwiftUITests: XCTestCase {
   var sutViewModel: StepsCounterViewModel!
@@ -106,7 +105,7 @@ class SlothRateSwiftUITests: XCTestCase {
     XCTAssertTrue(tomorrowCheckFails, "MockCalendar always returns true")
         
     XCTAssertLessThan(dayInPast, resultDate, "The day in the past should be less than current date.")
-        
+
     XCTAssertGreaterThan(dayAfterTomorrow, resultDate, "The function nextDate dailed - its result is tomorrow while it should be today.")
   }
     
@@ -130,5 +129,6 @@ class SlothRateSwiftUITests: XCTestCase {
         expectation.fulfill()
       }
       wait(for: [expectation], timeout: 5)
+    }
     }
 }
