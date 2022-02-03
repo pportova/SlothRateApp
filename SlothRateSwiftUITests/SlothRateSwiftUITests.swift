@@ -46,17 +46,16 @@ class MockHealthStore: HealthStore {
     func execute(_ query: Query) { }
 }
 
-class MockStatisticsQuery: StaticticsQuery {
-    
-}
+typealias CompletionHandler = (Double) -> Void
+
+struct MockStatisticsQuery: StaticticsQuery { }
 
 struct MockQueryProvider: QueryProviderProtocol {
-    let mockQuery = MockStatisticsQuery()
+    let steps: Double
 
     func makeQuery(quantityType: QuantityType, predicate: NSPredicate?, options: StaticticsOptions, completion: @escaping (Double) -> (Void)) -> StaticticsQuery? {
-        return mockQuery
-//        return nil
-        //MockStatisticsQuery()
+        completion(steps)
+        return MockStatisticsQuery()
     }
 }
 
@@ -119,7 +118,6 @@ class SlothRateSwiftUITests: XCTestCase {
         XCTAssertLessThan(dayInPast, resultDate, "The day in the past should be less than current date.")
         
         XCTAssertGreaterThan(dayAfterTomorrow, resultDate, "The function nextDate dailed - its result is tomorrow while it should be today.")
-        
     }
     
     
@@ -129,8 +127,8 @@ class SlothRateSwiftUITests: XCTestCase {
 
         let pickedDate = Date(timeIntervalSinceReferenceDate: 0.0)
         let calendar = MockCalendar()
-        var countResult = 0.0
         let expectation = expectation(description: "Completion handler isn't called")
+        let queryProvider = MockQueryProvider(steps: 10.0)
 
         sutModel.getTodaysSteps(
             calendar: calendar,
@@ -139,15 +137,13 @@ class SlothRateSwiftUITests: XCTestCase {
             healthQuantityType: MockQuantityType.self,
             healthTypeIdentifier: MockQuantityTypeIdentifier.self,
             healthStaticticsOptions: MockStaticticsOptions.self,
-            queryProvider: MockQueryProvider(),
+            queryProvider: queryProvider,
             healthStore: mockHealthStore,
             pickedDate: pickedDate
         ) { (result) in
-            countResult = 20.0
+            XCTAssert(result == 10.0)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5)
-
-        XCTAssertEqual(countResult, 20.0, "Completion handler wasn't called.")
     }
 }

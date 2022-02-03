@@ -38,9 +38,9 @@ class StepsCounter: NSObject, ObservableObject {
             end: dayIntervals.end,
             options: healthOptionsType.startDate)
 
-        let statisticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSumOption) { result in
+        let statisticsQuery = queryProvider.makeQuery(quantityType: stepsQuantityType, predicate: predicate, options: healthStaticticsOptions.cumulativeSumOption, completion: { result in
             completion(result)
-        }
+        })
         
         self.executeQuery(statisticsQuery: statisticsQuery, store: healthStore)
     }
