@@ -43,28 +43,42 @@ class StepsCounterViewModel: ObservableObject {
     }
     
     func getSlothRate() -> (Int, String) {
-//        var slothRate = Int()
-//        var activityDescription = ""
-        if countResult < 5000 {
-            //Sleeping sloth
+        if countResult < 1500 {
             slothRate = 1
             activityDescription = "Best of the breed.\n A genuinely stationary sloth."
-        } else if countResult > 5000 && countResult < 7500 {
+        } else if countResult >= 1500 && countResult < 3000 {
             slothRate = 2
-            //Hanging on a branch
             activityDescription = "A benchmark for laziness.\n Yet showing evidence of motion."
-        } else if countResult > 7500 && countResult < 10000 {
+        } else if countResult >= 3000 && countResult < 4500 {
             slothRate = 3
-            //Showing "V"
-            activityDescription = "Moderately active.\n Getting some calories burnt in vain."
-        } else if countResult > 10000 && countResult < 12500 {
+            activityDescription = "Well, you're up.\n Got the pictures moving in front of you."
+        } else if countResult >= 4500 && countResult < 6000 {
             slothRate = 4
-            //Sitting by a computer
-            activityDescription = "Suspiciously active.\n Evolving into other species rapidly."
-        } else if countResult > 12500 {
+            activityDescription = "Making progress.\n Went way beyond the morning routine."
+        } else if countResult >= 6000 && countResult < 7500 {
             slothRate = 5
-            //Climbing a branch
+            activityDescription = "Moderately active.\n Getting some calories burnt in vain."
+        } else if countResult >= 7500 && countResult < 9000 {
+            slothRate = 6
+            activityDescription = "Not-so-sloth.\n Making fun of your lazy friends."
+        } else if countResult >= 9000 && countResult < 11500 {
+            slothRate = 7
+            activityDescription = "Active.\n Putting those joints to good use."
+        } else if countResult >= 11500 && countResult < 13500 {
+            slothRate = 8
+            activityDescription = "Suspiciously active.\n Evolving into other species rapidly."
+        } else if countResult >= 13500 && countResult < 15500 {
+            slothRate = 9
+            activityDescription = "A true doer.\n Planned or not planned, got it all done."
+        } else if countResult >= 15500 && countResult < 17500 {
+            slothRate = 10
             activityDescription = "Hyperactive.\n Are you a sloth really?"
+        } else if countResult >= 17500 && countResult < 19500 {
+            slothRate = 11
+            activityDescription = "An energy vortex.\n You're generating new particle types."
+        } else if countResult >= 19500 {
+            slothRate = 12
+            activityDescription = "An undercover cheetah.\n Ran too fast, straight out of juice."
         }
         return (slothRate, activityDescription)
 }
