@@ -19,12 +19,12 @@
 		FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */; };
 		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
-		FF920EB3278C70AA00A90224 /* ValueStepsTakenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920EB2278C70AA00A90224 /* ValueStepsTakenView.swift */; };
+		FF920EB3278C70AA00A90224 /* StepsCountAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920EB2278C70AA00A90224 /* StepsCountAndLabelView.swift */; };
 		FFD562C727A2D26D009FCC0F /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD562C627A2D26D009FCC0F /* DatePickerView.swift */; };
 		FFDA7FE2277484BC00E4C24B /* NavigationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */; };
 		FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */; };
 		FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB1AD12769296300FA2B52 /* BadgeView.swift */; };
-		FFF0C3A22770B7C2001AD449 /* TextAndPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */; };
+		FFF0C3A22770B7C2001AD449 /* TitleAndPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF0C3A12770B7C2001AD449 /* TitleAndPictureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
-		FF920EB2278C70AA00A90224 /* ValueStepsTakenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStepsTakenView.swift; sourceTree = "<group>"; };
+		FF920EB2278C70AA00A90224 /* StepsCountAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCountAndLabelView.swift; sourceTree = "<group>"; };
 		FFD562C627A2D26D009FCC0F /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		FFD5DA6C2787127B004C7DA4 /* SlothRateSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlothRateSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD5DA6D2787127B004C7DA4 /* SlothRateSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +80,7 @@
 		FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FFDB1AD027690DFB00FA2B52 /* SlothRateSwiftUIDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUIDebug.entitlements; sourceTree = "<group>"; };
 		FFDB1AD12769296300FA2B52 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
-		FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndPictureView.swift; sourceTree = "<group>"; };
+		FFF0C3A12770B7C2001AD449 /* TitleAndPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndPictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +186,8 @@
 				FFD562C627A2D26D009FCC0F /* DatePickerView.swift */,
 				FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */,
 				FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */,
-				FFF0C3A12770B7C2001AD449 /* TextAndPictureView.swift */,
-				FF920EB2278C70AA00A90224 /* ValueStepsTakenView.swift */,
+				FFF0C3A12770B7C2001AD449 /* TitleAndPictureView.swift */,
+				FF920EB2278C70AA00A90224 /* StepsCountAndLabelView.swift */,
 				FF89EC1127580CD6006D9E88 /* CircleView.swift */,
 				FFDB1AD12769296300FA2B52 /* BadgeView.swift */,
 			);
@@ -334,14 +334,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF920EB3278C70AA00A90224 /* ValueStepsTakenView.swift in Sources */,
+				FF920EB3278C70AA00A90224 /* StepsCountAndLabelView.swift in Sources */,
 				FF5779C9277C64BA005C63FC /* ArrowButtonsView.swift in Sources */,
 				FFDB1AD22769296300FA2B52 /* BadgeView.swift in Sources */,
 				FFD562C727A2D26D009FCC0F /* DatePickerView.swift in Sources */,
 				FFDA7FE2277484BC00E4C24B /* NavigationButtonsView.swift in Sources */,
 				FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */,
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
-				FFF0C3A22770B7C2001AD449 /* TextAndPictureView.swift in Sources */,
+				FFF0C3A22770B7C2001AD449 /* TitleAndPictureView.swift in Sources */,
 				FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */,
 				FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */,
 				FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */,
@@ -569,7 +569,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.slothrate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
