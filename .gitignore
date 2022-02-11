@@ -1,0 +1,29 @@
+## User settings
+xcuserdata/
+
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+##MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+## Packages 
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+## Logs and databases
+*.log

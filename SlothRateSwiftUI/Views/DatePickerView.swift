@@ -54,7 +54,7 @@ struct DatePickerView: View {
 
 struct DatePickerView_Previews: PreviewProvider {
   static var previews: some View {
-    let testTime = Date(timeIntervalSinceReferenceDate: -152344567894.0)
+    let testTime = Date.distantPast
     let stepsViewModel = StepsCounterViewModel()
     
     DatePickerView(stepsViewModel: stepsViewModel, currentDate: .constant(testTime), isBadgeVisible: .constant(true), isPickerVisible: .constant(false))

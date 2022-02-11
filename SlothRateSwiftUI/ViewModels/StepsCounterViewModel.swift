@@ -21,14 +21,34 @@ class StepsCounterViewModel: ObservableObject {
   private var queryProvider = QueryProvider()
   private var today = Date()
   
+  struct SlothCharacteristics {
+    var slothRateValue = Int()
+    var slothDescription = String()
+    
+    enum SlothRateDescription: String, CaseIterable {
+      case first = "Best of the breed.\n A genuinely stationary sloth."
+      case second = "A benchmark for laziness.\n Yet showing evidence of motion."
+      case third = "Well, you're up.\n Got the pictures moving in front of you."
+      case fourth = "Making progress.\n Went way beyond the morning routine."
+      case fifth = "Moderately active.\n Getting some calories burnt in vain."
+      case sixth = "Not-so-sloth.\n Making fun of your lazy friends."
+      case seventh = "Active.\n Putting those joints to good use."
+      case eighth = "Suspiciously active.\n Evolving into other species rapidly."
+      case ninth = "A true doer.\n Planned or not planned, got it all done."
+      case tenth = "Hyperactive.\n Are you a sloth really?"
+      case eleventh = "An energy vortex.\n You're generating new particle types."
+      case twelfth = "An undercover cheetah.\n Ran too fast, straight out of juice."
+    }
+  }
+  
 //    MARK: Functions
   func countStepsAndCheckDate(currentDate: Date) {
         
     stepsCounter.getTodaysSteps(calendar: Calendar(identifier: .gregorian), healthQueryType: HKQuery.self, healthOptionsType: HKQueryOptions.self, healthQuantityType: HKQuantityType.self, healthTypeIdentifier: HKQuantityTypeIdentifier.self, healthStaticticsOptions: HKStatisticsOptions.self, queryProvider: queryProvider, healthStore: HKHealthStore(), pickedDate: currentDate, completion: { result in
           DispatchQueue.main.async {
             self.countResult = result
-            self.slothRate = self.getSlothRate().0
-            self.activityDescription = self.getSlothRate().1
+            self.slothRate = self.getSlothRate().slothRateValue
+            self.activityDescription = self.getSlothRate().slothDescription
           }
     })
     self.checkTheDate(currentDate: currentDate)
@@ -40,45 +60,46 @@ class StepsCounterViewModel: ObservableObject {
     }
   }
     
-  func getSlothRate() -> (Int, String) {
+  func getSlothRate() -> SlothCharacteristics {
+    var slothStructure = SlothCharacteristics()
     if countResult < 1500 {
-      slothRate = 1
-      activityDescription = "Best of the breed.\n A genuinely stationary sloth."
+      slothStructure.slothRateValue = 1
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.first.rawValue
     } else if countResult >= 1500 && countResult < 3000 {
-      slothRate = 2
-      activityDescription = "A benchmark for laziness.\n Yet showing evidence of motion."
+      slothStructure.slothRateValue = 2
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.second.rawValue
     } else if countResult >= 3000 && countResult < 4500 {
-      slothRate = 3
-      activityDescription = "Well, you're up.\n Got the pictures moving in front of you."
+      slothStructure.slothRateValue = 3
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.third.rawValue
     } else if countResult >= 4500 && countResult < 6000 {
-      slothRate = 4
-      activityDescription = "Making progress.\n Went way beyond the morning routine."
+      slothStructure.slothRateValue = 4
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fourth.rawValue
     } else if countResult >= 6000 && countResult < 7500 {
-      slothRate = 5
-      activityDescription = "Moderately active.\n Getting some calories burnt in vain."
+      slothStructure.slothRateValue = 5
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fifth.rawValue
     } else if countResult >= 7500 && countResult < 9000 {
-      slothRate = 6
-      activityDescription = "Not-so-sloth.\n Making fun of your lazy friends."
+      slothStructure.slothRateValue = 6
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.sixth.rawValue
     } else if countResult >= 9000 && countResult < 11500 {
-      slothRate = 7
-      activityDescription = "Active.\n Putting those joints to good use."
+      slothStructure.slothRateValue = 7
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.seventh.rawValue
     } else if countResult >= 11500 && countResult < 13500 {
-      slothRate = 8
-      activityDescription = "Suspiciously active.\n Evolving into other species rapidly."
+      slothStructure.slothRateValue = 8
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eighth.rawValue
     } else if countResult >= 13500 && countResult < 15500 {
-      slothRate = 9
-      activityDescription = "A true doer.\n Planned or not planned, got it all done."
+      slothStructure.slothRateValue = 9
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.ninth.rawValue
     } else if countResult >= 15500 && countResult < 17500 {
-      slothRate = 10
-      activityDescription = "Hyperactive.\n Are you a sloth really?"
+      slothStructure.slothRateValue = 10
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.tenth.rawValue
     } else if countResult >= 17500 && countResult < 19500 {
-      slothRate = 11
-      activityDescription = "An energy vortex.\n You're generating new particle types."
+      slothStructure.slothRateValue = 11
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eleventh.rawValue
     } else if countResult >= 19500 {
-      slothRate = 12
-      activityDescription = "An undercover cheetah.\n Ran too fast, straight out of juice."
+      slothStructure.slothRateValue = 12
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.twelfth.rawValue
     }
-    return (slothRate, activityDescription)
+    return slothStructure
   }
 }
 
