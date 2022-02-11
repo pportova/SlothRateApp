@@ -11,13 +11,13 @@
 		FF3230EC275FB1400016468D /* StepsCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3230EB275FB1400016468D /* StepsCounter.swift */; };
 		FF5779C9277C64BA005C63FC /* ArrowButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */; };
 		FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */; };
-		FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */; };
+		FF89EBE82758056B006D9E88 /* SlothRateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE72758056B006D9E88 /* SlothRateApp.swift */; };
 		FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBE92758056B006D9E88 /* ContentView.swift */; };
 		FF89EBEC2758056D006D9E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF89EBEB2758056D006D9E88 /* Assets.xcassets */; };
 		FF89EBEF2758056D006D9E88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF89EBEE2758056D006D9E88 /* Preview Assets.xcassets */; };
-		FF89EBF92758056D006D9E88 /* SlothRateSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBF82758056D006D9E88 /* SlothRateSwiftUITests.swift */; };
-		FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */; };
-		FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */; };
+		FF89EBF92758056D006D9E88 /* SlothRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EBF82758056D006D9E88 /* SlothRateTests.swift */; };
+		FF89EC032758056D006D9E88 /* SlothRateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC022758056D006D9E88 /* SlothRateUITests.swift */; };
+		FF89EC052758056D006D9E88 /* SlothRateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
 		FF920EB3278C70AA00A90224 /* StepsCountAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920EB2278C70AA00A90224 /* StepsCountAndLabelView.swift */; };
 		FFD562C727A2D26D009FCC0F /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD562C627A2D26D009FCC0F /* DatePickerView.swift */; };
@@ -62,23 +62,23 @@
 		FF3230EB275FB1400016468D /* StepsCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCounter.swift; sourceTree = "<group>"; };
 		FF5779C8277C64BA005C63FC /* ArrowButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButtonsView.swift; sourceTree = "<group>"; };
 		FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCounterViewModel.swift; sourceTree = "<group>"; };
-		FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIApp.swift; sourceTree = "<group>"; };
+		FF89EBE72758056B006D9E88 /* SlothRateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateApp.swift; sourceTree = "<group>"; };
 		FF89EBE92758056B006D9E88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF89EBEB2758056D006D9E88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF89EBEE2758056D006D9E88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FF89EBF82758056D006D9E88 /* SlothRateSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUITests.swift; sourceTree = "<group>"; };
-		FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITests.swift; sourceTree = "<group>"; };
-		FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF89EBF82758056D006D9E88 /* SlothRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateTests.swift; sourceTree = "<group>"; };
+		FF89EC022758056D006D9E88 /* SlothRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateUITests.swift; sourceTree = "<group>"; };
+		FF89EC042758056D006D9E88 /* SlothRateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothRateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF89EC1127580CD6006D9E88 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUI.entitlements; sourceTree = "<group>"; };
 		FF920EB2278C70AA00A90224 /* StepsCountAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCountAndLabelView.swift; sourceTree = "<group>"; };
 		FFD562C627A2D26D009FCC0F /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
-		FFD5DA6C2787127B004C7DA4 /* SlothRateSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlothRateSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFD5DA6D2787127B004C7DA4 /* SlothRateSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFD5DA6E2787127B004C7DA4 /* SlothRateSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD5DA6C2787127B004C7DA4 /* SlothRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlothRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD5DA6D2787127B004C7DA4 /* SlothRateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD5DA6E2787127B004C7DA4 /* SlothRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonsView.swift; sourceTree = "<group>"; };
 		FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		FFDB1AD027690DFB00FA2B52 /* SlothRateSwiftUIDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateSwiftUIDebug.entitlements; sourceTree = "<group>"; };
+		FFDB1AD027690DFB00FA2B52 /* SlothRateDebugSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateDebugSwiftUI.entitlements; sourceTree = "<group>"; };
 		FFDB1AD12769296300FA2B52 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		FFF0C3A12770B7C2001AD449 /* TitleAndPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndPictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,30 +120,30 @@
 		FF89EBDB2758056B006D9E88 = {
 			isa = PBXGroup;
 			children = (
-				FF89EBE62758056B006D9E88 /* SlothRateSwiftUI */,
-				FF89EBF72758056D006D9E88 /* SlothRateSwiftUITests */,
-				FF89EC012758056D006D9E88 /* SlothRateSwiftUIUITests */,
-				FFD5DA6C2787127B004C7DA4 /* SlothRateSwiftUI.app */,
-				FFD5DA6D2787127B004C7DA4 /* SlothRateSwiftUITests.xctest */,
-				FFD5DA6E2787127B004C7DA4 /* SlothRateSwiftUIUITests.xctest */,
+				FF89EBE62758056B006D9E88 /* SlothRate */,
+				FF89EBF72758056D006D9E88 /* SlothRateTests */,
+				FF89EC012758056D006D9E88 /* SlothRateUITests */,
+				FFD5DA6C2787127B004C7DA4 /* SlothRate.app */,
+				FFD5DA6D2787127B004C7DA4 /* SlothRateTests.xctest */,
+				FFD5DA6E2787127B004C7DA4 /* SlothRateUITests.xctest */,
 				FF185448279573F800DA71C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		FF89EBE62758056B006D9E88 /* SlothRateSwiftUI */ = {
+		FF89EBE62758056B006D9E88 /* SlothRate */ = {
 			isa = PBXGroup;
 			children = (
-				FF89EBE72758056B006D9E88 /* SlothRateSwiftUIApp.swift */,
+				FF89EBE72758056B006D9E88 /* SlothRateApp.swift */,
 				FF8ABAB62767B8F100BBD522 /* Views */,
 				FF8ABAB72767B90600BBD522 /* ViewModels */,
 				FF8ABAB52767B8DB00BBD522 /* Models */,
 				FF89EBEB2758056D006D9E88 /* Assets.xcassets */,
 				FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */,
 				FF8E979027624885005BB1E7 /* SlothRateSwiftUI.entitlements */,
-				FFDB1AD027690DFB00FA2B52 /* SlothRateSwiftUIDebug.entitlements */,
+				FFDB1AD027690DFB00FA2B52 /* SlothRateDebugSwiftUI.entitlements */,
 				FF89EBED2758056D006D9E88 /* Preview Content */,
 			);
-			path = SlothRateSwiftUI;
+			path = SlothRate;
 			sourceTree = "<group>";
 		};
 		FF89EBED2758056D006D9E88 /* Preview Content */ = {
@@ -154,21 +154,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FF89EBF72758056D006D9E88 /* SlothRateSwiftUITests */ = {
+		FF89EBF72758056D006D9E88 /* SlothRateTests */ = {
 			isa = PBXGroup;
 			children = (
-				FF89EBF82758056D006D9E88 /* SlothRateSwiftUITests.swift */,
+				FF89EBF82758056D006D9E88 /* SlothRateTests.swift */,
 			);
-			path = SlothRateSwiftUITests;
+			path = SlothRateTests;
 			sourceTree = "<group>";
 		};
-		FF89EC012758056D006D9E88 /* SlothRateSwiftUIUITests */ = {
+		FF89EC012758056D006D9E88 /* SlothRateUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FF89EC022758056D006D9E88 /* SlothRateSwiftUIUITests.swift */,
-				FF89EC042758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift */,
+				FF89EC022758056D006D9E88 /* SlothRateUITests.swift */,
+				FF89EC042758056D006D9E88 /* SlothRateUITestsLaunchTests.swift */,
 			);
-			path = SlothRateSwiftUIUITests;
+			path = SlothRateUITests;
 			sourceTree = "<group>";
 		};
 		FF8ABAB52767B8DB00BBD522 /* Models */ = {
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */ = {
+		FF89EBE32758056B006D9E88 /* SlothRate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUI" */;
+			buildConfigurationList = FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRate" */;
 			buildPhases = (
 				FF89EBE02758056B006D9E88 /* Sources */,
 				FF89EBE12758056B006D9E88 /* Frameworks */,
@@ -218,14 +218,14 @@
 			);
 			dependencies = (
 			);
-			name = SlothRateSwiftUI;
+			name = SlothRate;
 			productName = SlothRateSwiftUI;
-			productReference = FFD5DA6C2787127B004C7DA4 /* SlothRateSwiftUI.app */;
+			productReference = FFD5DA6C2787127B004C7DA4 /* SlothRate.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FF89EBF32758056D006D9E88 /* SlothRateSwiftUITests */ = {
+		FF89EBF32758056D006D9E88 /* SlothRateTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF89EC0B2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUITests" */;
+			buildConfigurationList = FF89EC0B2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateTests" */;
 			buildPhases = (
 				FF89EBF02758056D006D9E88 /* Sources */,
 				FF89EBF12758056D006D9E88 /* Frameworks */,
@@ -236,14 +236,14 @@
 			dependencies = (
 				FF89EBF62758056D006D9E88 /* PBXTargetDependency */,
 			);
-			name = SlothRateSwiftUITests;
+			name = SlothRateTests;
 			productName = SlothRateSwiftUITests;
-			productReference = FFD5DA6D2787127B004C7DA4 /* SlothRateSwiftUITests.xctest */;
+			productReference = FFD5DA6D2787127B004C7DA4 /* SlothRateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FF89EBFD2758056D006D9E88 /* SlothRateSwiftUIUITests */ = {
+		FF89EBFD2758056D006D9E88 /* SlothRateUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF89EC0E2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUIUITests" */;
+			buildConfigurationList = FF89EC0E2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateUITests" */;
 			buildPhases = (
 				FF89EBFA2758056D006D9E88 /* Sources */,
 				FF89EBFB2758056D006D9E88 /* Frameworks */,
@@ -254,9 +254,9 @@
 			dependencies = (
 				FF89EC002758056D006D9E88 /* PBXTargetDependency */,
 			);
-			name = SlothRateSwiftUIUITests;
+			name = SlothRateUITests;
 			productName = SlothRateSwiftUIUITests;
-			productReference = FFD5DA6E2787127B004C7DA4 /* SlothRateSwiftUIUITests.xctest */;
+			productReference = FFD5DA6E2787127B004C7DA4 /* SlothRateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -282,7 +282,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRateSwiftUI" */;
+			buildConfigurationList = FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRate" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -295,9 +295,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */,
-				FF89EBF32758056D006D9E88 /* SlothRateSwiftUITests */,
-				FF89EBFD2758056D006D9E88 /* SlothRateSwiftUIUITests */,
+				FF89EBE32758056B006D9E88 /* SlothRate */,
+				FF89EBF32758056D006D9E88 /* SlothRateTests */,
+				FF89EBFD2758056D006D9E88 /* SlothRateUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,7 +343,7 @@
 				FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */,
 				FFF0C3A22770B7C2001AD449 /* TitleAndPictureView.swift in Sources */,
 				FF89EBEA2758056B006D9E88 /* ContentView.swift in Sources */,
-				FF89EBE82758056B006D9E88 /* SlothRateSwiftUIApp.swift in Sources */,
+				FF89EBE82758056B006D9E88 /* SlothRateApp.swift in Sources */,
 				FF82197C276114E100FA5A39 /* StepsCounterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF89EBF92758056D006D9E88 /* SlothRateSwiftUITests.swift in Sources */,
+				FF89EBF92758056D006D9E88 /* SlothRateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF89EC032758056D006D9E88 /* SlothRateSwiftUIUITests.swift in Sources */,
-				FF89EC052758056D006D9E88 /* SlothRateSwiftUIUITestsLaunchTests.swift in Sources */,
+				FF89EC032758056D006D9E88 /* SlothRateUITests.swift in Sources */,
+				FF89EC052758056D006D9E88 /* SlothRateUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,12 +370,12 @@
 /* Begin PBXTargetDependency section */
 		FF89EBF62758056D006D9E88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */;
+			target = FF89EBE32758056B006D9E88 /* SlothRate */;
 			targetProxy = FF89EBF52758056D006D9E88 /* PBXContainerItemProxy */;
 		};
 		FF89EC002758056D006D9E88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF89EBE32758056B006D9E88 /* SlothRateSwiftUI */;
+			target = FF89EBE32758056B006D9E88 /* SlothRate */;
 			targetProxy = FF89EBFF2758056D006D9E88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -502,15 +502,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUIDebug.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SlothRate/SlothRateSwiftUIDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlothRate/Preview Content\"";
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
+				INFOPLIST_FILE = SlothRate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sloth Rate";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This application needs to acces your health data to count steps.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "This application needs to acces your health data to count steps.";
@@ -543,14 +543,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SlothRateSwiftUI/SlothRateSwiftUI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SlothRate/SlothRateSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"SlothRateSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlothRate/Preview Content\"";
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SlothRateSwiftUI/Info.plist;
+				INFOPLIST_FILE = SlothRate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sloth Rate";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This application needs to acces your health data to count steps.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "This application needs to acces your health data to count steps.";
@@ -582,6 +582,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
@@ -594,12 +596,14 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlothRateSwiftUI.app/SlothRateSwiftUI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlothRate.app/SlothRate";
 			};
 			name = Debug;
 		};
@@ -608,6 +612,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
@@ -620,12 +626,14 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlothRateSwiftUI.app/SlothRateSwiftUI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlothRate.app/SlothRate";
 			};
 			name = Release;
 		};
@@ -633,6 +641,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
@@ -644,12 +654,14 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUIUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SlothRateSwiftUI;
+				TEST_TARGET_NAME = SlothRate;
 			};
 			name = Debug;
 		};
@@ -657,6 +669,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
@@ -668,19 +682,21 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateSwiftUIUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.SlothRateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SlothRateSwiftUI;
+				TEST_TARGET_NAME = SlothRate;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRateSwiftUI" */ = {
+		FF89EBDF2758056B006D9E88 /* Build configuration list for PBXProject "SlothRate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF89EC062758056D006D9E88 /* Debug */,
@@ -689,7 +705,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUI" */ = {
+		FF89EC082758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF89EC092758056D006D9E88 /* Debug */,
@@ -698,7 +714,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF89EC0B2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUITests" */ = {
+		FF89EC0B2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF89EC0C2758056D006D9E88 /* Debug */,
@@ -707,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF89EC0E2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateSwiftUIUITests" */ = {
+		FF89EC0E2758056D006D9E88 /* Build configuration list for PBXNativeTarget "SlothRateUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF89EC0F2758056D006D9E88 /* Debug */,

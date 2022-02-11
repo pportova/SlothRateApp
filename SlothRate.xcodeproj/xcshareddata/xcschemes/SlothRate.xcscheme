@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF89EBE32758056B006D9E88"
-               BuildableName = "SlothRateSwiftUI.app"
-               BlueprintName = "SlothRateSwiftUI"
-               ReferencedContainer = "container:SlothRateSwiftUI.xcodeproj">
+               BuildableName = "SlothRate.app"
+               BlueprintName = "SlothRate"
+               ReferencedContainer = "container:SlothRate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF89EBF32758056D006D9E88"
-               BuildableName = "SlothRateSwiftUITests.xctest"
-               BlueprintName = "SlothRateSwiftUITests"
-               ReferencedContainer = "container:SlothRateSwiftUI.xcodeproj">
+               BuildableName = "SlothRateTests.xctest"
+               BlueprintName = "SlothRateTests"
+               ReferencedContainer = "container:SlothRate.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF89EBFD2758056D006D9E88"
-               BuildableName = "SlothRateSwiftUIUITests.xctest"
-               BlueprintName = "SlothRateSwiftUIUITests"
-               ReferencedContainer = "container:SlothRateSwiftUI.xcodeproj">
+               BuildableName = "SlothRateUITests.xctest"
+               BlueprintName = "SlothRateUITests"
+               ReferencedContainer = "container:SlothRate.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF89EBE32758056B006D9E88"
-            BuildableName = "SlothRateSwiftUI.app"
-            BlueprintName = "SlothRateSwiftUI"
-            ReferencedContainer = "container:SlothRateSwiftUI.xcodeproj">
+            BuildableName = "SlothRate.app"
+            BlueprintName = "SlothRate"
+            ReferencedContainer = "container:SlothRate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF89EBE32758056B006D9E88"
-            BuildableName = "SlothRateSwiftUI.app"
-            BlueprintName = "SlothRateSwiftUI"
-            ReferencedContainer = "container:SlothRateSwiftUI.xcodeproj">
+            BuildableName = "SlothRate.app"
+            BlueprintName = "SlothRate"
+            ReferencedContainer = "container:SlothRate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

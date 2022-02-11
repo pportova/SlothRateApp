@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SlothRateSwiftUI
+@testable import SlothRate
 
 class MockCalendar: AppCalendar {
   func isDateInToday(_ date: Date) -> Bool { true }
@@ -78,8 +78,8 @@ class SlothRateSwiftUITests: XCTestCase {
         
     let result = sutViewModel.getSlothRate()
         
-    XCTAssertEqual(result.0, 2)
-    XCTAssertEqual(result.1, "A benchmark for laziness.\n Yet showing evidence of motion.")
+    XCTAssertEqual(result.slothRateValue, 2)
+    XCTAssertEqual(result.slothDescription, "A benchmark for laziness.\n Yet showing evidence of motion.")
   }
     
   func testcheckTheDate() {

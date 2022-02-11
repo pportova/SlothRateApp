@@ -1,6 +1,6 @@
 //
-//  SlothRateSwiftUIApp.swift
-//  SlothRateSwiftUI
+//  SlothRateApp.swift
+//  SlothRate
 //
 //  Created by Polina Portova on 01.12.2021.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SlothRateSwiftUIApp: App {
+struct SlothRateApp: App {
   @State private var stepsViewModel = StepsCounterViewModel()
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   
