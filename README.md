@@ -8,7 +8,7 @@ This is a step tracker that gets the steps data from HealthKit and displays it a
 
 ## Preview
 
-![ScreenShot](iphoneScreenResized.png) 
+![ScreenShot](images/iphoneScreenResized.png) 
 
 SwiftUI was used here for building GUI and brought me lots of joy along with lots of devastation while working with it :))
 
