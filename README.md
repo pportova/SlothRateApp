@@ -14,7 +14,7 @@ SwiftUI was used here for building GUI and brought me lots of joy along with lot
 
 HealthKit dependencies are wrapped into protocols to ensure code's reusability and also to make functionality testing possible. The problem I've faced was that addressing to HealthKit throughout the code made it impossible to write unit tests that could check whether the steps data is retrieved correctly. That is why all HealthKit dependencied were wrapped into protocols thus I was able to create mock objects for unit testing.
 
-Running on simulator and real device
+## Running on simulator and real device
 
 There's no need for any additional steps to run the app on simulator. You could add the steps count on built-in Health app and the app will work with this data.
 
