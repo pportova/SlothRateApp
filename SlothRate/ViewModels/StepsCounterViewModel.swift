@@ -25,19 +25,36 @@ class StepsCounterViewModel: ObservableObject {
     var slothRateValue = Int()
     var slothDescription = String()
     
-    enum SlothRateDescription: String, CaseIterable {
-      case first = "Best of the breed.\n A genuinely stationary sloth."
-      case second = "A benchmark for laziness.\n Yet showing evidence of motion."
-      case third = "Well, you're up.\n Got the pictures moving in front of you."
-      case fourth = "Making progress.\n Went way beyond the morning routine."
-      case fifth = "Moderately active.\n Getting some calories burnt in vain."
-      case sixth = "Not-so-sloth.\n Making fun of your lazy friends."
-      case seventh = "Active.\n Putting those joints to good use."
-      case eighth = "Suspiciously active.\n Evolving into other species rapidly."
-      case ninth = "A true doer.\n Planned or not planned, got it all done."
-      case tenth = "Hyperactive.\n Are you a sloth really?"
-      case eleventh = "An energy vortex.\n You're generating new particle types."
-      case twelfth = "An undercover cheetah.\n Ran too fast, straight out of juice."
+    enum SlothRateDescription: CaseIterable {
+      case first
+      case second
+      case third
+      case fourth
+      case fifth
+      case sixth
+      case seventh
+      case eighth
+      case ninth
+      case tenth
+      case eleventh
+      case twelfth
+        
+        var description: String {
+            switch self {
+                case .first: return String(localized: "description/1")
+                case .second: return String(localized: "description/2")
+                case .third: return String(localized: "description/3")
+                case .fourth: return String(localized: "description/4")
+                case .fifth: return String(localized: "description/5")
+                case .sixth: return String(localized: "description/6")
+                case .seventh: return String(localized: "description/7")
+                case .eighth: return String(localized: "description/8")
+                case .ninth: return String(localized: "description/9")
+                case .tenth: return String(localized: "description/10")
+                case .eleventh: return String(localized: "description/11")
+                case .twelfth: return String(localized: "description/12")
+            }
+        }
     }
   }
   
@@ -64,40 +81,40 @@ class StepsCounterViewModel: ObservableObject {
     var slothStructure = SlothCharacteristics()
     if countResult < 1500 {
       slothStructure.slothRateValue = 1
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.first.rawValue
+        slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.first.description
     } else if countResult >= 1500 && countResult < 3000 {
       slothStructure.slothRateValue = 2
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.second.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.second.description
     } else if countResult >= 3000 && countResult < 4500 {
       slothStructure.slothRateValue = 3
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.third.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.third.description
     } else if countResult >= 4500 && countResult < 6000 {
       slothStructure.slothRateValue = 4
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fourth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fourth.description
     } else if countResult >= 6000 && countResult < 7500 {
       slothStructure.slothRateValue = 5
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fifth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fifth.description
     } else if countResult >= 7500 && countResult < 9000 {
       slothStructure.slothRateValue = 6
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.sixth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.sixth.description
     } else if countResult >= 9000 && countResult < 11500 {
       slothStructure.slothRateValue = 7
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.seventh.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.seventh.description
     } else if countResult >= 11500 && countResult < 13500 {
       slothStructure.slothRateValue = 8
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eighth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eighth.description
     } else if countResult >= 13500 && countResult < 15500 {
       slothStructure.slothRateValue = 9
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.ninth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.ninth.description
     } else if countResult >= 15500 && countResult < 17500 {
       slothStructure.slothRateValue = 10
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.tenth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.tenth.description
     } else if countResult >= 17500 && countResult < 19500 {
       slothStructure.slothRateValue = 11
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eleventh.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eleventh.description
     } else if countResult >= 19500 {
       slothStructure.slothRateValue = 12
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.twelfth.rawValue
+      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.twelfth.description
     }
     return slothStructure
   }

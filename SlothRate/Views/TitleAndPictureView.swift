@@ -12,7 +12,7 @@ struct TitleAndPictureView: View {
     
   var body: some View {
     VStack {
-      Text("What sloth\nare you today?")
+      Text(LocalizedStringKey("main_screen/title"))
         .fontWeight(.light)
         .font(.custom("Futura", size: 50))
         .foregroundColor(Color("TitleTextColor"))

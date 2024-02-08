@@ -21,7 +21,7 @@ struct StepsCountAndLabelView: View {
         .padding(10)
         .minimumScaleFactor(0.8)
 
-      Text("steps taken")
+      Text(LocalizedStringKey("main_screen/steps_taken"))
         .font(.custom("Futura", size: 30))
         .foregroundColor(Color("StepsTakenColor"))
         .minimumScaleFactor(0.01)

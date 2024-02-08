@@ -20,6 +20,7 @@
 		FF89EC052758056D006D9E88 /* SlothRateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC042758056D006D9E88 /* SlothRateUITestsLaunchTests.swift */; };
 		FF89EC1227580CD6006D9E88 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89EC1127580CD6006D9E88 /* CircleView.swift */; };
 		FF920EB3278C70AA00A90224 /* StepsCountAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920EB2278C70AA00A90224 /* StepsCountAndLabelView.swift */; };
+		FFD0BDA22B75574500AADB1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFDD57202B559DE200BEAA15 /* Localizable.strings */; };
 		FFD562C727A2D26D009FCC0F /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD562C627A2D26D009FCC0F /* DatePickerView.swift */; };
 		FFDA7FE2277484BC00E4C24B /* NavigationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA7FE1277484BB00E4C24B /* NavigationButtonsView.swift */; };
 		FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */; };
@@ -80,6 +81,8 @@
 		FFDB1AC72768F8D300FA2B52 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FFDB1AD027690DFB00FA2B52 /* SlothRateDebugSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlothRateDebugSwiftUI.entitlements; sourceTree = "<group>"; };
 		FFDB1AD12769296300FA2B52 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		FFDD571F2B559DE200BEAA15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFDD57212B559DF100BEAA15 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FFF0C3A12770B7C2001AD449 /* TitleAndPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndPictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +123,7 @@
 		FF89EBDB2758056B006D9E88 = {
 			isa = PBXGroup;
 			children = (
+				FFDD571E2B559D2900BEAA15 /* Localizations */,
 				FF89EBE62758056B006D9E88 /* SlothRate */,
 				FF89EBF72758056D006D9E88 /* SlothRateTests */,
 				FF89EC012758056D006D9E88 /* SlothRateUITests */,
@@ -200,6 +204,14 @@
 				FF82197B276114E100FA5A39 /* StepsCounterViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FFDD571E2B559D2900BEAA15 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD57202B559DE200BEAA15 /* Localizable.strings */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +301,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = FF89EBDB2758056B006D9E88;
 			productRefGroup = FF89EBDB2758056B006D9E88;
@@ -308,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDB1AC82768F8D300FA2B52 /* Launch Screen.storyboard in Resources */,
+				FFD0BDA22B75574500AADB1F /* Localizable.strings in Resources */,
 				FF89EBEF2758056D006D9E88 /* Preview Assets.xcassets in Resources */,
 				FF89EBEC2758056D006D9E88 /* Assets.xcassets in Resources */,
 			);
@@ -380,6 +394,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		FFDD57202B559DE200BEAA15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDD571F2B559DE200BEAA15 /* en */,
+				FFDD57212B559DF100BEAA15 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		FF89EC062758056D006D9E88 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -438,6 +464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -492,6 +519,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -504,10 +532,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SlothRate/SlothRateSwiftUIDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"SlothRate/Preview Content\"";
-				DEVELOPMENT_TEAM = TF4VQ9TTL8;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlothRate/Info.plist;
@@ -528,10 +558,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.slothrate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = SlothRate2024;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -545,7 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SlothRate/SlothRateSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"SlothRate/Preview Content\"";
 				DEVELOPMENT_TEAM = TF4VQ9TTL8;
 				ENABLE_PREVIEWS = YES;
@@ -568,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pportova.slothrate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

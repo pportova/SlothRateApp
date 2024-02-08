@@ -55,7 +55,7 @@ struct NavigationButtonsView: View {
           }
         }) {
           NavigationLink(destination: ContentView(currentDate: currentDate), label: {
-            Text("Back to Sloth")
+            Text(LocalizedStringKey("date_picker/back"))
               .padding(20.0)
               .multilineTextAlignment(.center)
               .foregroundColor(Color("UpperLabelsColor"))

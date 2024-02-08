@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  SlothRate
+
+  Created by Polina Portova on 15.01.2024.
+  
+*/
+
+"date_picker/back" = "Back to Sloth";
+"main_screen/steps_taken" = "steps taken";
+"main_screen/title" = "Тестовий\nтекст?";
+"description/1" = "Best of the breed.\n A genuinely stationary sloth.";
+"description/2" = "A benchmark for laziness.\n Yet showing evidence of motion.";
+"description/3" = "Well, you're up.\n Got the pictures moving in front of you.";
+"description/4" = "Making progress.\n Went way beyond the morning routine.";
+"description/5" = "Moderately active.\n Getting some calories burnt in vain.";
+"description/6" = "Not-so-sloth.\n Making fun of your lazy friends.";
+"description/7" = "Active.\n Putting those joints to good use.";
+"description/8" = "Suspiciously active.\n Evolving into other species rapidly.";
+"description/9" = "A true doer.\n Planned or not planned, got it all done.";
+"description/10" = "Hyperactive.\n Are you a sloth really?";
+"description/11" = "An energy vortex.\n You're generating new particle types.";
+"description/12" = "An undercover cheetah.\n Ran too fast, straight out of juice.";
