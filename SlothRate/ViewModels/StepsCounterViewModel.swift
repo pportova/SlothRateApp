@@ -61,45 +61,14 @@ class StepsCounterViewModel: ObservableObject {
   }
     
   func getSlothRate() -> SlothCharacteristics {
-    var slothStructure = SlothCharacteristics()
-    if countResult < 1500 {
-      slothStructure.slothRateValue = 1
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.first.rawValue
-    } else if countResult >= 1500 && countResult < 3000 {
-      slothStructure.slothRateValue = 2
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.second.rawValue
-    } else if countResult >= 3000 && countResult < 4500 {
-      slothStructure.slothRateValue = 3
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.third.rawValue
-    } else if countResult >= 4500 && countResult < 6000 {
-      slothStructure.slothRateValue = 4
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fourth.rawValue
-    } else if countResult >= 6000 && countResult < 7500 {
-      slothStructure.slothRateValue = 5
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.fifth.rawValue
-    } else if countResult >= 7500 && countResult < 9000 {
-      slothStructure.slothRateValue = 6
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.sixth.rawValue
-    } else if countResult >= 9000 && countResult < 11500 {
-      slothStructure.slothRateValue = 7
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.seventh.rawValue
-    } else if countResult >= 11500 && countResult < 13500 {
-      slothStructure.slothRateValue = 8
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eighth.rawValue
-    } else if countResult >= 13500 && countResult < 15500 {
-      slothStructure.slothRateValue = 9
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.ninth.rawValue
-    } else if countResult >= 15500 && countResult < 17500 {
-      slothStructure.slothRateValue = 10
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.tenth.rawValue
-    } else if countResult >= 17500 && countResult < 19500 {
-      slothStructure.slothRateValue = 11
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.eleventh.rawValue
-    } else if countResult >= 19500 {
-      slothStructure.slothRateValue = 12
-      slothStructure.slothDescription = SlothCharacteristics.SlothRateDescription.twelfth.rawValue
-    }
-    return slothStructure
+    let stepThresholds = [1500.0, 3000.0, 4500.0, 6000.0, 7500.0, 9000.0, 11500.0, 13500.0, 15500.0, 17500.0, 19500.0]
+    let descriptions = SlothCharacteristics.SlothRateDescription.allCases
+
+    let rateIndex = stepThresholds.firstIndex(where: { countResult < $0 }) ?? stepThresholds.count
+    let rate = rateIndex + 1
+    let description = descriptions[rateIndex].rawValue
+
+    return SlothCharacteristics(slothRateValue: rate, slothDescription: description)
   }
 }
 
